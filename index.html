@@ -6,63 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alberto Acquilino</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        /* CSS styles as before */
+
+        /* Menu styles */
+        header {
+            position: relative;
+        }
+
+        ul.menu {
+            list-style: none;
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8;
+            position: absolute;
+            top: 20px;
+            right: 20px;
         }
 
-        header {
-            text-align: center;
-            background-color: #007bff;
-            color: #fff;
-            padding: 40px 0;
+        ul.menu li {
+            display: inline-block;
+            margin-left: 20px;
         }
 
-        header h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
+        ul.menu li:first-child {
+            margin-left: 0;
         }
 
-        header h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        section {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 30px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-
-        section h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        section p {
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-        section a {
-            color: #007bff;
+        ul.menu li a {
             text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #007bff;
         }
 
-        section a:hover {
-            text-decoration: underline;
+        ul.menu li a:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 
 <body>
     <header>
+        <ul class="menu">
+            <li><a href="https://acquila91.github.io/" target="_blank">About</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="https://acquila91.github.io/mei-trumpet" target="_blank">MEI-Trumpet</a></li>
+        </ul>
         <h1>Alberto Acquilino</h1>
         <h3>PhD Candidate in Computational Acoustics</h3>
         <p>Schulich School of Music, McGill University</p>
