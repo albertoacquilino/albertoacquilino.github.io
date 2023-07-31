@@ -4,7 +4,7 @@ Welcome to the GitHub repository for Alberto Acquilino's personal website. This 
 
 ## Website URL
 
-The website can be accessed at: [https://acquila91.github.io](https://acquila91.github.io)
+The website can be accessed at: [https://albertoacquilino.github.io](https://acquila91.github.io)
 
 ## Table of Contents
 
