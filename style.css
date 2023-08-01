@@ -60,6 +60,16 @@ nav > ul > li {
   }
 }
 
+.logo-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav > h1 {
+  margin: 0;
+}
+
 /* Responsive Styles for the Navigation Menu */
 @media screen and (max-width: 480px) {
   nav {
@@ -82,6 +92,21 @@ nav > ul > li {
   nav.show-mobile > ul > li {
     display: block;
     border-bottom: 1px solid #ddd; /* Add a separator between menu items */
+  }
+}
+
+/* Add a new media query to hide the menu icon on larger screens */
+@media screen and (min-width: 768px) {
+  .menu-icon {
+    display: none;
+  }
+
+  nav > ul {
+    display: flex; /* Display the menu items in a row on larger screens */
+  }
+
+  nav > ul > li {
+    margin-left: 1em;
   }
 }
 
