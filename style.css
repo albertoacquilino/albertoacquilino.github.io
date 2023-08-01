@@ -45,6 +45,21 @@ nav > ul > li {
   display: inline-block;
 }
 
+/* Add a new media query to hide the menu icon on larger screens */
+@media screen and (min-width: 768px) {
+  .menu-icon {
+    display: none;
+  }
+
+  nav > ul {
+    display: block; /* Display the menu items in a row on larger screens */
+  }
+
+  nav > ul > li {
+    display: inline-block;
+  }
+}
+
 /* Responsive Styles for the Navigation Menu */
 @media screen and (max-width: 480px) {
   nav {
