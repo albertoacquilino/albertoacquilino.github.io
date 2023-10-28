@@ -98,4 +98,8 @@ pre {
         display: block;
         padding: 0.5em;
     }
+
+    body {
+        padding-top: 6em; /* Adjust this value as needed */
+    }
 }
