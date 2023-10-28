@@ -79,3 +79,23 @@ pre {
   border-radius: 10px;
 }
 
+/* Responsive navigation bar */
+@media (max-width: 768px) {
+    nav {
+        padding: 0.5em;
+    }
+
+    nav > h1 {
+        font-size: 0.8em;
+        padding: 0.5em;
+    }
+
+    nav > ul {
+        display: block;
+    }
+
+    nav > ul > li {
+        display: block;
+        padding: 0.5em;
+    }
+}
