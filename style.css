@@ -166,3 +166,23 @@ pre {
   margin: 50px auto;
   border-radius: 5px;
 }
+
+/* Image Gallery Styles */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.image-gallery img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.05);
+}
