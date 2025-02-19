@@ -43,9 +43,10 @@ nav > ul > li {
 }
 
 main {
-  max-width: 35em;
+  max-width: 90%; /* Use a percentage for better responsiveness */
+  max-width: min(50em, 90vw); /* Ensures it doesn’t become too wide */
   margin: 0 auto;
-  padding: 0 1em;
+  padding: 0 1.5em; /* Slightly increased padding for better spacing */
   box-sizing: border-box;
 }
 
@@ -102,4 +103,10 @@ pre {
     body {
         padding-top: 10em; /* Adjust this value as needed */
     }
+}
+
+@media (min-width: 1024px) {
+  main {
+     max-width: 50em; /* Expands content for desktop screens */
+  }
 }
