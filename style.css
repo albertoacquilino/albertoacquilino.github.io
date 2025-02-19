@@ -118,18 +118,18 @@ pre {
 }
 
 .input-image img {
-  width: 60%; /* Reduce the default size */
-  max-width: 300px; /* Prevent it from being too large */
+  width: 80%; /* Default size (bigger than before but still smaller than full width) */
+  max-width: 400px; /* Prevent it from getting too small */
   transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
   cursor: pointer;
   border-radius: 8px;
 }
 
 .input-image img:hover {
-  transform: scale(1.05); /* Slight zoom-in effect on hover */
+  transform: scale(1.08); /* Subtle zoom-in on hover */
 }
 
 .input-image img.expanded {
-  width: 90%; /* Make it larger when clicked */
-  max-width: 600px;
+  width: 95%; /* Bigger but still controlled */
+  max-width: 700px; /* Prevent it from taking the full screen */
 }
