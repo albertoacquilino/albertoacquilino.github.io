@@ -140,3 +140,21 @@ pre {
   display: block;
   margin: 20px auto; /* Center the image */
 }
+
+.app-store-links {
+  display: flex;
+  justify-content: center; /* Centers the buttons */
+  gap: 15px; /* Adds spacing between the logos */
+  margin: 20px 0;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+}
+
+.app-badge {
+  height: 50px; /* Uniform height for both logos */
+  width: auto; /* Keeps original aspect ratio */
+  transition: transform 0.2s ease-in-out;
+}
+
+.app-badge:hover {
+  transform: scale(1.1); /* Slight zoom-in effect */
+}
