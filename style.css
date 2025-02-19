@@ -133,3 +133,10 @@ pre {
   width: 95%; /* Bigger but still controlled */
   max-width: 700px; /* Prevent it from taking the full screen */
 }
+
+.app-screenshots img {
+  width: 70%; /* Reduce the default size */
+  max-width: 350px; /* Prevent it from getting too large */
+  display: block;
+  margin: 20px auto; /* Center the image */
+}
