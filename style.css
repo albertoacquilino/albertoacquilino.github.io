@@ -158,3 +158,11 @@ pre {
 .app-badge:hover {
   transform: scale(1.1); /* Slight zoom-in effect */
 }
+
+.custom-divider {
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(to right, #4CAF50, #58f, #FF5733);
+  margin: 50px auto;
+  border-radius: 5px;
+}
