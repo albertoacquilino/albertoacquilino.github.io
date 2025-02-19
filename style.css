@@ -110,3 +110,26 @@ pre {
      max-width: 50em; /* Expands content for desktop screens */
   }
 }
+
+.input-image {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.input-image img {
+  width: 60%; /* Reduce the default size */
+  max-width: 300px; /* Prevent it from being too large */
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.input-image img:hover {
+  transform: scale(1.05); /* Slight zoom-in effect on hover */
+}
+
+.input-image img.expanded {
+  width: 90%; /* Make it larger when clicked */
+  max-width: 600px;
+}
