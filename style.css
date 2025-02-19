@@ -167,22 +167,23 @@ pre {
   border-radius: 5px;
 }
 
-/* Image Gallery Styles */
-.image-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
+.hcp-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; /* Space between images */
   margin: 20px 0;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
-.image-gallery img {
-  width: 100%;
-  height: auto;
+.hcp-gallery img {
+  height: 400px; /* Ensures uniform height */
+  width: auto; /* Keeps proportions */
   object-fit: cover;
   border-radius: 8px;
   transition: transform 0.3s ease-in-out;
 }
 
-.image-gallery img:hover {
-  transform: scale(1.05);
+.hcp-gallery img:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
 }
