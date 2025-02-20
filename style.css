@@ -207,13 +207,14 @@ pre {
   width: 90%; /* 90% of the column width on larger screens */
   max-width: none; /* Prevents any restriction on max width */
   display: block;
-  margin: 20px auto; /* Centers the image and adds spacing */
-  border-radius: 10px; /* Optional: Slight rounded corners for aesthetics */
+  margin: 40px auto; /* Increases spacing above and below, centers horizontally */
+  border-radius: 10px; /* Optional: Slight rounded corners */
 }
 
 /* Make the image 100% width on small screens */
 @media (max-width: 768px) {
   .student-compass-image {
       width: 100%; /* Fills the column on smaller screens */
+      margin: 30px auto; /* Slightly less margin on small screens */
   }
 }
