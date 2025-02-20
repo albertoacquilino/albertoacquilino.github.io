@@ -134,11 +134,47 @@ pre {
   max-width: 700px; /* Prevent it from taking the full screen */
 }
 
-.app-screenshots img {
-  width: 70%; /* Reduce the default size */
-  max-width: 350px; /* Prevent it from getting too large */
-  display: block;
-  margin: 20px auto; /* Center the image */
+/* Default style for the image */
+.app-screenshot {
+  width: 70%; /* Regular size */
+  max-width: 350px; /* Prevents it from being too big */
+  cursor: pointer;
+  border: 3px solid #4CAF50;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, border-color 0.5s ease-in-out;
+}
+
+.app-screenshot:hover {
+  border-color: #FF5733;
+}
+
+/* Fullscreen overlay effect */
+.fullscreen {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw; /* Covers most of the screen */
+  height: auto;
+  max-width: 90%;
+  max-height: 90vh;
+  border: 3px solid #FF5733;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+  z-index: 1000;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Dark overlay background */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Darkens the background */
+  z-index: 999;
+  display: none;
 }
 
 .app-store-links {
