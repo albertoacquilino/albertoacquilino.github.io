@@ -171,19 +171,19 @@ pre {
   display: flex;
   justify-content: center; /* Centers images in the row */
   align-items: center; /* Ensures vertical alignment */
-  gap: 15px; /* Adds spacing between images */
+  gap: 30px; /* Increases spacing between images */
   margin: 20px 0;
-  flex-wrap: nowrap; /* Prevents wrapping to the next line */
+  flex-wrap: nowrap; /* Keeps them in a single row */
 }
 
 .hcp-gallery img {
-  width: 30%; /* Ensures each image takes up equal space */
-  height: auto; /* Maintains aspect ratio */
+  width: 28%; /* Slightly smaller to allow for hover expansion */
+  height: auto; /* Keeps original aspect ratio */
   object-fit: cover;
   border-radius: 8px;
   transition: transform 0.3s ease-in-out;
 }
 
 .hcp-gallery img:hover {
-  transform: scale(1.05); /* Slight zoom-in effect on hover */
+  transform: scale(1.15); /* Enlarges more on hover */
 }
