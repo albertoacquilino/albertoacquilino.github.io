@@ -204,7 +204,7 @@ pre {
 }
 
 .student-compass-image {
-  width: 80%; /* Makes the image bigger */
+  width: 90%; /* Makes the image bigger */
   max-width: 600px; /* Prevents it from getting too large */
   display: block;
   margin: 20px auto; /* Centers the image */
