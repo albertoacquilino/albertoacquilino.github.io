@@ -204,9 +204,9 @@ pre {
 }
 
 .student-compass-image {
-  width: 100%; /* Makes the image bigger */
-  max-width: none; /* Prevents it from getting too large */
+  width: 100%; /* Makes the image fill the column width */
+  max-width: none; /* Prevents any restriction on max width */
   display: block;
-  margin: 20px auto; /* Centers the image */
+  margin: 20px 0; /* Adds spacing above and below */
   border-radius: 10px; /* Optional: Slight rounded corners for aesthetics */
 }
