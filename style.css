@@ -169,21 +169,21 @@ pre {
 
 .hcp-gallery {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px; /* Space between images */
+  justify-content: center; /* Centers images in the row */
+  align-items: center; /* Ensures vertical alignment */
+  gap: 15px; /* Adds spacing between images */
   margin: 20px 0;
-  flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+  flex-wrap: nowrap; /* Prevents wrapping to the next line */
 }
 
 .hcp-gallery img {
-  height: 420px; /* Ensures uniform height */
-  width: auto; /* Keeps original proportions */
-  object-fit: cover; /* Ensures the image covers its frame without distortion */
+  width: 30%; /* Ensures each image takes up equal space */
+  height: auto; /* Maintains aspect ratio */
+  object-fit: cover;
   border-radius: 8px;
   transition: transform 0.3s ease-in-out;
 }
 
 .hcp-gallery img:hover {
-  transform: scale(1.05); /* Adds a slight zoom-in effect on hover */
+  transform: scale(1.05); /* Slight zoom-in effect on hover */
 }
