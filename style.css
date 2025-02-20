@@ -202,3 +202,11 @@ pre {
 .download-button:hover {
   background-color: #45a049; /* Slightly darker green on hover */
 }
+
+.student-compass-image {
+  width: 80%; /* Makes the image bigger */
+  max-width: 600px; /* Prevents it from getting too large */
+  display: block;
+  margin: 20px auto; /* Centers the image */
+  border-radius: 10px; /* Optional: Slight rounded corners for aesthetics */
+}
