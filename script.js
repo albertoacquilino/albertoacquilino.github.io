@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   video.addEventListener("ended", function () {
       playCount++;
-      if (playCount >= 3) { // Stops after 3 loops
+      if (playCount >= 2) { // Stops after 2 loops
           video.pause();
       } else {
           video.play();
