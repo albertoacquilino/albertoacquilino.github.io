@@ -250,3 +250,7 @@ pre {
   flex-direction: column;
   align-items: center; /* Ensures the audio player is centered below the text */
 }
+
+h3 {
+  margin-top: 10px; /* Adds space above all h3 elements */
+}
