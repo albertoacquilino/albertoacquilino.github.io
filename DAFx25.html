@@ -164,6 +164,126 @@
         The full sound dataset can be downloaded <a href="DAFx25/sound_dataset.zip">here</a>. The dataset includes a zip file with two folders: one containing good attacks and another containing bad attacks. Additionally, a CSV file is provided with annotations on the different attack errors associated with the file names of each bad attack.
     </p>
 
+    <h2>Synthesized Trumpet Signal Analysis</h2>
+    <p>
+        The following table presents an analysis of a synthesized trumpet signal with specific parameters such as fundamental frequency, modulation frequency, and noise level.
+    </p>
+
+    <!-- Inserted Table -->
+    <div id="synthesized-signal-table">
+        <style>
+            /* Table Styling */
+            table, tr, td, th {
+                border-style: solid;
+                border-width: 1px;
+                border-color: black;
+                border-collapse: separate;
+            }
+            td {
+                font-family: Helvetica, sans-serif;
+                font-size: 12px;
+                padding: 5px;
+                text-align: right;
+                min-width: 100px;
+            }
+            .title {
+                font-size: 14px;
+                font-weight: bold;
+                text-align: center;
+                background-color: white;
+            }
+            .columnLabel, .rowLabel {
+                font-weight: bold;
+                text-align: center;
+                background-color: #D2D2D2;
+            }
+            .highlight:hover {
+                background-color: #99D9FF !important;
+            }
+        </style>
+
+        <table id="table">
+            <tr>
+                <th class="title" colspan="6">
+                    Synth_trumpet: <em>f<sub>0</sub></em> = 466.16 Hz &nbsp;
+                    <em>f<sub>m</sub></em> = 5.00 Hz &nbsp;
+                    <em>c<sub>mp</sub></em> = 0.030 &nbsp;
+                    <em>t<sub>off</sub></em> = 212 ms &nbsp;
+                    SNR = 7 dB
+                    <br>
+                    <audio controls>
+                        <source src="DAFx25/synth_trumpet_f0_466.16_fm_5.00_cmp_0.030_toff_212_SNR_7.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </th>
+            </tr>
+            <tr>
+                <td class="emptycolumn" colspan="3" rowspan="3"></td>
+                <td class="subtitle"><em>&mu;<sub>dW</sub></em> = 224 ms</td>
+                <td class="subtitle"><em>&mu;<sub>dT</sub></em> = 224 ms</td>
+                <td class="subtitle"><em>&mu;<sub>dTeff</sub></em> = 318 ms</td>
+            </tr>
+            <tr>
+                <td class="subtitle"><em>&sigma;<sub>dW</sub></em> = 7 ms</td>
+                <td class="subtitle"><em>&sigma;<sub>dT</sub></em> = 17 ms</td>
+                <td class="subtitle"><em>&sigma;<sub>dTeff</sub></em> = 38 ms</td>
+            </tr>
+            <tr>
+                <td class="subtitle">Range = [208 , 242]</td>
+                <td class="subtitle">Range = [184 , 261]</td>
+                <td class="subtitle">Range = [242 , 415]</td>
+            </tr>
+            <tr>
+                <td class="emptycolumn"></td>
+                <td class="columnLabel">Center Pitch (Hz)</td>
+                <td class="columnLabel">Pitch STD (Hz)</td>
+                <td class="columnLabel">PSWT Attack Dur (ms)</td>
+                <td class="columnLabel">TT Attack Dur (ms)</td>
+                <td class="columnLabel">Effort Attack Dur (ms)</td>
+            </tr>
+            <tr class="highlight">
+                <td class="rowLabel">Signal #1</td>
+                <td class="data">467.15</td>
+                <td class="data">3.17</td>
+                <td class="data">225</td>
+                <td class="data">231</td>
+                <td class="data">394</td>
+            </tr>
+            <tr class="highlight">
+                <td class="rowLabel">Signal #2</td>
+                <td class="data">467.53</td>
+                <td class="data">3.25</td>
+                <td class="data">216</td>
+                <td class="data">238</td>
+                <td class="data">300</td>
+            </tr>
+            <tr class="highlight">
+                <td class="rowLabel">Signal #3</td>
+                <td class="data">464.52</td>
+                <td class="data">3.20</td>
+                <td class="data">220</td>
+                <td class="data">218</td>
+                <td class="data">298</td>
+            </tr>
+            <tr class="highlight">
+                <td class="rowLabel">Signal #4</td>
+                <td class="data">468.29</td>
+                <td class="data">3.28</td>
+                <td class="data">227</td>
+                <td class="data">204</td>
+                <td class="data">304</td>
+            </tr>
+            <tr class="highlight">
+                <td class="rowLabel">Signal #5</td>
+                <td class="data">467.91</td>
+                <td class="data">5.54</td>
+                <td class="data">212</td>
+                <td class="data">251</td>
+                <td class="data">345</td>
+            </tr>
+        </table>
+    </div>
+
     <h2>Histogram Analysis</h2>
     <p>
         The following histogram represents an analysis of the sound dataset, providing insights into key parameters related to attack transient evaluation.
