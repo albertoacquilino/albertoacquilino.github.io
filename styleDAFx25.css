@@ -14,7 +14,7 @@ h1 {
 /* Paragraph Styling */
 p {
     text-align: left;
-    font-size: 1em; /* Reduced size */
+    font-size: 1.2em; /* Slightly increased */
     color: #555;
 }
 
@@ -32,19 +32,19 @@ table {
 /* Table Borders */
 table, th, td {
     border: 1px solid black;
-    padding: 6px; /* Reduced padding to make cells smaller */
+    padding: 8px; /* Increased padding slightly */
 }
 
 /* Title Row */
 th.title {
     font-family: "Times New Roman", serif;
-    font-size: 18pt; /* Slightly smaller title */
+    font-size: 22pt; /* Increased title size */
     font-weight: bold;
     font-style: italic;
     text-align: center;
     background-color: white;
     color: black;
-    padding: 10px;
+    padding: 12px;
 }
 
 /* Column Labels */
@@ -52,16 +52,16 @@ th.title {
     font-weight: bold;
     text-align: center;
     background-color: #D2D2D2;
-    font-size: 8pt; /* Reduced font size */
-    padding: 5px; /* Reduced padding */
+    font-size: 10pt; /* Increased font size */
+    padding: 8px; /* More padding for better readability */
 }
 
 /* Table Data Cells */
 td.data {
-    font-size: 8pt; /* Reduce font size to save space */
+    font-size: 10pt; /* Increased text size */
     color: black;
     text-align: left;
-    padding: 5px;
+    padding: 8px;
 }
 
 /* Alternating Row Colors */
@@ -81,11 +81,11 @@ tr.highlight:hover {
 /* Empty Column Styling */
 .emptycolumn {
     background-color: #D2D2D2;
-    min-width: 80px; /* Reduced from 100px */
+    min-width: 80px;
 }
 
 /* Audio Player Styling */
 audio {
-    width: 120px; /* Adjust to fit better */
-    height: 30px; /* Ensures controls are visible */
+    width: 120px; /* Keeping the audio players as they are */
+    height: 30px;
 }
