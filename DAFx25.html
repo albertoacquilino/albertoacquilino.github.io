@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+            font-size: 1.1em;
+            color: #555;
+        }
+        table, tr, td, th {
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgb(0, 0, 0);
+            border-collapse: separate;
+        }
+        td {
+            font-family: Helvetica;
+            font-size: 9pt;
+            font-weight: normal;
+            font-style: normal;
+            padding: 3px;
+            text-align: left;
+            min-width: 100px;
+        }
+        .title {
+            color: rgb(0, 0, 0);
+            font-family: "Times New Roman";
+            font-size: 20pt;
+            font-weight: bold;
+            font-style: italic;
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+        }
+        .layer {
+            color: rgb(0, 0, 0);
+            background-color: rgb(255, 255, 255);
+        }
+        .emptycolumn {
+            background-color: rgb(210, 210, 210);
+            min-width: 100px;
+        }
+        .columnLabel {
+            color: rgb(0, 0, 0);
+            font-family: Helvetica;
+            font-size: 9pt;
+            font-weight: bold;
+            font-style: normal;
+            padding: 3px;
+            text-align: center;
+            background-color: rgb(210, 210, 210);
+            min-width: 100px;
+        }
+        .rowLabel {
+            color: rgb(0, 0, 0);
+            font-family: Helvetica;
+            font-size: 9pt;
+            font-weight: bold;
+            font-style: normal;
+            padding: 3px;
+            text-align: center;
+            background-color: rgb(210, 210, 210);
+        }
+        .data {
+            color: rgb(0, 0, 0);
+        }
+        tr:nth-child(2n+1) {
+            background-color: rgb(255, 255, 255);
+        }
+        tr:nth-child(2n+2) {
+            background-color: rgb(230, 230, 230);
+        }
+        .highlight:hover {
+            background-color: rgb(153, 217, 255) !important;
+        }
+        .highlight.dataHighlight:hover {
+            background-color: rgb(153, 217, 255) !important;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sound Examples</h1>
+    <p>
+        This webpage provides supplementary materials for the article titled 
+        "<strong>An Adaptive Wavelet-Based Algorithm for Assessing the Quality of the Attack Transients in Non-Percussive Instruments Sounds</strong>", 
+        submitted to the International Conference on Digital Audio Effects (DAFx) 2025. 
+        These audio samples are provided to enhance understanding of the methods and results discussed in the paper.
+    </p>
+    <table id="table">
+        <tr>
+            <th class="title" colspan="10">Trumpet sounds: Most interesting examples</th>
+        </tr>
+        <tr>
+            <td class="columnLabel">Audio File Example</td>
+            <td class="columnLabel">Annotation</td>
+            <td class="columnLabel">Original Signal</td>
+            <td class="columnLabel">Noisy Part</td>
+            <td class="columnLabel">Resonant Part</td>
+            <td class="columnLabel">Steady State Amp</td>
+            <td class="columnLabel">Center Pitch</td>
+            <td class="columnLabel">Pitch STD</td>
+            <td class="columnLabel">Attack Dur</td>
+        </tr>
+        <tr class="highlight">
+            <td class="rowLabel">attack_good.wav</td>
+            <td class="data">Good attack clarity</td>
+            <td class="data">
+                <audio controls>
+                    <source src="DAFx25/attack_good.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td class="data">
+                <audio controls>
+                    <source src="DAFx25/fv_good.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td class="data">
+                <audio controls>
+                    <source src="DAFx25/av_good.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td class="data">0.967</td>
+            <td class="data">466.47 <em>Hz</em></td>
+            <td class="data">2.5669 <em>Hz</em></td>
+            <td class="data">53.854 <em>ms</em></td>
+        </tr>
+        <tr class="highlight">
+            <td class="rowLabel">attack_breath.wav</td>
+            <td class="data">Attack with breath noise</td>
+            <td class="data">
+                <audio controls>
+                    <source src="DAFx25/attack_breath.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td class="data">
+                <audio controls>
+                    <source src="DAFx25/fv_breath.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td class="data">
+                <audio controls>
+                    <source src="DAFx25/av_breath.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td class="data">0.964</td>
+            <td class="data">465.57 <em>Hz</em></td>
+            <td class="data">25.1294 <em>Hz</em></td>
+            <td class="data">202.729 <em>ms</em></td>
+        </tr>
+        <tr class="highlight">
+            <td class="rowLabel">attack_noise.wav</td>
+            <td class="data">Noisy/Unclean attack</td>
+            <td class="data">
+                <audio controls>
+                    <source src="DAFx25/Bb4_bad3.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td class="data">
+                <audio controls>
+                    <source src="DAFx25/fv_Bb4_bad3.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td class="data">
+                <audio controls>
+                    <source src="DAFx25/av_Bb4_bad3.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td class="data">0.984</td>
+            <td class="data">466.47 <em>Hz</em></td>
+            <td class="data">29.6044 <em>Hz</em></td>
+            <td class="data">103.229 <em>ms</em></td>
+        </tr>
+        <tr class="highlight">
+            <td class="rowLabel">attack_pitch.wav</td>
+            <td class="data">Delayed stabilization of pitch</td>
+            <td class="data">
+                <audio controls>
+                    <source src="DAFx25/attack_pitch.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td class="data">
+                <audio controls>
+                    <source src="DAFx25/fv_pitch.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td class="data">
+                <audio controls>
+                    <source src="DAFx25/av_pitch.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td class="data">0.990</td>
+            <td class="data">466.93 <em>Hz</em></td>
+            <td class="data">38.6623 <em>Hz</em></td>
+            <td class="data">34.792 <em>ms</em></td>
+        </tr>
+        <tr class="highlight">
+            <td class="rowLabel">attack_resonance.wav</td>
+            <td class="data">Delayed stabilization of resonance</td>
+            <td class="data">
+                <audio controls>
+                    <source src="DAFx25/attack_resonance.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td class="data">
+                <audio controls>
+                    <source src="DAFx25/fv_resonance.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td class="data">
+                <audio controls>
+                    <source src="DAFx25/av_resonance.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td class="data">0.998</td>
+            <td class="data">465.12 <em>Hz</em></td>
+            <td class="data">17.7724 <em>Hz</em></td>
+            <td class="data">197.000 <em>ms</em></td>
+        </tr>
+    </table>
+    <p>
+        The full sound dataset can be downloaded <a href="DAFx25/sound_dataset.zip">here</a>. The dataset includes a zip file with two folders: one containing good attacks and another containing bad attacks. Additionally, a CSV file is provided with annotations on the different attack errors associated with the file names of each bad attack.
+    </p>
+</body>
+</html>
