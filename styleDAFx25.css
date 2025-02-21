@@ -14,7 +14,7 @@ h1 {
 /* Paragraph Styling */
 p {
     text-align: left;
-    font-size: 1.1em;
+    font-size: 1em; /* Reduced size */
     color: #555;
 }
 
@@ -24,24 +24,27 @@ table {
     border-collapse: collapse;
     margin: 20px 0;
     background-color: #fff;
+    max-width: 100%;
+    table-layout: auto;
+    overflow-x: auto;
 }
 
 /* Table Borders */
 table, th, td {
     border: 1px solid black;
-    padding: 8px;
+    padding: 6px; /* Reduced padding to make cells smaller */
 }
 
 /* Title Row */
 th.title {
     font-family: "Times New Roman", serif;
-    font-size: 20pt;
+    font-size: 18pt; /* Slightly smaller title */
     font-weight: bold;
     font-style: italic;
     text-align: center;
     background-color: white;
     color: black;
-    padding: 12px;
+    padding: 10px;
 }
 
 /* Column Labels */
@@ -49,6 +52,16 @@ th.title {
     font-weight: bold;
     text-align: center;
     background-color: #D2D2D2;
+    font-size: 8pt; /* Reduced font size */
+    padding: 5px; /* Reduced padding */
+}
+
+/* Table Data Cells */
+td.data {
+    font-size: 8pt; /* Reduce font size to save space */
+    color: black;
+    text-align: left;
+    padding: 5px;
 }
 
 /* Alternating Row Colors */
@@ -65,25 +78,14 @@ tr.highlight:hover {
     background-color: #99D9FF !important;
 }
 
-/* Data Cells */
-td.data {
-    color: black;
-    text-align: left;
-}
-
 /* Empty Column Styling */
 .emptycolumn {
     background-color: #D2D2D2;
-    min-width: 100px;
+    min-width: 80px; /* Reduced from 100px */
 }
 
 /* Audio Player Styling */
 audio {
-    width: 100%;
-}
-
-table {
-    max-width: 100%;
-    table-layout: auto;
-    overflow-x: auto;
+    width: 120px; /* Adjust to fit better */
+    height: 30px; /* Ensures controls are visible */
 }
