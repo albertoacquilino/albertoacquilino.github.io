@@ -218,3 +218,21 @@ pre {
       margin: 20px auto; /* Slightly smaller spacing for mobile */
   }
 }
+
+.input-video {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.input-video video {
+  width: 80%; /* Adjusts to 80% of container width */
+  max-width: 400px; /* Prevents it from being too large */
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.input-video video:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
