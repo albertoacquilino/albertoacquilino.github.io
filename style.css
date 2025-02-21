@@ -245,5 +245,8 @@ pre {
 }
 
 .audio-example {
-  text-align: center; /* Centers the text labels */
+  text-align: center;  /* Centers the text above */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ensures the audio player is centered below the text */
 }
