@@ -1,0 +1,83 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Page Title */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Paragraph Styling */
+p {
+    text-align: left;
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #fff;
+}
+
+/* Table Borders */
+table, th, td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+/* Title Row */
+th.title {
+    font-family: "Times New Roman", serif;
+    font-size: 20pt;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    background-color: white;
+    color: black;
+    padding: 12px;
+}
+
+/* Column Labels */
+.columnLabel, .rowLabel {
+    font-weight: bold;
+    text-align: center;
+    background-color: #D2D2D2;
+}
+
+/* Alternating Row Colors */
+tr:nth-child(odd) {
+    background-color: #FFF;
+}
+
+tr:nth-child(even) {
+    background-color: #E6E6E6;
+}
+
+/* Hover Effect */
+tr.highlight:hover {
+    background-color: #99D9FF !important;
+}
+
+/* Data Cells */
+td.data {
+    color: black;
+    text-align: left;
+}
+
+/* Empty Column Styling */
+.emptycolumn {
+    background-color: #D2D2D2;
+    min-width: 100px;
+}
+
+/* Audio Player Styling */
+audio {
+    width: 100%;
+}
