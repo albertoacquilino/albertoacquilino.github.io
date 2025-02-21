@@ -79,6 +79,11 @@ td.data {
 
 /* Audio Player Styling */
 audio {
-    width: 1000px; /* Adjust width to fit better */
-    height: 25px; /* Reduce height for compact display */
+    width: 100%;
+}
+
+table {
+    max-width: 100%;
+    table-layout: auto;
+    overflow-x: auto;
 }
