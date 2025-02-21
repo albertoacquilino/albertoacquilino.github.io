@@ -17,49 +17,79 @@
             font-size: 1.1em;
             color: #555;
         }
-    
-        /* Ensure the table container does not break the page layout */
-        .table-container {
-            overflow-x: auto; /* Enables horizontal scrolling if necessary */
-            width: 100%; /* Ensures the container takes full width */
-            display: block;
+        table, tr, td, th {
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgb(0, 0, 0);
+            border-collapse: separate;
         }
-    
-        /* Force table to fit within the screen */
-        table {
-            width: 100%; /* Forces the table to stay within the container */
-            max-width: 100%; /* Prevents it from expanding beyond the screen */
-            table-layout: fixed; /* Makes columns adjust within available space */
-            border-collapse: collapse;
-        }
-    
-        th, td {
-            word-wrap: break-word; /* Ensures text does not cause overflow */
-            white-space: normal; /* Allows text wrapping */
-            overflow: hidden;
-            text-overflow: ellipsis; /* Prevents long text from breaking layout */
-            padding: 5px;
+        td {
+            font-family: Helvetica;
+            font-size: 9pt;
+            font-weight: normal;
+            font-style: normal;
+            padding: 3px;
             text-align: left;
-            min-width: 80px;
+            min-width: 100px;
         }
-    
-        /* Make column headers readable */
-        th {
-            background-color: rgb(210, 210, 210);
+        .title {
+            color: rgb(0, 0, 0);
+            font-family: "Times New Roman";
+            font-size: 20pt;
             font-weight: bold;
-        }
-    
-        /* Alternating row colors */
-        tr:nth-child(even) {
-            background-color: rgb(230, 230, 230);
-        }
-        tr:nth-child(odd) {
+            font-style: italic;
+            text-align: center;
             background-color: rgb(255, 255, 255);
         }
-    
-        /* Hover effect for better readability */
+        .layer {
+            color: rgb(0, 0, 0);
+            background-color: rgb(255, 255, 255);
+        }
+        .emptycolumn {
+            background-color: rgb(210, 210, 210);
+            min-width: 100px;
+        }
+        .columnLabel {
+            color: rgb(0, 0, 0);
+            font-family: Helvetica;
+            font-size: 9pt;
+            font-weight: bold;
+            font-style: normal;
+            padding: 3px;
+            text-align: center;
+            background-color: rgb(210, 210, 210);
+            min-width: 100px;
+        }
+        .rowLabel {
+            color: rgb(0, 0, 0);
+            font-family: Helvetica;
+            font-size: 9pt;
+            font-weight: bold;
+            font-style: normal;
+            padding: 3px;
+            text-align: center;
+            background-color: rgb(210, 210, 210);
+        }
+        .data {
+            color: rgb(0, 0, 0);
+        }
+        tr:nth-child(2n+1) {
+            background-color: rgb(255, 255, 255);
+        }
+        tr:nth-child(2n+2) {
+            background-color: rgb(230, 230, 230);
+        }
         .highlight:hover {
             background-color: rgb(153, 217, 255) !important;
+        }
+        .highlight.dataHighlight:hover {
+            background-color: rgb(153, 217, 255) !important;
+        }
+    
+        /* Add this new style */
+        .table-container {
+            overflow-x: auto; /* Enables horizontal scrolling */
+            max-width: 100%; /* Prevents the table from exceeding the screen width */
         }
     </style>
 </head>
