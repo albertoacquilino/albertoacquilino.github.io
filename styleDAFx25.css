@@ -86,6 +86,6 @@ tr.highlight:hover {
 
 /* Audio Player Styling */
 audio {
-    width: 160px; /* Keeping the audio players as they are */
+    width: 175px; /* Keeping the audio players as they are */
     height: 40px;
 }
