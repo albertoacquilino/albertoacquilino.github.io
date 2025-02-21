@@ -17,41 +17,49 @@
             font-size: 1.1em;
             color: #555;
         }
-        table, tr, td, th {
-            border-style: solid;
-            border-width: 1px;
-            border-color: rgb(0, 0, 0);
-            border-collapse: separate;
-        }
-        td {
-            font-family: Helvetica;
-            font-size: 9pt;
-            font-weight: normal;
-            font-style: normal;
-            padding: 3px;
-            text-align: left;
-            min-width: 80px; /* Reduce min-width to prevent overflow */
-            word-wrap: break-word; /* Allow wrapping */
-        }
-        th {
-            min-width: 80px; /* Reduce min-width to avoid overflow */
-            word-wrap: break-word;
-        }
-        
-        /* Ensures table fits screen */
+    
+        /* Ensure the table container does not break the page layout */
         .table-container {
-            overflow-x: auto; /* Enables scrolling if needed */
-            width: 100%; /* Ensures it takes full width */
+            overflow-x: auto; /* Enables horizontal scrolling if necessary */
+            width: 100%; /* Ensures the container takes full width */
             display: block;
         }
     
+        /* Force table to fit within the screen */
         table {
-            width: 100%; /* Ensures table adapts to screen */
-            table-layout: auto; /* Allows flexible column sizes */
+            width: 100%; /* Forces the table to stay within the container */
+            max-width: 100%; /* Prevents it from expanding beyond the screen */
+            table-layout: fixed; /* Makes columns adjust within available space */
+            border-collapse: collapse;
         }
     
         th, td {
-            white-space: normal; /* Allows text wrapping instead of overflowing */
+            word-wrap: break-word; /* Ensures text does not cause overflow */
+            white-space: normal; /* Allows text wrapping */
+            overflow: hidden;
+            text-overflow: ellipsis; /* Prevents long text from breaking layout */
+            padding: 5px;
+            text-align: left;
+            min-width: 80px;
+        }
+    
+        /* Make column headers readable */
+        th {
+            background-color: rgb(210, 210, 210);
+            font-weight: bold;
+        }
+    
+        /* Alternating row colors */
+        tr:nth-child(even) {
+            background-color: rgb(230, 230, 230);
+        }
+        tr:nth-child(odd) {
+            background-color: rgb(255, 255, 255);
+        }
+    
+        /* Hover effect for better readability */
+        .highlight:hover {
+            background-color: rgb(153, 217, 255) !important;
         }
     </style>
 </head>
