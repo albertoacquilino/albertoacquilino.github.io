@@ -236,3 +236,14 @@ pre {
 .input-video video:hover {
   transform: scale(1.05); /* Slight zoom on hover */
 }
+
+.audio-container {
+  display: flex;
+  justify-content: center;  /* Centers the elements */
+  gap: 20px;  /* Adds spacing between the two audio players */
+  flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+}
+
+.audio-example {
+  text-align: center; /* Centers the text labels */
+}
