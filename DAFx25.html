@@ -183,10 +183,18 @@
 
     <h2>Histogram Analysis</h2>
     <p>
-        The following histogram represents an analysis of the sound dataset, providing insights into key parameters related to attack transient evaluation.
+        The following histograms present the distributions of attack durations estimated using three different methods:
+        <ul>
+            <li><strong>Weakest-effort method:</strong> A simple approach that estimates attack duration with minimal constraints.</li>
+            <li><strong>-3 dB below the maximum value:</strong> Defines the attack duration threshold at -3 dB relative to the peak amplitude.</li>
+            <li><strong>Pitch-synchronous wavelet transform (PSWT) method:</strong> A more refined technique that synchronizes analysis with the pitch for improved accuracy.</li>
+        </ul>
+        These methods were applied to a trumpet-like synthesized sound across six different levels of signal-to-noise ratio (SNR): 100, 20, 12, 7, 3, and 1. 
+        Each histogram displays the distribution of attack durations, along with the average value and standard deviation for each method.
     </p>
+
     <div style="text-align: center;">
-        <img src="DAFx25/histogram.png" alt="Histogram Analysis" style="max-width: 60%; height: auto; border: 1px solid black;">
+        <img src="DAFx25/histograms.svg" alt="Histogram Analysis" style="width: 100%; height: auto; border: 1px solid black;">
     </div>
 
 </body>
