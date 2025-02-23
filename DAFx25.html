@@ -164,24 +164,7 @@
         The full sound dataset can be downloaded <a href="DAFx25/sound_dataset.zip">here</a>. The dataset includes a zip file with two folders: one containing good attacks and another containing bad attacks. Additionally, a CSV file is provided with annotations on the different attack errors associated with the file names of each bad attack.
     </p>
 
-    <h2>Synthesized Trumpet Signal Analysis</h2>
-    <p>
-        The following table presents an analysis of a synthesized trumpet signal with specific parameters such as fundamental frequency, modulation frequency, and noise level.
-    </p>
-
-    <div id="synthesized-signal-table"></div>
-
-    <script>
-        // Load the full table dynamically from the external HTML file
-        fetch('DAFx25/sigtable_trumpet_f0_466.16_fm_5.00_cmp_0.030_toff_212_SNR_7.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('synthesized-signal-table').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading the table:', error));
-    </script>
-
-    <h2>Histogram Analysis</h2>
+    <h2>Accuracy and Robustness Analysis</h2>
     <p>
         The following histograms present the distributions of attack durations estimated using three different methods:
         <ul>
