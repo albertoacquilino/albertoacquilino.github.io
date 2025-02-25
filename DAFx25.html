@@ -165,16 +165,30 @@
     </p>
 
     <h2>Accuracy and Robustness Analysis</h2>
-    <p>
-        The following histograms present the distributions of attack durations estimated using three different methods:
-        <ul>
-            <li><strong>Weakest-effort method:</strong> A simple approach that estimates attack duration with minimal constraints.</li>
-            <li><strong>-3 dB below the maximum value:</strong> Defines the attack duration threshold at -3 dB relative to the peak amplitude.</li>
-            <li><strong>Pitch-synchronous wavelet transform (PSWT) method:</strong> A more refined technique that synchronizes analysis with the pitch for improved accuracy.</li>
-        </ul>
-        These methods were applied to <strong>100 synthesized sounds</strong> with attack transients <strong>corrupted by enveloped white Gaussian random noise</strong> across six levels of signal-to-noise ratio (SNR): 100, 20, 12, 7, 3, and 1. 
-        Each histogram displays the distribution of attack durations, along with the average value and standard deviation for each method, highlighting their accuracy and robustness.
-    </p>
+<p>
+    The following histograms present the distributions of attack durations estimated using three different methods:
+    <ul>
+        <li><strong>Weakest-effort method:</strong> A simple approach that estimates attack duration with minimal constraints.</li>
+        <li><strong>-3 dB below the maximum value:</strong> Defines the attack duration threshold at -3 dB relative to the peak amplitude.</li>
+        <li><strong>Pitch-synchronous wavelet transform (PSWT) method:</strong> A more refined technique that synchronizes analysis with the pitch for improved accuracy.</li>
+    </ul>
+    These methods were applied to <strong>100 synthesized sounds</strong> with attack transients <strong>corrupted by enveloped white Gaussian random noise</strong> across six levels of signal-to-noise ratio (SNR): 100, 20, 12, 7, 3, and 1. 
+    Each histogram displays the distribution of attack durations, along with the average value and standard deviation for each method, highlighting their accuracy and robustness.
+</p>
+
+<p>
+    Below each histogram plot, <strong>HTML tables</strong> provide detailed data on the obtained results. These tables include:
+    <ul>
+        <li>The <strong>type of signal</strong> analyzed (sinusoidal, sawtooth, triangular, square, or trumpet-like).</li>
+        <li>The <strong>detected center pitch</strong> \( f_0 \).</li>
+        <li>The <strong>pitch standard deviation</strong>.</li>
+        <li>The <strong>frequency modulation</strong> \( f_m \) and the <strong>modulation depth</strong> \( c_{mp} \) of the signal.</li>
+        <li>The <strong>estimated offset time</strong> \( t_{off} \) of the attack transient.</li>
+        <li>The <strong>Signal-to-Noise Ratio (SNR)</strong> level.</li>
+        <li>The <strong>average attack time estimation</strong> \( \mu \), along with the corresponding <strong>standard deviation</strong> \( \sigma \) and range for each attack duration estimation method.</li>
+        <li>The <strong>attack duration estimates</strong> for each synthesized sound across the three methods.</li>
+    </ul>
+</p>
 
     <h3>Sinusoidal Signal</h3>
     <p>
@@ -260,7 +274,7 @@
         <a href="DAFx25/square SNR var WTscale3/sigtable_square_f0_466.16_fm_0.00_cmp_0.000_toff_213_SNR_12.html" target="_blank">SNR 12</a>
         <a href="DAFx25/square SNR var WTscale3/sigtable_square_f0_466.16_fm_0.00_cmp_0.000_toff_213_SNR_7.html" target="_blank">SNR 7</a>
         <a href="DAFx25/square SNR var WTscale3/sigtable_square_f0_466.16_fm_0.00_cmp_0.000_toff_213_SNR_3.html" target="_blank">SNR 3</a>
-        <a href="DAFx25/square SNR var WTscale3/sigtable_square_f0_466.16_fm_0.00_cmp_0.000_toff_213_SNR_1.html target="_blank">SNR 1</a>
+        <a href="DAFx25/square SNR var WTscale3/sigtable_square_f0_466.16_fm_0.00_cmp_0.000_toff_213_SNR_1.html" target="_blank">SNR 1</a>
     </div>
 
     <h3>Trumpet-Like Sound</h3>
