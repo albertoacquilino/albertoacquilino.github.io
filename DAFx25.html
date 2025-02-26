@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sound Examples</title>
     <link rel="stylesheet" href="styleDAFx25.css">
 </head>
+
 <body>
     <h1>Sound Examples</h1>
     <p>
-        This webpage provides supplementary materials for the article titled 
-        "<strong>An Adaptive Wavelet-Based Algorithm for Assessing the Quality of the Attack Transients in Non-Percussive Instruments Sounds</strong>", 
-        submitted to the International Conference on Digital Audio Effects (DAFx) 2025. 
+        This webpage provides supplementary materials for the article titled
+        "<strong>An Adaptive Wavelet-Based Algorithm for Assessing the Quality of the Attack Transients in
+            Non-Percussive Instruments Sounds</strong>",
+        submitted to the International Conference on Digital Audio Effects (DAFx) 2025.
         These audio samples are provided to enhance understanding of the methods and results discussed in the paper.
     </p>
     <table id="table">
@@ -161,180 +164,255 @@
         </tr>
     </table>
     <p>
-        The full sound dataset can be downloaded <a href="DAFx25/sound_dataset.zip">here</a>. The dataset includes a zip file with two folders: one containing good attacks and another containing bad attacks. Additionally, a CSV file is provided with annotations on the different attack errors associated with the file names of each bad attack.
+        The full sound dataset can be downloaded <a href="DAFx25/sound_dataset.zip">here</a>. The dataset includes a zip
+        file with two folders: one containing good attacks and another containing bad attacks. Additionally, a CSV file
+        is provided with annotations on the different attack errors associated with the file names of each bad attack.
     </p>
 
     <h2>Accuracy and Robustness Analysis</h2>
     <p>
-        The following histograms present the distributions of attack durations estimated using three different methods:
-        <ul>
-            <li><strong>Weakest-effort method:</strong> A simple approach that estimates attack duration with minimal constraints.</li>
-            <li><strong>-3 dB below the maximum value:</strong> Defines the attack duration threshold at -3 dB relative to the peak amplitude.</li>
-            <li><strong>Pitch-synchronous wavelet transform (PSWT) method:</strong> A more refined technique that achieves more reliable estimates by separating the harmonic components from the noisy transient.</li>
-        </ul>
-        These methods were applied to <strong>100 synthesized sounds</strong> with attack transients <strong>corrupted by enveloped white Gaussian random noise</strong> across six levels of signal-to-noise ratio (SNR): 100, 20, 12, 7, 3, and 1. 
-        Each histogram displays the distribution of attack durations, along with the average value and standard deviation for each method, highlighting their accuracy and robustness.
+        The following plots present the histogram distributions of attack durations estimated using three different
+        methods:
+    <ul>
+        <li><strong>Weakest-effort method:</strong> A simple approach that estimates attack duration with minimal
+            constraints.</li>
+        <li><strong>-3 dB below the maximum value:</strong> Defines the attack duration threshold at -3 dB relative to
+            the peak amplitude.</li>
+        <li><strong>Pitch-synchronous wavelet transform (PSWT) method:</strong> A more refined technique that achieves
+            more reliable estimates by separating the harmonic components from the noisy transient.</li>
+    </ul>
+    These methods were applied to <strong>100 synthesized sounds</strong> with attack transients <strong>corrupted by
+        enveloped white Gaussian random noise</strong> across six levels of signal-to-noise ratio (SNR): 120, 20, 12, 7,
+    3, and 1.
+    Each histogram displays the distribution of attack durations, along with the average value and standard deviation
+    for each method, highlighting their accuracy and robustness.
     </p>
 
     <p>
-        Below each histogram plot, <strong>HTML tables</strong> provide detailed data on the obtained results. These tables include:
-        <ul>
-            <li>The <strong>type of signal</strong> analyzed (sinusoidal, sawtooth, triangular, square, or trumpet-like).</li>
-            <li>The <strong>detected center pitch</strong> \( f_0 \).</li>
-            <li>The <strong>pitch standard deviation</strong>.</li>
-            <li>The <strong>frequency modulation</strong> \( f_m \) and the <strong>modulation depth</strong> \( c_{mp} \) of the signal.</li>
-            <li>The <strong>estimated offset time</strong> \( t_{off} \) of the attack transient.</li>
-            <li>The <strong>Signal-to-Noise Ratio (SNR)</strong> level.</li>
-            <li>The <strong>average attack time estimation</strong> \( \mu \), along with the corresponding <strong>standard deviation</strong> \( \sigma \) and range for each attack duration estimation method.</li>
-            <li>The <strong>attack duration estimates</strong> for each synthesized sound across the three methods.</li>
-            <li>An <strong>audio player</strong> to listen to a sample of the synthesized sounds analyzed.</li>
-        </ul>
+        The figure below shows an example of the <strong>envelopes</strong> of a synthesized sound and the added noise.
+        In this example, the <strong>Signal-to-Noise Ratio (SNR) is -1 dB</strong>, meaning that the noise envelope 
+        reaches <strong>1 dB more than the sound envelope</strong>. The <strong>attack duration</strong> 
+        \( t_{\text{off}} \) of the synthesized sound is also shown.
+    </p>
+
+    <div style="text-align: center;">
+        <img src="DAFx25/envelopes.png" alt="Example of Sound and Noise Envelopes" 
+             style="width: 60%; height: auto; border: 1px solid black;">
+    </div>
+
+    <p>
+        Below each histogram plot, <strong>HTML tables</strong> provide detailed data on the obtained results. These
+        tables include:
+    <ul>
+        <li>The <strong>type of signal</strong> analyzed (sinusoidal, sawtooth, triangular, square, or trumpet-like).
+        </li>
+        <li>The <strong>detected center pitch</strong> \( f_0 \).</li>
+        <li>The <strong>pitch standard deviation</strong>.</li>
+        <li>The <strong>frequency modulation</strong> \( f_m \) and the <strong>modulation depth</strong> \( c_{mp} \)
+            of the signal.</li>
+        <li>The <strong>estimated offset time</strong> \( t_{off} \) of the attack transient.</li>
+        <li>The <strong>Signal-to-Noise Ratio (SNR)</strong> level.</li>
+        <li>The <strong>average attack time estimation</strong> \( \mu \), along with the corresponding <strong>standard
+                deviation</strong> \( \sigma \) and range for each attack duration estimation method.</li>
+        <li>The <strong>attack duration estimates</strong> for each synthesized sound across the three methods.</li>
+        <li>An <strong>audio player</strong> to listen to a sample of the synthesized sounds analyzed.</li>
+    </ul>
     </p>
 
     <h3>Sinusoidal Signal</h3>
     <p>
-        The first analysis focuses on a <strong>sinusoidal signal</strong> with varying SNR levels, analyzed using a wavelet scale of 4.
+        The first analysis focuses on a <strong>sinusoidal signal</strong> with varying SNR levels, analyzed using a
+        wavelet scale of 4.
     </p>
 
     <div style="text-align: center;">
-        <img src="DAFx25/sin SNR var WTscale4 toff68/histograms sin SNRvar WTscale4 Toff68.svg" alt="Histogram Analysis (Sinusoidal Signal)" style="width: 100%; height: auto; border: 1px solid black;">
+        <img src="DAFx25/sin SNR var WTscale4 toff68/histograms sin SNRvar WTscale4 Toff68.svg"
+            alt="Histogram Analysis (Sinusoidal Signal)" style="width: 100%; height: auto; border: 1px solid black;">
     </div>
 
     <h4>View Detailed Data Tables</h4>
     <p>Click on a link below to open the corresponding table with all data for each SNR level:</p>
 
     <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 10px;">
-        <a href="DAFx25/sin SNR var WTscale4 toff68/sigtable_sin_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_100.html" target="_blank">SNR 100</a>
-        <a href="DAFx25/sin SNR var WTscale4 toff68/sigtable_sin_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_20.html" target="_blank">SNR 20</a>
-        <a href="DAFx25/sin SNR var WTscale4 toff68/sigtable_sin_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_12.html" target="_blank">SNR 12</a>
-        <a href="DAFx25/sin SNR var WTscale4 toff68/sigtable_sin_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_7.html" target="_blank">SNR 7</a>
-        <a href="DAFx25/sin SNR var WTscale4 toff68/sigtable_sin_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_3.html" target="_blank">SNR 3</a>
-        <a href="DAFx25/sin SNR var WTscale4 toff68/sigtable_sin_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_1.html" target="_blank">SNR 1</a>
+        <a href="DAFx25/sin SNR var WTscale4 toff68/sigtable_sin_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_100.html"
+            target="_blank">SNR 120</a>
+        <a href="DAFx25/sin SNR var WTscale4 toff68/sigtable_sin_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_20.html"
+            target="_blank">SNR 20</a>
+        <a href="DAFx25/sin SNR var WTscale4 toff68/sigtable_sin_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_12.html"
+            target="_blank">SNR 12</a>
+        <a href="DAFx25/sin SNR var WTscale4 toff68/sigtable_sin_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_7.html"
+            target="_blank">SNR 7</a>
+        <a href="DAFx25/sin SNR var WTscale4 toff68/sigtable_sin_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_3.html"
+            target="_blank">SNR 3</a>
+        <a href="DAFx25/sin SNR var WTscale4 toff68/sigtable_sin_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_1.html"
+            target="_blank">SNR 1</a>
     </div>
 
     <!-- Placeholder for Sawtooth Signal -->
     <h3>Sawtooth Signal</h3>
     <p>
-        The following histograms illustrate the <strong>sawtooth synthesized signal</strong>, analyzed with the same three methods across different SNR levels using a wavelet scale of 4.
+        The following histograms illustrate the <strong>sawtooth synthesized signal</strong>, analyzed with the same
+        three methods across different SNR levels using a wavelet scale of 4.
     </p>
 
     <div style="text-align: center;">
-        <img src="DAFx25/saw SNR var WTscale4 toff72/histograms saw SNRvar WTscale4 Toffset72.svg" alt="Histogram Analysis (Sinusoidal Signal)" style="width: 100%; height: auto; border: 1px solid black;">
+        <img src="DAFx25/saw SNR var WTscale4 toff72/histograms saw SNRvar WTscale4 Toffset72.svg"
+            alt="Histogram Analysis (Sinusoidal Signal)" style="width: 100%; height: auto; border: 1px solid black;">
     </div>
 
     <h4>View Detailed Data Tables</h4>
     <p>Click on a link below to open the corresponding table with all data for each SNR level:</p>
 
     <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 10px;">
-        <a href="DAFx25/saw SNR var WTscale4 toff72/sigtable_saw_f0_466.16_fm_0.00_cmp_0.000_toff_221_SNR_100.html" target="_blank">SNR 100</a>
-        <a href="DAFx25/saw SNR var WTscale4 toff72/sigtable_saw_f0_466.16_fm_0.00_cmp_0.000_toff_221_SNR_20.html" target="_blank">SNR 20</a>
-        <a href="DAFx25/saw SNR var WTscale4 toff72/sigtable_saw_f0_466.16_fm_0.00_cmp_0.000_toff_221_SNR_12.html" target="_blank">SNR 12</a>
-        <a href="DAFx25/saw SNR var WTscale4 toff72/sigtable_saw_f0_466.16_fm_0.00_cmp_0.000_toff_221_SNR_7.html" target="_blank">SNR 7</a>
-        <a href="DAFx25/saw SNR var WTscale4 toff72/sigtable_saw_f0_466.16_fm_0.00_cmp_0.000_toff_221_SNR_3.html" target="_blank">SNR 3</a>
-        <a href="DAFx25/saw SNR var WTscale4 toff72/sigtable_saw_f0_466.16_fm_0.00_cmp_0.000_toff_221_SNR_1.html" target="_blank">SNR 1</a>
+        <a href="DAFx25/saw SNR var WTscale4 toff72/sigtable_saw_f0_466.16_fm_0.00_cmp_0.000_toff_221_SNR_100.html"
+            target="_blank">SNR 120</a>
+        <a href="DAFx25/saw SNR var WTscale4 toff72/sigtable_saw_f0_466.16_fm_0.00_cmp_0.000_toff_221_SNR_20.html"
+            target="_blank">SNR 20</a>
+        <a href="DAFx25/saw SNR var WTscale4 toff72/sigtable_saw_f0_466.16_fm_0.00_cmp_0.000_toff_221_SNR_12.html"
+            target="_blank">SNR 12</a>
+        <a href="DAFx25/saw SNR var WTscale4 toff72/sigtable_saw_f0_466.16_fm_0.00_cmp_0.000_toff_221_SNR_7.html"
+            target="_blank">SNR 7</a>
+        <a href="DAFx25/saw SNR var WTscale4 toff72/sigtable_saw_f0_466.16_fm_0.00_cmp_0.000_toff_221_SNR_3.html"
+            target="_blank">SNR 3</a>
+        <a href="DAFx25/saw SNR var WTscale4 toff72/sigtable_saw_f0_466.16_fm_0.00_cmp_0.000_toff_221_SNR_1.html"
+            target="_blank">SNR 1</a>
     </div>
 
     <!-- Placeholder for Triangular Signal -->
     <h3>Triangular Signal</h3>
     <p>
-        The following histograms illustrate the <strong>triangular synthesized signal</strong>, analyzed with the same three methods across different SNR levels using a wavelet scale of 4.
+        The following histograms illustrate the <strong>triangular synthesized signal</strong>, analyzed with the same
+        three methods across different SNR levels using a wavelet scale of 4.
     </p>
 
     <div style="text-align: center;">
-        <img src="DAFx25/triangular SNR var WTscale4 toff705/histograms triang SNRvar WTscale4 toffdetect705.svg" alt="Histogram Analysis (Sinusoidal Signal)" style="width: 100%; height: auto; border: 1px solid black;">
+        <img src="DAFx25/triangular SNR var WTscale4 toff705/histograms triang SNRvar WTscale4 toffdetect705.svg"
+            alt="Histogram Analysis (Sinusoidal Signal)" style="width: 100%; height: auto; border: 1px solid black;">
     </div>
 
     <h4>View Detailed Data Tables</h4>
     <p>Click on a link below to open the corresponding table with all data for each SNR level:</p>
 
     <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 10px;">
-        <a href="DAFx25/triangular SNR var WTscale4 toff705/sigtable_triang_f0_466.16_fm_0.00_cmp_0.000_toff_214_SNR_100.html" target="_blank">SNR 100</a>
-        <a href="DAFx25/triangular SNR var WTscale4 toff705/sigtable_triang_f0_466.16_fm_0.00_cmp_0.000_toff_214_SNR_20.html" target="_blank">SNR 20</a>
-        <a href="DAFx25/triangular SNR var WTscale4 toff705/sigtable_triang_f0_466.16_fm_0.00_cmp_0.000_toff_214_SNR_12.html" target="_blank">SNR 12</a>
-        <a href="DAFx25/triangular SNR var WTscale4 toff705/sigtable_triang_f0_466.16_fm_0.00_cmp_0.000_toff_214_SNR_7.html" target="_blank">SNR 7</a>
-        <a href="DAFx25/triangular SNR var WTscale4 toff705/sigtable_triang_f0_466.16_fm_0.00_cmp_0.000_toff_214_SNR_3.html" target="_blank">SNR 3</a>
-        <a href="DAFx25/triangular SNR var WTscale4 toff705/sigtable_triang_f0_466.16_fm_0.00_cmp_0.000_toff_214_SNR_1.html" target="_blank">SNR 1</a>
+        <a href="DAFx25/triangular SNR var WTscale4 toff705/sigtable_triang_f0_466.16_fm_0.00_cmp_0.000_toff_214_SNR_100.html"
+            target="_blank">SNR 120</a>
+        <a href="DAFx25/triangular SNR var WTscale4 toff705/sigtable_triang_f0_466.16_fm_0.00_cmp_0.000_toff_214_SNR_20.html"
+            target="_blank">SNR 20</a>
+        <a href="DAFx25/triangular SNR var WTscale4 toff705/sigtable_triang_f0_466.16_fm_0.00_cmp_0.000_toff_214_SNR_12.html"
+            target="_blank">SNR 12</a>
+        <a href="DAFx25/triangular SNR var WTscale4 toff705/sigtable_triang_f0_466.16_fm_0.00_cmp_0.000_toff_214_SNR_7.html"
+            target="_blank">SNR 7</a>
+        <a href="DAFx25/triangular SNR var WTscale4 toff705/sigtable_triang_f0_466.16_fm_0.00_cmp_0.000_toff_214_SNR_3.html"
+            target="_blank">SNR 3</a>
+        <a href="DAFx25/triangular SNR var WTscale4 toff705/sigtable_triang_f0_466.16_fm_0.00_cmp_0.000_toff_214_SNR_1.html"
+            target="_blank">SNR 1</a>
     </div>
 
     <!-- Placeholder for Square Wave Signal -->
     <h3>Square Wave Signal</h3>
     <p>
-        The following histograms illustrate the <strong>square synthesized signal</strong>, analyzed with the same three methods across different SNR levels using a wavelet scale of 3.
+        The following histograms illustrate the <strong>square synthesized signal</strong>, analyzed with the same three
+        methods across different SNR levels using a wavelet scale of 3.
     </p>
 
     <div style="text-align: center;">
-        <img src="DAFx25/square SNR var WTscale3/histograms square SNRvar WTscales3.svg" alt="Histogram Analysis (Sinusoidal Signal)" style="width: 100%; height: auto; border: 1px solid black;">
+        <img src="DAFx25/square SNR var WTscale3/histograms square SNRvar WTscales3.svg"
+            alt="Histogram Analysis (Sinusoidal Signal)" style="width: 100%; height: auto; border: 1px solid black;">
     </div>
 
     <h4>View Detailed Data Tables</h4>
     <p>Click on a link below to open the corresponding table with all data for each SNR level:</p>
 
     <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 10px;">
-        <a href="DAFx25/square SNR var WTscale3/sigtable_square_f0_466.16_fm_0.00_cmp_0.000_toff_213_SNR_100.html" target="_blank">SNR 100</a>
-        <a href="DAFx25/square SNR var WTscale3/sigtable_square_f0_466.16_fm_0.00_cmp_0.000_toff_213_SNR_20.html" target="_blank">SNR 20</a>
-        <a href="DAFx25/square SNR var WTscale3/sigtable_square_f0_466.16_fm_0.00_cmp_0.000_toff_213_SNR_12.html" target="_blank">SNR 12</a>
-        <a href="DAFx25/square SNR var WTscale3/sigtable_square_f0_466.16_fm_0.00_cmp_0.000_toff_213_SNR_7.html" target="_blank">SNR 7</a>
-        <a href="DAFx25/square SNR var WTscale3/sigtable_square_f0_466.16_fm_0.00_cmp_0.000_toff_213_SNR_3.html" target="_blank">SNR 3</a>
-        <a href="DAFx25/square SNR var WTscale3/sigtable_square_f0_466.16_fm_0.00_cmp_0.000_toff_213_SNR_1.html" target="_blank">SNR 1</a>
+        <a href="DAFx25/square SNR var WTscale3/sigtable_square_f0_466.16_fm_0.00_cmp_0.000_toff_213_SNR_100.html"
+            target="_blank">SNR 120</a>
+        <a href="DAFx25/square SNR var WTscale3/sigtable_square_f0_466.16_fm_0.00_cmp_0.000_toff_213_SNR_20.html"
+            target="_blank">SNR 20</a>
+        <a href="DAFx25/square SNR var WTscale3/sigtable_square_f0_466.16_fm_0.00_cmp_0.000_toff_213_SNR_12.html"
+            target="_blank">SNR 12</a>
+        <a href="DAFx25/square SNR var WTscale3/sigtable_square_f0_466.16_fm_0.00_cmp_0.000_toff_213_SNR_7.html"
+            target="_blank">SNR 7</a>
+        <a href="DAFx25/square SNR var WTscale3/sigtable_square_f0_466.16_fm_0.00_cmp_0.000_toff_213_SNR_3.html"
+            target="_blank">SNR 3</a>
+        <a href="DAFx25/square SNR var WTscale3/sigtable_square_f0_466.16_fm_0.00_cmp_0.000_toff_213_SNR_1.html"
+            target="_blank">SNR 1</a>
     </div>
 
     <h3>Trumpet-Like Sound</h3>
     <p>
-        The following histograms illustrate the <strong>trumpet-like synthesized sound</strong>, analyzed with the same three methods across different SNR levels using a wavelet scale of 3.
+        The following histograms illustrate the <strong>trumpet-like synthesized sound</strong>, analyzed with the same
+        three methods across different SNR levels using a wavelet scale of 3.
     </p>
 
     <div style="text-align: center;">
-        <img src="DAFx25/trumpet SNR var WTscale3/histograms trumpet SNRvar WTscales3.svg" alt="Histogram Analysis (Trumpet-like Sound)" style="width: 100%; height: auto; border: 1px solid black;">
+        <img src="DAFx25/trumpet SNR var WTscale3/histograms trumpet SNRvar WTscales3.svg"
+            alt="Histogram Analysis (Trumpet-like Sound)" style="width: 100%; height: auto; border: 1px solid black;">
     </div>
 
     <h4>View Detailed Data Tables</h4>
     <p>Click on a link below to open the corresponding table with all data for each SNR level:</p>
 
     <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 10px;">
-        <a href="DAFx25/trumpet SNR var WTscale3/sigtable_trumpet_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_100.html" target="_blank">SNR 100</a>
-        <a href="DAFx25/trumpet SNR var WTscale3/sigtable_trumpet_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_20.html" target="_blank">SNR 20</a>
-        <a href="DAFx25/trumpet SNR var WTscale3/sigtable_trumpet_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_12.html" target="_blank">SNR 12</a>
-        <a href="DAFx25/trumpet SNR var WTscale3/sigtable_trumpet_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_7.html" target="_blank">SNR 7</a>
-        <a href="DAFx25/trumpet SNR var WTscale3/sigtable_trumpet_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_3.html" target="_blank">SNR 3</a>
-        <a href="DAFx25/trumpet SNR var WTscale3/sigtable_trumpet_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_1.html" target="_blank">SNR 1</a>
+        <a href="DAFx25/trumpet SNR var WTscale3/sigtable_trumpet_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_100.html"
+            target="_blank">SNR 120</a>
+        <a href="DAFx25/trumpet SNR var WTscale3/sigtable_trumpet_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_20.html"
+            target="_blank">SNR 20</a>
+        <a href="DAFx25/trumpet SNR var WTscale3/sigtable_trumpet_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_12.html"
+            target="_blank">SNR 12</a>
+        <a href="DAFx25/trumpet SNR var WTscale3/sigtable_trumpet_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_7.html"
+            target="_blank">SNR 7</a>
+        <a href="DAFx25/trumpet SNR var WTscale3/sigtable_trumpet_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_3.html"
+            target="_blank">SNR 3</a>
+        <a href="DAFx25/trumpet SNR var WTscale3/sigtable_trumpet_f0_466.16_fm_0.00_cmp_0.000_toff_212_SNR_1.html"
+            target="_blank">SNR 1</a>
     </div>
 
     <h2>Modulation Depth Analysis at Fixed SNR=7</h2>
-<p>
-    The following histograms present the distributions of attack durations estimated using the three different methods,
-    applied to <strong>100 synthesized sounds</strong> with attack transients <strong>corrupted by enveloped white Gaussian random noise</strong>.
-    In this analysis, the <strong>Signal-to-Noise Ratio (SNR) is fixed at 7</strong>, while the <strong>frequency modulation</strong> is set at 
-    <strong>f<sub>m</sub> = 5</strong>, and the <strong>modulation depth</strong> varies across <strong>c<sub>mp</sub> = [0, 0.001, 0.002, 0.005]</strong>.
-</p>
+    <p>
+        The following histograms present the distributions of attack durations estimated using the three different
+        methods,
+        applied to <strong>100 synthesized sounds</strong> with attack transients <strong>corrupted by enveloped white
+            Gaussian random noise</strong>.
+        In this analysis, the <strong>Signal-to-Noise Ratio (SNR) is fixed at 7</strong>, while the <strong>frequency
+            modulation</strong> is set at
+        <strong>f<sub>m</sub> = 5</strong>, and the <strong>modulation depth</strong> varies across
+        <strong>c<sub>mp</sub> = [0, 0.001, 0.002, 0.005]</strong>.
+    </p>
 
-<p>
-    Each histogram displays the distribution of attack durations, along with the average value and standard deviation for each method,
-    highlighting their accuracy and robustness.
-</p>
+    <p>
+        Each histogram displays the distribution of attack durations, along with the average value and standard
+        deviation for each method,
+        highlighting their accuracy and robustness.
+    </p>
 
-<div style="text-align: center;">
-    <img src="DAFx25/FMvar_sin_SNR7_WTscale3_toffset68/FMvar_sin_SNR7_WTscale4_toffset68.svg" 
-         alt="Histogram Analysis (Fixed SNR=7, Varying Modulation Depth)" 
-         style="width: 100%; height: auto; border: 1px solid black;">
-</div>
+    <div style="text-align: center;">
+        <img src="DAFx25/FMvar_sin_SNR7_WTscale3_toffset68/FMvar_sin_SNR7_WTscale4_toffset68.svg"
+            alt="Histogram Analysis (Fixed SNR=7, Varying Modulation Depth)"
+            style="width: 100%; height: auto; border: 1px solid black;">
+    </div>
 
-<h4>View Detailed Data Tables</h4>
-<p>Click on a link below to open the corresponding table with all data for each modulation depth level:</p>
+    <h4>View Detailed Data Tables</h4>
+    <p>Click on a link below to open the corresponding table with all data for each modulation depth level:</p>
 
-<div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 10px;">
-    <a href="DAFx25/FMvar_sin_SNR7_WTscale3_toffset68/sigtable_sin_f0_466.16_fm_5.00_cmp_0.000_toff_212_SNR_7.html" target="_blank">
-        c<sub>mp</sub> = 0
-    </a>
-    <a href="DAFx25/FMvar_sin_SNR7_WTscale3_toffset68/sigtable_sin_f0_466.16_fm_5.00_cmp_0.001_toff_212_SNR_7.html" target="_blank">
-        c<sub>mp</sub> = 0.001
-    </a>
-    <a href="DAFx25/FMvar_sin_SNR7_WTscale3_toffset68/sigtable_sin_f0_466.16_fm_5.00_cmp_0.002_toff_212_SNR_7.html" target="_blank">
-        c<sub>mp</sub> = 0.002
-    </a>
-    <a href="DAFx25/FMvar_sin_SNR7_WTscale3_toffset68/sigtable_sin_f0_466.16_fm_5.00_cmp_0.005_toff_212_SNR_7.html" target="_blank">
-        c<sub>mp</sub> = 0.005
-    </a>
-</div>
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 10px;">
+        <a href="DAFx25/FMvar_sin_SNR7_WTscale3_toffset68/sigtable_sin_f0_466.16_fm_5.00_cmp_0.000_toff_212_SNR_7.html"
+            target="_blank">
+            c<sub>mp</sub> = 0
+        </a>
+        <a href="DAFx25/FMvar_sin_SNR7_WTscale3_toffset68/sigtable_sin_f0_466.16_fm_5.00_cmp_0.001_toff_212_SNR_7.html"
+            target="_blank">
+            c<sub>mp</sub> = 0.001
+        </a>
+        <a href="DAFx25/FMvar_sin_SNR7_WTscale3_toffset68/sigtable_sin_f0_466.16_fm_5.00_cmp_0.002_toff_212_SNR_7.html"
+            target="_blank">
+            c<sub>mp</sub> = 0.002
+        </a>
+        <a href="DAFx25/FMvar_sin_SNR7_WTscale3_toffset68/sigtable_sin_f0_466.16_fm_5.00_cmp_0.005_toff_212_SNR_7.html"
+            target="_blank">
+            c<sub>mp</sub> = 0.005
+        </a>
+    </div>
 
 </body>
+
 </html>
