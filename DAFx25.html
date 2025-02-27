@@ -367,6 +367,33 @@
             target="_blank">SNR 1</a>
     </div>
 
+    <h2>Discussion of Attack Duration Estimates</h2>
+
+    <p>
+        The histograms presented above provide statistical insights into the accuracy and reliability of three different methods 
+        for estimating attack duration across various synthesized signals. The results highlight how these methods behave under 
+        different noise conditions.
+    </p>
+
+    <p>
+        At <strong>SNR = 120 dB</strong> (virtually no noise), all three methods generally yield a <strong>single, well-defined attack duration</strong>, 
+        indicating their consistency in near-ideal conditions. However, as noise increases (<strong>lower SNR values</strong>), the estimated attack durations 
+        begin to exhibit greater variability, forming a distribution of values instead of a unique estimate.
+    </p>
+
+    <p>
+        Among the three methods, the <strong>weakest-effort method</strong>, as defined in the Timbre Toolbox, is found to be 
+        <strong>highly unreliable</strong> for determining attack duration. It consistently produces estimates that deviate 
+        significantly from the ground truth \( t_{\text{off}} \), with much higher standard deviations compared to the other two methods.
+    </p>
+
+    <p>
+        In contrast, the <strong>-3 dB method</strong> and the <strong>Pitch-Synchronous Wavelet Transform (PSWT) method</strong> 
+        both exhibit a <strong>Gaussian-shaped distribution</strong> around \( t_{\text{off}} \), showing greater accuracy. 
+        The PSWT-based approach, in particular, demonstrates the <strong>lowest standard deviation</strong>, making it the most 
+        stable and robust method for estimating attack durations in the presence of noise.
+    </p>
+
     <h2>Modulation Depth Analysis at Fixed SNR=12</h2>
 
     <p>
