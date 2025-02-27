@@ -367,16 +367,17 @@
             target="_blank">SNR 1</a>
     </div>
 
-    <h2>Modulation Depth Analysis at Fixed SNR=7</h2>
+    <h2>Modulation Depth Analysis at Fixed SNR=12</h2>
+
     <p>
         The following histograms present the distributions of attack durations estimated using the three different
         methods,
         applied to <strong>100 synthesized sounds</strong> with attack transients <strong>corrupted by enveloped white
             Gaussian random noise</strong>.
-        In this analysis, the <strong>Signal-to-Noise Ratio (SNR) is fixed at 7</strong>, while the <strong>frequency
+        In this analysis, the <strong>Signal-to-Noise Ratio (SNR) is fixed at 12</strong>, while the <strong>frequency
             modulation</strong> is set at
-        <strong>f<sub>m</sub> = 5</strong>, and the <strong>modulation depth</strong> varies across
-        <strong>c<sub>mp</sub> = [0, 0.001, 0.002, 0.005]</strong>.
+        <strong>f<sub>m</sub> = 4</strong>, and the <strong>modulation depth</strong> varies across
+        <strong>c<sub>mp</sub> = [0, 0.0005, 0.0008, 0.001]</strong>.
     </p>
 
     <p>
@@ -385,28 +386,116 @@
         highlighting their accuracy and robustness.
     </p>
 
+    <h3>Results for Different Signal Types</h3>
+    <p>
+        The following sections present the **histogram results** and **detailed data tables** for different synthesized
+        signal types.  
+        Each type is analyzed with a **fixed SNR of 12 dB**, but the **wavelet scale (WT) varies**:
+    </p>
+    <ul>
+        <li><strong>Sinusoidal signal:</strong> WT scale = 4</li>
+        <li><strong>Sawtooth signal:</strong> WT scale = 4</li>
+        <li><strong>Triangular signal:</strong> WT scale = 4</li>
+        <li><strong>Square wave signal:</strong> WT scale = 3</li>
+        <li><strong>Trumpet-like signal:</strong> WT scale = 3</li>
+    </ul>
+
+    <!-- Sinusoidal Signal -->
+    <h3>Sinusoidal Signal (SNR = 12 dB, WT Scale = 4)</h3>
+    <p>
+        The histogram below illustrates the results for a **sinusoidal synthesized signal** with **SNR=12 dB** and **WT scale = 4**.
+    </p>
     <div style="text-align: center;">
         <img src="DAFx25/FMvar_html_tables_sin_SNR12_WTScales4_toffset68/histograms sin FMvar SNR12 WTscale4 toff68.svg"
-            alt="Histogram Analysis (Fixed SNR=7, Varying Modulation Depth)"
+            alt="Histogram Analysis (Sinusoidal Signal, SNR=12, WT Scale=4)"
             style="width: 100%; height: auto; border: 1px solid black;">
     </div>
 
     <h4>View Detailed Data Tables</h4>
     <p>Click on a link below to open the corresponding table with all data for each modulation depth level:</p>
-
     <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 10px;">
         <a href="DAFx25/FMvar_html_tables_sin_SNR12_WTScales4_toffset68/sigtable_sin_f0_466.16_fm_4.00_cmp_0.0005_toff_212_SNR_12.html"
-            target="_blank">
-            c<sub>mp</sub> = 0.0005
-        </a>
+            target="_blank">c<sub>mp</sub> = 0.0005</a>
         <a href="DAFx25/FMvar_html_tables_sin_SNR12_WTScales4_toffset68/sigtable_sin_f0_466.16_fm_4.00_cmp_0.0008_toff_212_SNR_12.html"
-            target="_blank">
-            c<sub>mp</sub> = 0.0008
-        </a>
+            target="_blank">c<sub>mp</sub> = 0.0008</a>
         <a href="DAFx25/FMvar_html_tables_sin_SNR12_WTScales4_toffset68/sigtable_sin_f0_466.16_fm_4.00_cmp_0.0010_toff_212_SNR_12.html"
-            target="_blank">
-            c<sub>mp</sub> = 0.001
-        </a>
+            target="_blank">c<sub>mp</sub> = 0.001</a>
+    </div>
+
+    <!-- Sawtooth Signal -->
+    <h3>Sawtooth Signal (SNR = 12 dB, WT Scale = 4)</h3>
+    <div style="text-align: center;">
+        <img src="DAFx25/FMvar_html_tables_saw_SNR12_WTScales4_toffset72/histograms saw FMvar SNR12 WTscale4 toff72.svg"
+            alt="Histogram Analysis (Sawtooth Signal, SNR=12, WT Scale=4)"
+            style="width: 100%; height: auto; border: 1px solid black;">
+    </div>
+
+    <h4>View Detailed Data Tables</h4>
+    <p>Click on a link below to open the corresponding table with all data for each modulation depth level:</p>
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 10px;">
+        <a href="DAFx25/FMvar_html_tables_saw_SNR12_WTScales4_toffset72/sigtable_saw_f0_466.16_fm_4.00_cmp_0.0005_toff_221_SNR_12.html"
+            target="_blank">c<sub>mp</sub> = 0.0005</a>
+        <a href="DAFx25/FMvar_html_tables_saw_SNR12_WTScales4_toffset72/synth_saw_f0_466.16_fm_4.00_cmp_0.0008_toff_221_SNR_12.wav"
+            target="_blank">c<sub>mp</sub> = 0.0008</a>
+        <a href="DAFx25/FMvar_html_tables_saw_SNR12_WTScales4_toffset72/sigtable_saw_f0_466.16_fm_4.00_cmp_0.0010_toff_221_SNR_12.html"
+            target="_blank">c<sub>mp</sub> = 0.001</a>
+    </div>
+
+    <!-- Triangular Signal -->
+    <h3>Triangular Signal (SNR = 12 dB, WT Scale = 4)</h3>
+    <div style="text-align: center;">
+        <img src="DAFx25/FMvar_html_tables_triang_SNR12_WTScales4_toffset705/histograms triang FMvar SNR12 WTscale4 toff705.svg"
+            alt="Histogram Analysis (Triangular Signal, SNR=12, WT Scale=4)"
+            style="width: 100%; height: auto; border: 1px solid black;">
+    </div>
+
+    <h4>View Detailed Data Tables</h4>
+    <p>Click on a link below to open the corresponding table with all data for each modulation depth level:</p>
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 10px;">
+        <a href="DAFx25/FMvar_html_tables_triang_SNR12_WTScales4_toffset705/sigtable_triang_f0_466.16_fm_4.00_cmp_0.0005_toff_214_SNR_12.html"
+            target="_blank">c<sub>mp</sub> = 0.0005</a>
+        <a href="DAFx25/FMvar_html_tables_triang_SNR12_WTScales4_toffset705/sigtable_triang_f0_466.16_fm_4.00_cmp_0.0008_toff_214_SNR_12.html"
+            target="_blank">c<sub>mp</sub> = 0.0008</a>
+        <a href="DAFx25/FMvar_html_tables_triang_SNR12_WTScales4_toffset705/sigtable_triang_f0_466.16_fm_4.00_cmp_0.0010_toff_214_SNR_12.html"
+            target="_blank">c<sub>mp</sub> = 0.001</a>
+    </div>
+
+    <!-- Square Wave Signal -->
+    <h3>Square Wave Signal (SNR = 12 dB, WT Scale = 3)</h3>
+    <div style="text-align: center;">
+        <img src="DAFx25/FMvar_html_tables_square_SNR12_WTScales3_toffset63/histograms square FMvar SNR12 WTscale3 toff63.svg"
+            alt="Histogram Analysis (Square Wave Signal, SNR=12, WT Scale=3)"
+            style="width: 100%; height: auto; border: 1px solid black;">
+    </div>
+
+    <h4>View Detailed Data Tables</h4>
+    <p>Click on a link below to open the corresponding table with all data for each modulation depth level:</p>
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 10px;">
+        <a href="DAFx25/FMvar_html_tables_square_SNR12_WTScales3_toffset63/sigtable_square_f0_466.16_fm_4.00_cmp_0.0005_toff_213_SNR_12.html"
+            target="_blank">c<sub>mp</sub> = 0.0005</a>
+        <a href="DAFx25/FMvar_html_tables_square_SNR12_WTScales3_toffset63/sigtable_square_f0_466.16_fm_4.00_cmp_0.0008_toff_213_SNR_12.html"
+            target="_blank">c<sub>mp</sub> = 0.0008</a>
+        <a href="DAFx25/FMvar_html_tables_square_SNR12_WTScales3_toffset63/sigtable_square_f0_466.16_fm_4.00_cmp_0.0010_toff_213_SNR_12.html"
+            target="_blank">c<sub>mp</sub> = 0.001</a>
+    </div>
+
+    <!-- Trumpet-like Signal -->
+    <h3>Trumpet-Like Signal (SNR = 12 dB, WT Scale = 3)</h3>
+    <div style="text-align: center;">
+        <img src="DAFx25/FMvar_html_tables_trumpet_SNR12_WTScales3_toffset699/histograms trumpet FMvar SNR12 WTscales3 toff699.svg"
+            alt="Histogram Analysis (Trumpet-like Signal, SNR=12, WT Scale=3)"
+            style="width: 100%; height: auto; border: 1px solid black;">
+    </div>
+
+    <h4>View Detailed Data Tables</h4>
+    <p>Click on a link below to open the corresponding table with all data for each modulation depth level:</p>
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 10px;">
+        <a href="DAFx25/FMvar_html_tables_trumpet_SNR12_WTScales3_toffset699/sigtable_trumpet_f0_466.16_fm_4.00_cmp_0.0005_toff_212_SNR_12.html"
+            target="_blank">c<sub>mp</sub> = 0.0005</a>
+        <a href="DAFx25/FMvar_html_tables_trumpet_SNR12_WTScales3_toffset699/sigtable_trumpet_f0_466.16_fm_4.00_cmp_0.0008_toff_212_SNR_12.html"
+            target="_blank">c<sub>mp</sub> = 0.0008</a>
+        <a href="DAFx25/FMvar_html_tables_trumpet_SNR12_WTScales3_toffset699/sigtable_trumpet_f0_466.16_fm_4.00_cmp_0.0010_toff_212_SNR_12.html"
+            target="_blank">c<sub>mp</sub> = 0.001</a>
     </div>
 
 </body>
