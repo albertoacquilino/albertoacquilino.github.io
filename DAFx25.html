@@ -429,9 +429,6 @@
 
     <!-- Sinusoidal Signal -->
     <h3>Sinusoidal Signal (SNR = 12 dB, WT Scale = 4)</h3>
-    <p>
-        The histogram below illustrates the results for a **sinusoidal synthesized signal** with **SNR=12 dB** and **WT scale = 4**.
-    </p>
     <div style="text-align: center;">
         <img src="DAFx25/FMvar_html_tables_sin_SNR12_WTScales4_toffset68/histograms sin FMvar SNR12 WTscale4 toff68.svg"
             alt="Histogram Analysis (Sinusoidal Signal, SNR=12, WT Scale=4)"
@@ -524,6 +521,29 @@
         <a href="DAFx25/FMvar_html_tables_trumpet_SNR12_WTScales3_toffset699/sigtable_trumpet_f0_466.16_fm_4.00_cmp_0.0010_toff_212_SNR_12.html"
             target="_blank">c<sub>mp</sub> = 0.001</a>
     </div>
+
+    <h2>Discussion on Modulation Depth Analysis</h2>
+
+    <p>
+        The histograms above illustrate the <strong>statistical distribution of attack duration estimates</strong> 
+        obtained using the three methods at a fixed <strong>Signal-to-Noise Ratio (SNR) of 12 dB</strong>, while 
+        increasing the <strong>depth of frequency modulation</strong> of the synthesized signal. This variation simulates 
+        a sound with progressively stronger vibrato, adding an additional challenge to the estimation process.
+    </p>
+
+    <p>
+        As observed in previous analyses, the <strong>weakest-effort method</strong> proves to be 
+        <strong>unreliable</strong> in estimating attack duration, both in terms of <strong>accuracy</strong> 
+        (mean value deviating from the ground truth \( t_{\text{off}} \)) and <strong>robustness</strong> 
+        (high standard deviation).
+    </p>
+
+    <p>
+        The other two methods—the <strong>-3 dB method</strong> and the <strong>Pitch-Synchronous Wavelet Transform (PSWT) method</strong>—
+        yield more consistent results, forming a distribution centered around \( t_{\text{off}} \). Notably, the <strong>PSWT-based method</strong> 
+        exhibits a <strong>lower standard deviation</strong>, reinforcing its reliability in estimating attack duration even under increasingly 
+        challenging conditions, such as signals with stronger vibrato.
+    </p>
 
 </body>
 
