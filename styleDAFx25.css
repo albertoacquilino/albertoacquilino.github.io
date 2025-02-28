@@ -89,3 +89,7 @@ audio {
     width: 175px; /* Keeping the audio players as they are */
     height: 40px;
 }
+
+h2 {
+    margin-top: 40px; /* Adjust spacing as needed */
+}
