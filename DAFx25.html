@@ -407,9 +407,36 @@
     </p>
 
     <p>
+        The parameter <strong>c<sub>mp</sub></strong> represents the <strong>modulation index</strong>, expressed as a 
+        percentage of the fundamental frequency <strong>f<sub>0</sub></strong>. This index determines the depth of the 
+        frequency modulation applied to the signal.
+    </p>
+
+    <p>
+        Given a periodic signal with a fundamental frequency <strong>f<sub>0</sub></strong>, represented as:
+    </p>
+
+    <p style="text-align: center;">
+        wave(f<sub>0</sub> t)
+    </p>
+
+    <p>
+        the modulated signal is constructed as:
+    </p>
+
+    <p style="text-align: center;">
+        wave(f<sub>0</sub> (1 + c<sub>mp</sub>/100 &middot; sin(2&pi; f<sub>m</sub> t)) &middot; t)
+    </p>
+
+    <p>
+        where <strong>f<sub>m</sub></strong> is the <strong>modulation frequency</strong>, which is set to <strong>4 Hz</strong> 
+        in this example. This modulation introduces a periodic variation in the fundamental frequency, simulating a vibrato effect 
+        with an increasing depth determined by <strong>c<sub>mp</sub></strong>.
+    </p>
+
+    <p>
         Each histogram displays the distribution of attack durations, along with the average value and standard
-        deviation for each method,
-        highlighting their accuracy and robustness.
+        deviation for each method, highlighting their accuracy and robustness.
     </p>
 
     <h3>Results for Different Signal Types</h3>
@@ -535,7 +562,7 @@
     </p>
 
     <p>
-        The other two methods—the <strong>-3 dB method</strong> and the <strong>Pitch-Synchronous Wavelet Transform (PSWT) method</strong>—
+        The other two methods - the <strong>-3 dB method</strong> and the <strong>Pitch-Synchronous Wavelet Transform (PSWT) method</strong> - 
         yield more consistent results, forming a distribution centered around t<sub>off</sub>. Notably, the <strong>PSWT-based method</strong> 
         exhibits a <strong>lower standard deviation</strong>, reinforcing its reliability in estimating attack duration even under increasingly 
         challenging conditions, such as signals with stronger vibrato.
