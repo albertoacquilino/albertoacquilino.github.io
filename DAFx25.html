@@ -169,65 +169,26 @@
     <p>
         The analysis figures for different types of attack are reported as for <strong>Fig. 5</strong> of the paper. 
         In these figures, the trumpet sound signal is time-shifted so that 
-        <math>
-            <msub>
-                <mi>t</mi>
-                <mtext>on</mtext>
-            </msub> = 0
-        </math>. 
+        \( t_{\textit{\textls{on}}} = 0 \).
     </p>
     <p>
-        The estimate of the attack duration 
-        <math>
-            <msub>
-                <mi>t</mi>
-                <mtext>off</mtext>
-            </msub>
-        </math> 
-        obtained by thresholding the envelope 
-        <math>
-            <mi>e</mi><sub>h</sub>(t)
-        </math> 
-        (red curve) of the harmonic part is shown by a thick black vertical line.
+        The estimate of the attack duration \( t_{\textit{\textls{off}}} \) 
+        obtained by thresholding the envelope \( e_h(t) \) (red curve) of the harmonic part is shown by a thick black vertical line.
     </p>
     <p>
-        The estimates of 
-        <math>
-            <msub>
-                <mi>t</mi>
-                <mtext>off</mtext>
-            </msub>
-        </math> 
-        obtained by means of the threshold 
-        <math>
-            -3 dB 
-        </math> 
-        below 
-        <math>
-            \max_t{e(t)}
-        </math> 
-        and the weakest-effort methods are also shown, respectively, by means of a cross (<strong>x</strong>) and a circle (<strong>o</strong>) mark above the input signal envelope 
-        <math>
-            e(t)
-        </math>.
+        The estimates of \( t_{\textit{\textls{off}}} \) obtained by means of the threshold 
+        \( -3 \text{ dB} \) below \( \max_t{e(t)} \) and the weakest-effort methods are also shown, respectively, by means of a cross (<strong>x</strong>) and a circle (<strong>o</strong>) mark above the input signal envelope \( e(t) \).
     </p>
     <p>
-        Additionally, the envelope 
-        <math>
-            <mi>e</mi><sub>f</sub>(t)
-        </math> 
-        (yellow curve) of the fluctuation components is displayed, which peaks right after the onset of the signal.
+        Additionally, the envelope \( e_f(t) \) (yellow curve) of the fluctuation components is displayed, which peaks right after the onset of the signal.
     </p>
     <p>
-        An estimate of the noise ducking time 
-        <math>
-            <msub>
-                <mi>t</mi>
-                <mtext>nd</mtext>
-            </msub>
-        </math> 
-        is shown, which delimits the end of the noisy part of the attack.
+        An estimate of the noise ducking time \( t_{\textit{\textls{nd}}} \) is shown, which delimits the end of the noisy part of the attack.
     </p>
+    
+    <!-- Load MathJax for LaTeX-style rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <div style="text-align: center; margin-bottom: 20px;">
         <img src="DAFx25/attack_good.svg" alt="Analysis of Good Attack" style="width: 50%; border: 1px solid black;">
