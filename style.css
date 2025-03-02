@@ -285,6 +285,11 @@ nav a.home-link h1 {
   text-decoration: none;
 }
 
+.home-link {
+  display: inline-block;  /* ensures margin works horizontally */
+  margin-right: 10em;      /* add however much spacing you want */
+}
+
 /* Optional: if you also want to remove the default hover effect */
 .home-link:hover,
 .home-link:visited,
