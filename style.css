@@ -247,30 +247,34 @@ h3 {
 
 /* Hide the menu by default on mobile */
 @media (max-width: 768px) {
+  /* Hide #menu by default */
   #menu {
-    display: none;         /* hidden by default */
-    position: absolute;    /* so it can overlay content */
-    left: 0;
-    top: 4em;              /* slightly below your nav bar height */
-    width: 100%;           /* full width dropdown */
-    background-color: #333;/* black/dark background */
+    display: none;         /* hidden by default on mobile */
+    background-color: #f5f5f5; /* same background as nav */
     margin: 0;
     padding: 0;
   }
-  
+
+  /* Show it when we toggle the .show-mobile class */
   #menu.show-mobile {
-    display: block; /* show it when .show-mobile is toggled */
+    display: block;
   }
 
+  /* Stack items vertically */
   #menu li {
-    display: block;
-    text-align: left;
-    border-bottom: 1px solid #444; /* optional divider line */
+    display: block;     /* stacked in a column */
+    text-align: center; /* optional: center each item text */
+    border-bottom: 1px solid #ddd; /* optional separator line */
     margin: 0;
     padding: 1em;
   }
 
-  /* The hamburger button styling */
+  /* Use same text color as before */
+  #menu li a {
+    color: #333;
+  }
+
+  /* Show the hamburger on mobile */
   .hamburger {
     display: inline-block;
     font-size: 1.4em;
@@ -278,30 +282,34 @@ h3 {
     border: none;
     cursor: pointer;
     margin-left: 1em;
-    color: #333; /* or #fff if your nav bar is dark */
+    color: #333; 
   }
 }
 
+/* DESKTOP STYLES */
 @media (min-width: 769px) {
-  .hamburger {
-    display: none; /* Hide the hamburger icon on desktop */
-  }
-  
+  /* Keep your inline display for desktop */
   #menu {
-    display: inline-block; /* or flex, etc. */
-    position: static;
-    background-color: transparent;
+    display: inline-block;
+    background-color: transparent; /* or #f5f5f5, whichever you had */
   }
 
+  /* Menu items side by side */
   #menu li {
     display: inline-block;
-    border: none;
+    border: none;          /* no separator line */
     margin: 0;
-    padding: 1em; /* your original padding */
+    padding: 1em;          /* your original nav padding */
   }
-  
+
+  /* Desktop link color (same as original) */
   #menu li a {
-    color: #333; /* restore original color for desktop */
+    color: #333;
+  }
+
+  /* Hide the hamburger on desktop */
+  .hamburger {
+    display: none;
   }
 }
 
