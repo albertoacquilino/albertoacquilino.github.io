@@ -10,15 +10,17 @@
 <title>Portfolio | Alberto Acquilino</title>
 </head>
 <body>
-<nav>
-<h1>Alberto Acquilino</h1>
-<ul>
-  <li><a href="/">About</a></li>
-  <li><a href="/publications.html">Publications</a></li>
-  <li><a href="/portfolio.html">Portfolio</a></li>
-</ul>
-
-</nav>
+  <nav>
+    <h1>Alberto Acquilino</h1>
+    <!-- ADD THIS BUTTON -->
+    <button class="hamburger" onclick="toggleMobileMenu()">&#9776;</button>
+    
+    <ul id="menu">
+      <li><a href="/">About</a></li>
+      <li><a href="/publications.html">Publications</a></li>
+      <li><a href="/portfolio.html">Portfolio</a></li>
+    </ul>
+  </nav>
 
 <main>
   <header>
@@ -218,5 +220,6 @@
 <footer>
   <p>&copy; 2023 MEI-Trumpet. All rights reserved.</p>
 </footer>
+<script src="/script.js"></script>
 </body>
 </html>
