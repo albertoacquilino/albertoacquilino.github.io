@@ -376,7 +376,7 @@ h3 {
     /* stacked in a column */
     text-align: center;
     /* optional: center each item text */
-    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
     /* optional separator line */
     margin: 0;
     padding: 1em;
