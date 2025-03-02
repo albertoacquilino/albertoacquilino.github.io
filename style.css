@@ -274,11 +274,14 @@ h3 {
   }
 }
 
-.home-link {
-  color: black;         /* text color */
-  text-decoration: none; /* remove underline */
-  font-weight: bold;    /* ensure it stays bold */
-  display: inline-block; /* so that the <a> can surround the <h1> neatly */
+nav a.home-link h1 {
+  font-size: inherit;    /* Make sure it exactly inherits from the nav text */
+  margin: 0;
+  padding: 1em;         /* Same padding as your <li> items */
+  font-weight: bold;    /* or normal if you prefer the same weight as the links */
+  display: inline-block; /* So it behaves like your other links */
+  color: #333;          /* or #58f to match the other anchors */
+  text-decoration: none; /* remove underlines */
 }
 
 /* Optional: if you also want to remove the default hover effect */
