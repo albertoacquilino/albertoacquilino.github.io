@@ -273,3 +273,18 @@ h3 {
     display: inline-block; /* or whatever your original display was */
   }
 }
+
+.home-link {
+  color: black;         /* text color */
+  text-decoration: none; /* remove underline */
+  font-weight: bold;    /* ensure it stays bold */
+  display: inline-block; /* so that the <a> can surround the <h1> neatly */
+}
+
+/* Optional: if you also want to remove the default hover effect */
+.home-link:hover,
+.home-link:visited,
+.home-link:active {
+  color: black;
+  text-decoration: none;
+}
