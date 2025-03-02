@@ -248,19 +248,37 @@ h3 {
 /* Hide the menu by default on mobile */
 @media (max-width: 768px) {
   #menu {
-    display: none; /* hides the <ul> */
+    display: none;         /* hidden by default */
+    position: absolute;    /* so it can overlay content */
+    left: 0;
+    top: 4em;              /* slightly below your nav bar height */
+    width: 100%;           /* full width dropdown */
+    background-color: #333;/* black/dark background */
+    margin: 0;
+    padding: 0;
   }
+  
   #menu.show-mobile {
     display: block; /* show it when .show-mobile is toggled */
   }
 
+  #menu li {
+    display: block;
+    text-align: left;
+    border-bottom: 1px solid #444; /* optional divider line */
+    margin: 0;
+    padding: 1em;
+  }
+
   /* The hamburger button styling */
   .hamburger {
+    display: inline-block;
     font-size: 1.4em;
     background: none;
     border: none;
     cursor: pointer;
-    margin-left: 1em; /* adjust as desired */
+    margin-left: 1em;
+    color: #333; /* or #fff if your nav bar is dark */
   }
 }
 
@@ -270,7 +288,20 @@ h3 {
   }
   
   #menu {
-    display: inline-block; /* or whatever your original display was */
+    display: inline-block; /* or flex, etc. */
+    position: static;
+    background-color: transparent;
+  }
+
+  #menu li {
+    display: inline-block;
+    border: none;
+    margin: 0;
+    padding: 1em; /* your original padding */
+  }
+  
+  #menu li a {
+    color: #333; /* restore original color for desktop */
   }
 }
 
