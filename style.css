@@ -6,7 +6,10 @@ html {
   word-wrap: break-word;
 }
 
-body { margin: 0; padding-top: 3.6em; }
+body {
+  margin: 0;
+  padding-top: 3.6em;
+}
 
 nav {
   position: fixed;
@@ -22,7 +25,7 @@ nav {
   text-align: center;
 }
 
-nav > h1 {
+nav>h1 {
   font-size: 1em;
   font-weight: bold;
   padding: 1em;
@@ -30,48 +33,112 @@ nav > h1 {
   display: inline-block;
 }
 
-nav > ul {
+nav>ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: inline-block;
 }
 
-nav > ul > li {
+nav>ul>li {
   padding: 1em;
   display: inline-block;
 }
 
 main {
-  max-width: 90%; /* Use a percentage for better responsiveness */
-  max-width: min(50em, 90vw); /* Ensures it doesn’t become too wide */
+  max-width: 90%;
+  /* Use a percentage for better responsiveness */
+  max-width: min(50em, 90vw);
+  /* Ensures it doesn’t become too wide */
   margin: 0 auto;
-  padding: 0 1.5em; /* Slightly increased padding for better spacing */
+  padding: 0 1.5em;
+  /* Slightly increased padding for better spacing */
   box-sizing: border-box;
 }
 
-main > header {
+main>header {
   padding-bottom: 1em;
   border-bottom: 1px solid #ddd;
 }
 
-#education h2 { font-size: 1.17em; }
-ul.nonetype { list-style-type: none; margin: 0; padding: 0; }
-ul.nonetype > li { margin: 1em 0; }
+#education h2 {
+  font-size: 1.17em;
+}
 
-h1 { font-size: 1.8em; margin: 0.67em 0; }
-h2 { font-size: 1.5em; margin: 0.83em 0; }
-h3 { font-size: 1.17em; margin: 1em 0; }
-h4 { font-size: 1em; margin: 1.33em 0; }
-p { text-align: justify; }
-a { color: #58f; text-decoration: none; }
-a:hover { text-decoration: underline; }
-a.button { color: white; padding: 0 1ex; background-color: #58f; border-radius: 3px; text-decoration: none; }
-figure { margin: 1em 40px; text-align: center; }
-img { max-width: 100%; }
-cite { display: inline; font-style: normal; }
-dt { font-weight: bold; font-style: normal; }
-dd { font-style: normal; }
+ul.nonetype {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.nonetype>li {
+  margin: 1em 0;
+}
+
+h1 {
+  font-size: 1.8em;
+  margin: 0.67em 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+
+p {
+  text-align: justify;
+}
+
+a {
+  color: #58f;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.button {
+  color: white;
+  padding: 0 1ex;
+  background-color: #58f;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+figure {
+  margin: 1em 40px;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+cite {
+  display: inline;
+  font-style: normal;
+}
+
+dt {
+  font-weight: bold;
+  font-style: normal;
+}
+
+dd {
+  font-style: normal;
+}
+
 pre {
   overflow: auto;
   padding: 1em;
@@ -81,23 +148,25 @@ pre {
 }
 
 @media (max-width: 768px) {
-    nav {
-        padding: 0.5em;
-    }
+  nav {
+    padding: 0.5em;
+  }
 
-    nav > h1 {
-        font-size: 0.8em;
-        padding: 0.5em;
-    }
+  nav>h1 {
+    font-size: 0.8em;
+    padding: 0.5em;
+  }
 
-    body {
-        padding-top: 6em; /* Adjust this value as needed */
-    }
+  body {
+    padding-top: 6em;
+    /* Adjust this value as needed */
+  }
 }
 
 @media (min-width: 1024px) {
   main {
-     max-width: 50em; /* Expands content for desktop screens */
+    max-width: 50em;
+    /* Expands content for desktop screens */
   }
 }
 
@@ -108,45 +177,59 @@ pre {
 }
 
 .input-image img {
-  width: 80%; /* Default size (bigger than before but still smaller than full width) */
-  max-width: 400px; /* Prevent it from getting too small */
+  width: 80%;
+  /* Default size (bigger than before but still smaller than full width) */
+  max-width: 400px;
+  /* Prevent it from getting too small */
   transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
   cursor: pointer;
   border-radius: 8px;
 }
 
 .input-image img:hover {
-  transform: scale(1.08); /* Subtle zoom-in on hover */
+  transform: scale(1.08);
+  /* Subtle zoom-in on hover */
 }
 
 .input-image img.expanded {
-  width: 95%; /* Bigger but still controlled */
-  max-width: 700px; /* Prevent it from taking the full screen */
+  width: 95%;
+  /* Bigger but still controlled */
+  max-width: 700px;
+  /* Prevent it from taking the full screen */
 }
 
 .app-screenshots img {
-  width: 70%; /* Reduce the default size */
-  max-width: 350px; /* Prevent it from getting too large */
+  width: 70%;
+  /* Reduce the default size */
+  max-width: 350px;
+  /* Prevent it from getting too large */
   display: block;
-  margin: 20px auto; /* Center the image */
+  margin: 20px auto;
+  /* Center the image */
 }
 
 .app-store-links {
   display: flex;
-  justify-content: center; /* Centers the buttons */
-  gap: 15px; /* Adds spacing between the logos */
+  justify-content: center;
+  /* Centers the buttons */
+  gap: 15px;
+  /* Adds spacing between the logos */
   margin: 20px 0;
-  flex-wrap: wrap; /* Allows wrapping on small screens */
+  flex-wrap: wrap;
+  /* Allows wrapping on small screens */
 }
 
 .app-badge {
-  height: 50px; /* Uniform height for both logos */
-  width: auto; /* Keeps original aspect ratio */
+  height: 50px;
+  /* Uniform height for both logos */
+  width: auto;
+  /* Keeps original aspect ratio */
   transition: transform 0.2s ease-in-out;
 }
 
 .app-badge:hover {
-  transform: scale(1.1); /* Slight zoom-in effect */
+  transform: scale(1.1);
+  /* Slight zoom-in effect */
 }
 
 .custom-divider {
@@ -159,29 +242,37 @@ pre {
 
 .hcp-gallery {
   display: flex;
-  justify-content: center; /* Centers images in the row */
-  align-items: center; /* Ensures vertical alignment */
-  gap: 15px; /* Adds spacing between images */
+  justify-content: center;
+  /* Centers images in the row */
+  align-items: center;
+  /* Ensures vertical alignment */
+  gap: 15px;
+  /* Adds spacing between images */
   margin: 20px 0;
-  flex-wrap: nowrap; /* Prevents wrapping to the next line */
+  flex-wrap: nowrap;
+  /* Prevents wrapping to the next line */
 }
 
 .hcp-gallery img {
-  width: 30%; /* Ensures each image takes up equal space */
-  height: auto; /* Maintains aspect ratio */
+  width: 30%;
+  /* Ensures each image takes up equal space */
+  height: auto;
+  /* Maintains aspect ratio */
   object-fit: cover;
   border-radius: 8px;
   transition: transform 0.3s ease-in-out;
 }
 
 .hcp-gallery img:hover {
-  transform: scale(1.05); /* Slight zoom-in effect on hover */
+  transform: scale(1.05);
+  /* Slight zoom-in effect on hover */
 }
 
 .download-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50;
+  /* Green */
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -190,22 +281,29 @@ pre {
 }
 
 .download-button:hover {
-  background-color: #45a049; /* Slightly darker green on hover */
+  background-color: #45a049;
+  /* Slightly darker green on hover */
 }
 
 .student-compass-image {
-  width: 90%; /* 90% of the column width on larger screens */
-  max-width: none; /* Prevents any restriction on max width */
+  width: 90%;
+  /* 90% of the column width on larger screens */
+  max-width: none;
+  /* Prevents any restriction on max width */
   display: block;
-  margin: 25px auto; /* Reduced spacing above and below */
-  border-radius: 10px; /* Optional: Slight rounded corners */
+  margin: 25px auto;
+  /* Reduced spacing above and below */
+  border-radius: 10px;
+  /* Optional: Slight rounded corners */
 }
 
 /* Make the image 100% width on small screens */
 @media (max-width: 768px) {
   .student-compass-image {
-      width: 100%; /* Fills the column on smaller screens */
-      margin: 20px auto; /* Slightly smaller spacing for mobile */
+    width: 100%;
+    /* Fills the column on smaller screens */
+    margin: 20px auto;
+    /* Slightly smaller spacing for mobile */
   }
 }
 
@@ -216,41 +314,53 @@ pre {
 }
 
 .input-video video {
-  width: 80%; /* Adjusts to 80% of container width */
-  max-width: 400px; /* Prevents it from being too large */
+  width: 80%;
+  /* Adjusts to 80% of container width */
+  max-width: 400px;
+  /* Prevents it from being too large */
   border-radius: 8px;
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 }
 
 .input-video video:hover {
-  transform: scale(1.05); /* Slight zoom on hover */
+  transform: scale(1.05);
+  /* Slight zoom on hover */
 }
 
 .audio-container {
   display: flex;
-  justify-content: center;  /* Centers the elements */
-  gap: 20px;  /* Adds spacing between the two audio players */
-  flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+  justify-content: center;
+  /* Centers the elements */
+  gap: 20px;
+  /* Adds spacing between the two audio players */
+  flex-wrap: wrap;
+  /* Ensures responsiveness on smaller screens */
 }
 
 .audio-example {
-  text-align: center;  /* Centers the text above */
+  text-align: center;
+  /* Centers the text above */
   display: flex;
   flex-direction: column;
-  align-items: center; /* Ensures the audio player is centered below the text */
+  align-items: center;
+  /* Ensures the audio player is centered below the text */
 }
 
 h3 {
-  margin-top: 30px; /* Adds space above all h3 elements */
+  margin-top: 30px;
+  /* Adds space above all h3 elements */
 }
 
 /* Hide the menu by default on mobile */
 @media (max-width: 768px) {
+
   /* Hide #menu by default */
   #menu {
-    display: none;         /* hidden by default on mobile */
-    background-color: #f5f5f5; /* same background as nav */
+    display: none;
+    /* hidden by default on mobile */
+    background-color: #f5f5f5;
+    /* same background as nav */
     margin: 0;
     padding: 0;
   }
@@ -262,9 +372,12 @@ h3 {
 
   /* Stack items vertically */
   #menu li {
-    display: block;     /* stacked in a column */
-    text-align: center; /* optional: center each item text */
-    border-bottom: 1px solid #ddd; /* optional separator line */
+    display: block;
+    /* stacked in a column */
+    text-align: center;
+    /* optional: center each item text */
+    border-bottom: 1px solid #ddd;
+    /* optional separator line */
     margin: 0;
     padding: 1em;
   }
@@ -282,24 +395,28 @@ h3 {
     border: none;
     cursor: pointer;
     margin-left: 1em;
-    color: #333; 
+    color: #333;
   }
 }
 
 /* DESKTOP STYLES */
 @media (min-width: 769px) {
+
   /* Keep your inline display for desktop */
   #menu {
     display: inline-block;
-    background-color: transparent; /* or #f5f5f5, whichever you had */
+    background-color: transparent;
+    /* or #f5f5f5, whichever you had */
   }
 
   /* Menu items side by side */
   #menu li {
     display: inline-block;
-    border: none;          /* no separator line */
+    border: none;
+    /* no separator line */
     margin: 0;
-    padding: 1em;          /* your original nav padding */
+    padding: 1em;
+    /* your original nav padding */
   }
 
   /* Desktop link color (same as original) */
@@ -325,8 +442,10 @@ nav a.home-link h1 {
 }
 
 .home-link {
-  display: inline-block;  /* ensures margin works horizontally */
-  margin-right: 2em;      /* add however much spacing you want */
+  display: inline-block;
+  /* ensures margin works horizontally */
+  margin-right: 2em;
+  /* add however much spacing you want */
 }
 
 /* Optional: if you also want to remove the default hover effect */

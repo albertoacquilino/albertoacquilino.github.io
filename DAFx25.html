@@ -166,23 +166,28 @@
 
     <h2>Analysis Figures</h2>
     <p>
-        The analysis figures for different types of attack are reported as for <strong>Fig. 5</strong> of the paper. 
-        In these figures, the trumpet sound signal is time-shifted so that 
+        The analysis figures for different types of attack are reported as for <strong>Fig. 5</strong> of the paper.
+        In these figures, the trumpet sound signal is time-shifted so that
         \( t_{\text{on}} = 0 \).
     </p>
     <p>
-        The estimate of the attack duration \( t_{\text{off}} \) 
-        obtained by thresholding the envelope \( e_h(t) \) (red curve) of the harmonic part is shown by a thick black vertical line.
+        The estimate of the attack duration \( t_{\text{off}} \)
+        obtained by thresholding the envelope \( e_h(t) \) (red curve) of the harmonic part is shown by a thick black
+        vertical line.
     </p>
     <p>
-        The estimates of \( t_{\text{off}} \) obtained by means of the threshold 
-        \( -3 \text{ dB} \) below \( \max_t{e(t)} \) and the weakest-effort methods are also shown, respectively, by means of a cross (<strong>x</strong>) and a circle (<strong>o</strong>) mark above the input signal envelope \( e(t) \).
+        The estimates of \( t_{\text{off}} \) obtained by means of the threshold
+        \( -3 \text{ dB} \) below \( \max_t{e(t)} \) and the weakest-effort methods are also shown, respectively, by
+        means of a cross (<strong>x</strong>) and a circle (<strong>o</strong>) mark above the input signal envelope \(
+        e(t) \).
     </p>
     <p>
-        Additionally, the envelope \( e_f(t) \) (yellow curve) of the fluctuation components is displayed, which peaks right after the onset of the signal.
+        Additionally, the envelope \( e_f(t) \) (yellow curve) of the fluctuation components is displayed, which peaks
+        right after the onset of the signal.
     </p>
     <p>
-        An estimate of the noise ducking time \( t_{\text{nd}} \) is shown, which delimits the end of the noisy part of the attack.
+        An estimate of the noise ducking time \( t_{\text{nd}} \) is shown, which delimits the end of the noisy part of
+        the attack.
     </p>
 
     <!-- Load MathJax for LaTeX-style rendering -->
@@ -201,7 +206,8 @@
     <h3 style="text-align: center;">Attack with breath noise</h3>
 
     <div style="text-align: center; margin-bottom: 20px;">
-        <img src="DAFx25/attack_breath.svg" alt="Analysis of Attack with Breath Noise" style="width: 50%; border: 1px solid black;">
+        <img src="DAFx25/attack_breath.svg" alt="Analysis of Attack with Breath Noise"
+            style="width: 50%; border: 1px solid black;">
     </div>
     <p>
         <em>[Add description for the attack with breath noise case here]</em>
@@ -210,7 +216,8 @@
     <h3 style="text-align: center;">Attack with delayed stabilization of resonance</h3>
 
     <div style="text-align: center; margin-bottom: 20px;">
-        <img src="DAFx25/attack_resonance.svg" alt="Analysis of Delayed Resonance" style="width: 50%; border: 1px solid black;">
+        <img src="DAFx25/attack_resonance.svg" alt="Analysis of Delayed Resonance"
+            style="width: 50%; border: 1px solid black;">
     </div>
     <p>
         <em>[Add description for the delayed resonance case here]</em>
@@ -220,7 +227,8 @@
         The full sound dataset can be downloaded <a href="DAFx25/sound_dataset.zip">here</a>. The dataset includes a zip
         file with two folders: one containing good attacks and another containing bad attacks. Additionally, a CSV file
         is provided with annotations on the different attack errors associated with the file names of each bad attack.
-        For the recording, a Behringer ECM8000 condenser microphone was used, connected to a Focusrite Scarlett 2i2 USB audio interface.
+        For the recording, a Behringer ECM8000 condenser microphone was used, connected to a Focusrite Scarlett 2i2 USB
+        audio interface.
         Audio was captured at a sampling rate of 48 kHz with a 16-bit depth.
     </p>
 
@@ -236,9 +244,11 @@
         <li><strong>Pitch-synchronous wavelet transform (PSWT) method:</strong> A more refined technique that achieves
             more reliable estimates by separating the harmonic components from the noisy transient.</li>
     </ul>
-    In order to estimate the statistics, we applied each method to a set of <strong>100 synthesized sounds</strong> 
-    with attack transients <strong>corrupted by enveloped white Gaussian random noise</strong> across six levels of signal-to-noise ratio (SNR): 120, 20, 12, 7,
-    3, and 1 dB. The indicated SNR is defined as the <strong>20 log<sub>10</sub></strong> ratio of the maximum levels achieved by the envelopes, which basically is the maximum SNR for at least 
+    In order to estimate the statistics, we applied each method to a set of <strong>100 synthesized sounds</strong>
+    with attack transients <strong>corrupted by enveloped white Gaussian random noise</strong> across six levels of
+    signal-to-noise ratio (SNR): 120, 20, 12, 7,
+    3, and 1 dB. The indicated SNR is defined as the <strong>20 log<sub>10</sub></strong> ratio of the maximum levels
+    achieved by the envelopes, which basically is the maximum SNR for at least
     the first half of the signal duration, including the attack phase.
     Each histogram displays the distribution of attack durations, along with the average value and standard deviation
     for each method, highlighting their accuracy and robustness.
@@ -246,14 +256,14 @@
 
     <p>
         The figure below shows an example of the <strong>envelopes</strong> of a synthesized sound and the added noise.
-        In this example, the <strong>Signal-to-Noise Ratio (SNR) is -1 dB</strong>, meaning that the noise envelope 
-        reaches <strong>1 dB more than the sound envelope</strong>. The <strong>attack duration</strong> 
+        In this example, the <strong>Signal-to-Noise Ratio (SNR) is -1 dB</strong>, meaning that the noise envelope
+        reaches <strong>1 dB more than the sound envelope</strong>. The <strong>attack duration</strong>
         t<sub>off</sub> of the synthesized sound is also shown.
     </p>
 
     <div style="text-align: center;">
-        <img src="DAFx25/envelopes.png" alt="Example of Sound and Noise Envelopes" 
-             style="width: 40%; height: auto; border: 1px solid black;">
+        <img src="DAFx25/envelopes.png" alt="Example of Sound and Noise Envelopes"
+            style="width: 40%; height: auto; border: 1px solid black;">
     </div>
 
     <p>
@@ -264,7 +274,8 @@
         </li>
         <li>The <strong>detected center pitch</strong> f<sub>0</sub>.</li>
         <li>The <strong>pitch standard deviation</strong>.</li>
-        <li>The <strong>frequency modulation</strong> f<sub>m</sub> and the <strong>modulation index</strong> c<sub>mp</sub>
+        <li>The <strong>frequency modulation</strong> f<sub>m</sub> and the <strong>modulation index</strong>
+            c<sub>mp</sub>
             of the signal.</li>
         <li>The <strong>estimated offset time</strong> t<sub>off</sub> of the attack transient.</li>
         <li>The <strong>Signal-to-Noise Ratio (SNR)</strong> level.</li>
@@ -277,7 +288,8 @@
 
     <h3>Sinusoidal Signal</h3>
     <p>
-        The first analysis focuses on a <strong>sinusoidal signal</strong> with varying SNR levels, analyzed using 4 dyadic wavelet scales.
+        The first analysis focuses on a <strong>sinusoidal signal</strong> with varying SNR levels, analyzed using 4
+        dyadic wavelet scales.
     </p>
 
     <div style="text-align: center;">
@@ -333,7 +345,7 @@
             target="_blank">SNR 1</a>
     </div>
 
-    
+
 
     <!-- Placeholder for Triangular Signal -->
     <h3>Triangular Signal</h3>
@@ -427,26 +439,34 @@
     <h2>Discussion of Attack Duration Estimates</h2>
 
     <p>
-        The histograms presented above provide statistical insights into the accuracy and reliability of three different methods 
-        for estimating attack duration across various synthesized signals. The results highlight how these methods behave under 
+        The histograms presented above provide statistical insights into the accuracy and reliability of three different
+        methods
+        for estimating attack duration across various synthesized signals. The results highlight how these methods
+        behave under
         different noise conditions.
     </p>
 
     <p>
-        At <strong>SNR = 120 dB</strong> (virtually no noise), all three methods generally yield a <strong>single, well-defined attack duration</strong>, 
-        indicating their consistency in near-ideal conditions. However, as noise increases (<strong>lower SNR values</strong>), the estimated attack durations 
+        At <strong>SNR = 120 dB</strong> (virtually no noise), all three methods generally yield a <strong>single,
+            well-defined attack duration</strong>,
+        indicating their consistency in near-ideal conditions. However, as noise increases (<strong>lower SNR
+            values</strong>), the estimated attack durations
         begin to exhibit greater variability, forming a distribution of values instead of a unique estimate.
     </p>
 
     <p>
-        Among the three methods, the <strong>weakest-effort method</strong>, as defined in the Timbre Toolbox, is found to be 
-        <strong>highly unreliable</strong> for determining attack duration since it yields much higher standard deviations compared to the other two methods.
+        Among the three methods, the <strong>weakest-effort method</strong>, as defined in the Timbre Toolbox, is found
+        to be
+        <strong>highly unreliable</strong> for determining attack duration since it yields much higher standard
+        deviations compared to the other two methods.
     </p>
 
     <p>
-        In contrast, the <strong>-3 dB method</strong> and the <strong>Pitch-Synchronous Wavelet Transform (PSWT) method</strong> 
-        both exhibit a <strong>Gaussian-shaped distribution</strong> around t<sub>off</sub>, showing greater accuracy. 
-        The PSWT-based approach, in particular, demonstrates the <strong>lowest standard deviation</strong>, making it the most 
+        In contrast, the <strong>-3 dB method</strong> and the <strong>Pitch-Synchronous Wavelet Transform (PSWT)
+            method</strong>
+        both exhibit a <strong>Gaussian-shaped distribution</strong> around t<sub>off</sub>, showing greater accuracy.
+        The PSWT-based approach, in particular, demonstrates the <strong>lowest standard deviation</strong>, making it
+        the most
         stable and robust method for estimating attack durations in the presence of noise.
     </p>
 
@@ -464,8 +484,8 @@
     </p>
 
     <p>
-        The parameter <strong>c<sub>mp</sub></strong> represents the <strong>modulation index</strong>, expressed as a 
-        percentage of the fundamental frequency <strong>f<sub>0</sub></strong>. This index determines the depth of the 
+        The parameter <strong>c<sub>mp</sub></strong> represents the <strong>modulation index</strong>, expressed as a
+        percentage of the fundamental frequency <strong>f<sub>0</sub></strong>. This index determines the depth of the
         frequency modulation applied to the signal.
     </p>
 
@@ -486,8 +506,10 @@
     </p>
 
     <p>
-        where <strong>f<sub>m</sub></strong> is the <strong>modulation frequency</strong>, which is set to <strong>4 Hz</strong> 
-        in this example. This modulation introduces a periodic variation in the fundamental frequency, simulating a vibrato effect 
+        where <strong>f<sub>m</sub></strong> is the <strong>modulation frequency</strong>, which is set to <strong>4
+            Hz</strong>
+        in this example. This modulation introduces a periodic variation in the fundamental frequency, simulating a
+        vibrato effect
         with an increasing depth determined by <strong>c<sub>mp</sub></strong>.
     </p>
 
@@ -498,8 +520,9 @@
 
     <h3>Results for Different Signal Types</h3>
     <p>
-        The following sections present the </strong>histogram results</strong> and </strong>detailed data tables</strong> for different synthesized
-        signal types.  
+        The following sections present the </strong>histogram results</strong> and </strong>detailed data
+        tables</strong> for different synthesized
+        signal types.
         Each type is analyzed with a </strong>fixed SNR of 12 dB</strong> but the number of wavelet scales varies:
     </p>
     <ul>
@@ -608,20 +631,25 @@
     <h2>Discussion on Modulation Depth Analysis</h2>
 
     <p>
-        The histograms above illustrate the <strong>statistical distribution of attack duration estimates</strong> 
-        obtained using the three methods at a fixed <strong>Signal-to-Noise Ratio (SNR) of 12 dB</strong>, while 
-        increasing the <strong>depth of frequency modulation</strong> of the synthesized signal. This variation simulates 
+        The histograms above illustrate the <strong>statistical distribution of attack duration estimates</strong>
+        obtained using the three methods at a fixed <strong>Signal-to-Noise Ratio (SNR) of 12 dB</strong>, while
+        increasing the <strong>depth of frequency modulation</strong> of the synthesized signal. This variation
+        simulates
         a sound with progressively stronger vibrato, adding an additional challenge to the estimation process.
     </p>
 
     <p>
-        As observed in previous analyses,  in view of the high standard deviation attained the <strong>weakest-effort method proves to be the least robust</strong> of the three methods we explored.
+        As observed in previous analyses, in view of the high standard deviation attained the <strong>weakest-effort
+            method proves to be the least robust</strong> of the three methods we explored.
     </p>
 
     <p>
-        The other two methods - the <strong>-3 dB method</strong> and the <strong>Pitch-Synchronous Wavelet Transform (PSWT) method</strong> - 
-        yield more consistent results, forming a distribution centered around t<sub>off</sub>. Notably, the <strong>PSWT-based method</strong> 
-        exhibits a <strong>lower standard deviation</strong>, reinforcing its reliability in estimating attack duration even under increasingly 
+        The other two methods - the <strong>-3 dB method</strong> and the <strong>Pitch-Synchronous Wavelet Transform
+            (PSWT) method</strong> -
+        yield more consistent results, forming a distribution centered around t<sub>off</sub>. Notably, the
+        <strong>PSWT-based method</strong>
+        exhibits a <strong>lower standard deviation</strong>, reinforcing its reliability in estimating attack duration
+        even under increasingly
         challenging conditions, such as signals with stronger vibrato.
     </p>
 

@@ -14,7 +14,8 @@ h1 {
 /* Paragraph Styling */
 p {
     text-align: left;
-    font-size: 1.2em; /* Slightly increased */
+    font-size: 1.2em;
+    /* Slightly increased */
     color: #555;
 }
 
@@ -30,15 +31,19 @@ table {
 }
 
 /* Table Borders */
-table, th, td {
+table,
+th,
+td {
     border: 1px solid black;
-    padding: 8px; /* Increased padding slightly */
+    padding: 8px;
+    /* Increased padding slightly */
 }
 
 /* Title Row */
 th.title {
     font-family: "Times New Roman", serif;
-    font-size: 22pt; /* Increased title size */
+    font-size: 22pt;
+    /* Increased title size */
     font-weight: bold;
     font-style: italic;
     text-align: center;
@@ -48,17 +53,21 @@ th.title {
 }
 
 /* Column Labels */
-.columnLabel, .rowLabel {
+.columnLabel,
+.rowLabel {
     font-weight: bold;
     text-align: center;
     background-color: #D2D2D2;
-    font-size: 10pt; /* Increased font size */
-    padding: 8px; /* More padding for better readability */
+    font-size: 10pt;
+    /* Increased font size */
+    padding: 8px;
+    /* More padding for better readability */
 }
 
 /* Table Data Cells */
 td.data {
-    font-size: 10pt; /* Increased text size */
+    font-size: 10pt;
+    /* Increased text size */
     color: black;
     text-align: left;
     padding: 8px;
@@ -86,10 +95,12 @@ tr.highlight:hover {
 
 /* Audio Player Styling */
 audio {
-    width: 175px; /* Keeping the audio players as they are */
+    width: 175px;
+    /* Keeping the audio players as they are */
     height: 40px;
 }
 
 h2 {
-    margin-top: 40px; /* Adjust spacing as needed */
+    margin-top: 40px;
+    /* Adjust spacing as needed */
 }

@@ -7,12 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
   let playCount = 0;
 
   video.addEventListener("ended", function () {
-      playCount++;
-      if (playCount >= 2) { // Stops after 2 loops
-          video.pause();
-      } else {
-          video.play();
-      }
+    playCount++;
+    if (playCount >= 2) { // Stops after 2 loops
+      video.pause();
+    } else {
+      video.play();
+    }
   });
 });
 
