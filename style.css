@@ -80,7 +80,6 @@ pre {
   border-radius: 10px;
 }
 
-/* Responsive navigation bar */
 @media (max-width: 768px) {
     nav {
         padding: 0.5em;
@@ -88,15 +87,6 @@ pre {
 
     nav > h1 {
         font-size: 0.8em;
-        padding: 0.5em;
-    }
-
-    nav > ul {
-        display: block;
-    }
-
-    nav > ul > li {
-        display: block;
         padding: 0.5em;
     }
 
@@ -253,4 +243,33 @@ pre {
 
 h3 {
   margin-top: 30px; /* Adds space above all h3 elements */
+}
+
+/* Hide the menu by default on mobile */
+@media (max-width: 768px) {
+  #menu {
+    display: none; /* hides the <ul> */
+  }
+  #menu.show-mobile {
+    display: block; /* show it when .show-mobile is toggled */
+  }
+
+  /* The hamburger button styling */
+  .hamburger {
+    font-size: 1.4em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 1em; /* adjust as desired */
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none; /* Hide the hamburger icon on desktop */
+  }
+  
+  #menu {
+    display: inline-block; /* or whatever your original display was */
+  }
 }
