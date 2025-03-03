@@ -733,6 +733,84 @@
         challenging conditions, such as signals with stronger vibrato.
     </p>
 
+    <h2>Expanding the Analysis to Other Musical Instruments</h2>
+    <p>
+        To further assess the applicability of the proposed algorithm, we extended our analysis to sounds from other
+        musical instruments using the Good-sounds dataset. This dataset provides sound samples annotated with "good
+        attack"
+        and "bad attack," offering a valuable basis for evaluating the algorithm's effectiveness across different
+        timbres
+        and attack characteristics.
+    </p>
+
+    <!-- Flute Analysis Subsection -->
+    <h3>Analysis of Flute Sounds</h3>
+    <p>
+        The Good-sounds dataset provides flute sounds annotated with "good attack" and "bad attack," without specifying
+        further details. Three different flute sound samples of the same pitch were selected as examples to evaluate the
+        algorithm's applicability. The selected sounds include:
+    </p>
+    <ul>
+        <li>One annotated with a "good attack."</li>
+        <li>Two annotated with a "bad attack," specifically:
+            <ul>
+                <li>One example resembling a "breath attack" type.</li>
+                <li>One example resembling a "noisy attack" type.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <p>
+        Below are the plots of the analyzed flute sounds, along with audio players to listen to the corresponding sound
+        files.
+    </p>
+
+    <!-- Container for flute audio players and plots -->
+    <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px;">
+
+        <!-- First example: Good attack -->
+        <div style="flex: 1 1 300px; text-align: center;">
+            <h4>Good Attack</h4>
+            <audio controls>
+                <source src="DAFx25/flute_good0018.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+            <img src="DAFx25/flute_good.svg" alt="Analysis of Good Flute Attack"
+                style="width: 100%; border: 1px solid black;">
+        </div>
+
+        <!-- Second example: Noisy attack -->
+        <div style="flex: 1 1 300px; text-align: center;">
+            <h4>Noisy Attack</h4>
+            <audio controls>
+                <source src="DAFx25/flute_bad0048noisy.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+            <img src="DAFx25/flute_noise.svg" alt="Analysis of Noisy Flute Attack"
+                style="width: 100%; border: 1px solid black;">
+        </div>
+
+        <!-- Third example: Breathy attack -->
+        <div style="flex: 1 1 300px; text-align: center;">
+            <h4>Breathy Attack</h4>
+            <audio controls>
+                <source src="DAFx25/flute_bad0047breathy.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+            <img src="DAFx25/flute_breathy.svg" alt="Analysis of Breathy Flute Attack"
+                style="width: 100%; border: 1px solid black;">
+        </div>
+
+    </div>
+
+    <!-- Placeholder for Violin Analysis Subsection -->
+    <h3>Analysis of Violin Sounds</h3>
+    <p>
+        [This section will include the analysis of violin sounds following the same structure as the flute analysis,
+        with
+        audio files and plots for good attack, noisy attack, and breathy attack types.]
+    </p>
+
 </body>
 
 </html>
