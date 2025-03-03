@@ -194,13 +194,46 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+    <!-- Single flex container for all three images -->
+    <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px;">
+
+        <!-- First image (Good attack) -->
+        <div style="flex: 1 1 300px; text-align: center;">
+            <h3>Good attack</h3>
+            <img src="DAFx25/attack_good.svg" alt="Analysis of Good Attack"
+                style="width: 100%; border: 1px solid black;">
+        </div>
+
+        <!-- Second image (Breath noise) -->
+        <div style="flex: 1 1 300px; text-align: center;">
+            <h3>Attack with breath noise</h3>
+            <img src="DAFx25/attack_breath.svg" alt="Analysis of Attack with Breath Noise"
+                style="width: 100%; border: 1px solid black;">
+        </div>
+
+        <!-- Third image (Delayed resonance) -->
+        <div style="flex: 1 1 300px; text-align: center;">
+            <h3>Attack with delayed stabilization of resonance</h3>
+            <img src="DAFx25/attack_resonance.svg" alt="Analysis of Delayed Resonance"
+                style="width: 100%; border: 1px solid black;">
+        </div>
+    </div>
+
     <h3 style="text-align: center;">Good attack</h3>
 
     <div style="text-align: center; margin-bottom: 20px;">
         <img src="DAFx25/attack_good.svg" alt="Analysis of Good Attack" style="width: 50%; border: 1px solid black;">
     </div>
     <p>
-        The displayed example shows a trumpet sound signal, time-shifted so that <strong>t<sub>on</sub> = 0</strong>. The estimate of the attack duration <strong>t<sub>off</sub></strong> obtained by thresholding the envelope <strong>e<sub>h</sub>(t)</strong> (red curve) of the harmonic part is shown by a thick black vertical line. The estimates of <strong>t<sub>off</sub></strong> obtained by means of the threshold (-3 dB below <strong>max<sub>t</sub>{e(t)}</strong>) and the weakest-effort methods are also shown, respectively, by means of a cross (x) and a circle (o) mark above the input signal envelope <strong>e(t)</strong>. The envelope <strong>e<sub>f</sub>(t)</strong> (yellow curve) of the fluctuation components is also shown, which peaks right after the onset of the signal. An estimate of the noise ducking time <strong>t<sub>nd</sub></strong> is shown, which delimits the end of the noisy part of the attack.
+        The displayed example shows a trumpet sound signal, time-shifted so that <strong>t<sub>on</sub> = 0</strong>.
+        The estimate of the attack duration <strong>t<sub>off</sub></strong> obtained by thresholding the envelope
+        <strong>e<sub>h</sub>(t)</strong> (red curve) of the harmonic part is shown by a thick black vertical line. The
+        estimates of <strong>t<sub>off</sub></strong> obtained by means of the threshold (-3 dB below
+        <strong>max<sub>t</sub>{e(t)}</strong>) and the weakest-effort methods are also shown, respectively, by means of
+        a cross (x) and a circle (o) mark above the input signal envelope <strong>e(t)</strong>. The envelope
+        <strong>e<sub>f</sub>(t)</strong> (yellow curve) of the fluctuation components is also shown, which peaks right
+        after the onset of the signal. An estimate of the noise ducking time <strong>t<sub>nd</sub></strong> is shown,
+        which delimits the end of the noisy part of the attack.
     </p>
 
     <h3 style="text-align: center;">Attack with breath noise</h3>
@@ -348,9 +381,14 @@
     <div style="height: 40px;"></div> <!-- Adjust the height value as needed -->
 
     <div style="text-align: center; margin-top: 20px;">
-        <p>As in Figure 7 of the article, below it is reported the behavior of the standard deviations <i>&sigma;<sub>dW</sub></i> and <i>&sigma;<sub>dT</sub></i> for the duration of the attack based on wavelets and on input envelope using sawtooth wave synthesis and noise at increasing SNR. The curve described by a decreasing exponential fit of <i>&sigma;<sub>dW</sub></i> is also plotted.</p>
-        <img src="DAFx25/sigma_dW_saw_vs_SNR.svg" alt="Standard Deviation vs SNR for Sawtooth Wave Synthesis" style="max-width: 80%; height: auto; margin-top: 10px;">
-        <p style="margin-top: 10px;">The standard deviation of the PSWT-based method, which exponentially decreases as the SNR increases, is always smaller than that of the classical method.</p>
+        <p>As in Figure 7 of the article, below it is reported the behavior of the standard deviations
+            <i>&sigma;<sub>dW</sub></i> and <i>&sigma;<sub>dT</sub></i> for the duration of the attack based on wavelets
+            and on input envelope using sawtooth wave synthesis and noise at increasing SNR. The curve described by a
+            decreasing exponential fit of <i>&sigma;<sub>dW</sub></i> is also plotted.</p>
+        <img src="DAFx25/sigma_dW_saw_vs_SNR.svg" alt="Standard Deviation vs SNR for Sawtooth Wave Synthesis"
+            style="max-width: 80%; height: auto; margin-top: 10px;">
+        <p style="margin-top: 10px;">The standard deviation of the PSWT-based method, which exponentially decreases as
+            the SNR increases, is always smaller than that of the classical method.</p>
     </div>
 
     <!-- Placeholder for Triangular Signal -->
@@ -445,9 +483,14 @@
     <div style="height: 40px;"></div> <!-- Adjust the height value as needed -->
 
     <div style="text-align: center; margin-top: 20px;">
-        <p>Below, the behavior of the standard deviations <i>&sigma;<sub>dW</sub></i> and <i>&sigma;<sub>dT</sub></i> for the duration of the attack based on wavelets and on input envelope using trumpet-like wave synthesis and noise at increasing SNR is reported. The curve described by a decreasing exponential fit of <i>&sigma;<sub>dW</sub></i> is also plotted.</p>
-        <img src="DAFx25/sigma_dW_trumpet_vs_SNR.svg" alt="Standard Deviation vs SNR for Trumpet-like Wave Synthesis" style="max-width: 80%; height: auto; margin-top: 10px;">
-        <p style="margin-top: 10px;">The standard deviation of the PSWT-based method, which exponentially decreases as the SNR increases, is always much smaller than that of the classical method.</p>
+        <p>Below, the behavior of the standard deviations <i>&sigma;<sub>dW</sub></i> and <i>&sigma;<sub>dT</sub></i>
+            for the duration of the attack based on wavelets and on input envelope using trumpet-like wave synthesis and
+            noise at increasing SNR is reported. The curve described by a decreasing exponential fit of
+            <i>&sigma;<sub>dW</sub></i> is also plotted.</p>
+        <img src="DAFx25/sigma_dW_trumpet_vs_SNR.svg" alt="Standard Deviation vs SNR for Trumpet-like Wave Synthesis"
+            style="max-width: 80%; height: auto; margin-top: 10px;">
+        <p style="margin-top: 10px;">The standard deviation of the PSWT-based method, which exponentially decreases as
+            the SNR increases, is always much smaller than that of the classical method.</p>
     </div>
 
     <h2>Discussion of Attack Duration Estimates</h2>
