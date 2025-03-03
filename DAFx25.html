@@ -204,23 +204,24 @@
                 style="width: 100%; border: 1px solid black;">
         </div>
 
-        <!-- Second image (Breath noise) -->
-        <div style="flex: 1 1 300px; text-align: center;">
-            <h3>Attack with breath noise</h3>
-            <img src="DAFx25/attack_breath.svg" alt="Analysis of Attack with Breath Noise"
-                style="width: 100%; border: 1px solid black;">
-        </div>
-
-        <!-- Third image (Delayed resonance) -->
+        <!-- Second image (Delayed resonance) -->
         <div style="flex: 1 1 300px; text-align: center;">
             <h3>Attack with delayed stabilization of resonance</h3>
             <img src="DAFx25/attack_resonance.svg" alt="Analysis of Delayed Resonance"
                 style="width: 100%; border: 1px solid black;">
         </div>
+
+        <!-- Third image (Breath noise) -->
+        <div style="flex: 1 1 300px; text-align: center;">
+            <h3>Attack with breath noise</h3>
+            <img src="DAFx25/attack_breath.svg" alt="Analysis of Attack with Breath Noise"
+                style="width: 100%; border: 1px solid black;">
+        </div>
     </div>
 
     <p>
-        The displayed example shows a trumpet sound signal, time-shifted so that <strong>t<sub>on</sub> = 0</strong>.
+        The displayed examples show three trumpet sound signal of the same pitch (i.e., Bb4), time-shifted so that
+        <strong>t<sub>on</sub> = 0</strong>.
         The estimate of the attack duration <strong>t<sub>off</sub></strong> obtained by thresholding the envelope
         <strong>e<sub>h</sub>(t)</strong> (red curve) of the harmonic part is shown by a thick black vertical line. The
         estimates of <strong>t<sub>off</sub></strong> obtained by means of the threshold (-3 dB below
@@ -231,7 +232,50 @@
         which delimits the end of the noisy part of the attack.
     </p>
 
-    
+    <!-- Descriptions for the three cases -->
+    <div style="margin-top: 20px;">
+        <!-- Good Attack Description -->
+        <h4 style="text-align: center;">Description of Good Attack</h4>
+        <p style="text-align: justify;">
+            In the case of the good attack, the harmonic envelope increases quite rapidly and linearly until reaching a
+            region more flat.
+            The onset of the note is characterized by a short peak of the envelope of fluctuations, probably due to the
+            tongued attack,
+            before the envelope then sets to lower steady state values. The noise ducking time estimated is very short,
+            finishing after
+            the initial noise peak when the harmonic envelope prevails. The estimate of attack duration
+            <strong>t<sub>off</sub></strong>
+            is found once the harmonic envelope reaches values close to its steady state.
+        </p>
+
+        <!-- Attack with Delayed Stabilization of Resonance Description -->
+        <h4 style="text-align: center;">Description of Attack with Delayed Stabilization of Resonance</h4>
+        <p style="text-align: justify;">
+            In the case of attack with delayed stabilization of resonance, the sound starts muffled due to sub-optimal
+            configuration
+            of the oral cavity and air flow of the musician, before reaching a more full sound. This causes the harmonic
+            envelope to rise
+            unstably and with a slower slope than in case of proper attack sounds. This is also reflected in longer
+            estimates of attack time duration
+            and noise ducking time.
+        </p>
+
+        <!-- Attack with Breath Noise Description -->
+        <h4 style="text-align: center;">Description of Attack with Breath Noise</h4>
+        <p style="text-align: justify;">
+            In the case of the attack with breath noise, the lips of the musician do not start oscillating right away
+            and the sound starts
+            after an undefined period of low energy noise in which air passes through the instrument without generating
+            sound.
+            The adaptive threshold is able to identify the initial breath sound, which contains almost no harmonic
+            content.
+            When the player's lips enter in the regime of self-sustained oscillation, the harmonic envelope starts to
+            rise,
+            although not very stably. Due to this initial breathy part, the estimated attack duration and noise ducking
+            time are much longer
+            than in the case of good attack.
+        </p>
+    </div>
 
     <p>
         The full sound dataset can be downloaded <a href="DAFx25/sound_dataset.zip">here</a>. The dataset includes a zip
@@ -361,7 +405,8 @@
         <p>As in Figure 7 of the article, below it is reported the behavior of the standard deviations
             <i>&sigma;<sub>dW</sub></i> and <i>&sigma;<sub>dT</sub></i> for the duration of the attack based on wavelets
             and on input envelope using sawtooth wave synthesis and noise at increasing SNR. The curve described by a
-            decreasing exponential fit of <i>&sigma;<sub>dW</sub></i> is also plotted.</p>
+            decreasing exponential fit of <i>&sigma;<sub>dW</sub></i> is also plotted.
+        </p>
         <img src="DAFx25/sigma_dW_saw_vs_SNR.svg" alt="Standard Deviation vs SNR for Sawtooth Wave Synthesis"
             style="max-width: 80%; height: auto; margin-top: 10px;">
         <p style="margin-top: 10px;">The standard deviation of the PSWT-based method, which exponentially decreases as
@@ -463,7 +508,8 @@
         <p>Below, the behavior of the standard deviations <i>&sigma;<sub>dW</sub></i> and <i>&sigma;<sub>dT</sub></i>
             for the duration of the attack based on wavelets and on input envelope using trumpet-like wave synthesis and
             noise at increasing SNR is reported. The curve described by a decreasing exponential fit of
-            <i>&sigma;<sub>dW</sub></i> is also plotted.</p>
+            <i>&sigma;<sub>dW</sub></i> is also plotted.
+        </p>
         <img src="DAFx25/sigma_dW_trumpet_vs_SNR.svg" alt="Standard Deviation vs SNR for Trumpet-like Wave Synthesis"
             style="max-width: 80%; height: auto; margin-top: 10px;">
         <p style="margin-top: 10px;">The standard deviation of the PSWT-based method, which exponentially decreases as
