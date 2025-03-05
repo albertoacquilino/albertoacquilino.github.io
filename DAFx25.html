@@ -820,10 +820,38 @@
 
     <!-- Placeholder for Violin Analysis Subsection -->
     <h3>Analysis of Violin Sounds</h3>
-    <p>
-        [This section will include the analysis of violin sounds following the same structure as the flute analysis,
-        with
-        audio files and plots for good attack, noisy attack, and breathy attack types.]
+    <p style="text-align: justify;">
+        The Good-sounds dataset provides violin sounds annotated with "good attack" and "bad attack". Of the sounds classified as bad attack:
+    </p>
+    <ul style="text-align: justify;">
+        <li>
+            A group of them does not have any annotation, presenting a noisy transient characteristic.
+        </li>
+        <li>
+            A group of them is annotated with "bad pressure". We interpret this annotation as the player was applying 
+            an incorrect pressure of the bow on the string at the attack of a sound. Sounds with this annotation 
+            present longer and evident noise in the attack of the sound.
+        </li>
+        <li>
+            A group of them is annotated with "rebond". We interpret this annotation as coming from French, meaning "bounce", 
+            so the bow is bouncing on the violin string generating a very short note at the attack of the sound. 
+            This is reflected in the behaviour of the sound. This is not a type of sound that we intend to include in our analysis 
+            as the type of error is not related to the duration of the attack transient, but to the behavioural characteristics 
+            of having one short sound followed by the note.
+        </li>
+    </ul>
+    
+    <!-- Audio player for "rebond" sound -->
+    <div style="text-align: center; margin-bottom: 20px;">
+        <h4>Example of "Rebond" Attack</h4>
+        <audio controls>
+            <source src="DAFx25/bad_attack_rebond0057.wav" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    
+    <p style="text-align: justify;">
+        Three different violin sound samples of the same pitch (i.e., E♭5) were selected as examples to evaluate the algorithm's applicability.
     </p>
 
 </body>
