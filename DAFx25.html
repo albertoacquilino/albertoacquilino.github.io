@@ -736,21 +736,18 @@
     <h2>Robustness Analysis on Noise Ducking Time</h2>
 
     <p>
-        This section presents the robustness analysis of the <strong>noise ducking time t<sub>nd</sub></strong>,
-        which is estimated based on different noise levels for a synthesized triangular wave.
-        The analysis aims to assess the stability and reliability of the noise ducking time estimates across varying
-        Signal-to-Noise Ratios (SNR).
+        In this section, we analyze the robustness of the <strong>noise ducking time (t<sub>nd</sub>)</strong>. 
+        The analysis is based on a synthesized triangular wave with white noise having the same amplitude envelope and constant variance. 
+        The goal is to assess how stable and reliable the estimates of t<sub>nd</sub> are under these controlled conditions.
     </p>
 
     <div style="text-align: center; margin-top: 20px;">
         <img src="DAFx25/Hist_t_nd_triang.svg" alt="Distribution of Noise Ducking Time for Triangular Wave"
             style="max-width: 80%; height: auto; border: 1px solid black;">
         <p style="margin-top: 10px;">
-            The figure above shows the histogram distribution of noise ducking time obtained for a
-            synthesized triangular wave under different noise conditions, based on 500 sounds.
-            The data illustrates how the distribution shifts and varies with increasing noise levels, providing insights
-            into
-            the robustness of the noise ducking time estimation method.
+            The figure above shows the histogram distribution of noise ducking time obtained for a 
+            synthesized triangular wave with noise of constant amplitude and variance, and the same envelope, based on 500 sounds.
+            The figure shows low values of standard deviation centered on the programmed attack duration of the synthesized sound, highlighting the consistency of the noise ducking time estimates.
         </p>
     </div>
 
