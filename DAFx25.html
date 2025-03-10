@@ -737,7 +737,7 @@
 
     <p>
         In this section, we analyze the robustness of the <strong>noise ducking time (t<sub>nd</sub>)</strong>. 
-        The analysis is based on a synthesized triangular wave with white noise having the same amplitude envelope and constant variance. 
+        We analyzed various synthesized waveshapes with trapezoidal envelopes mixed with short noise pulse with linear or exponential decay (<a href="#envelope-figures">see envelopes</a>) with similar robustness and consistency results.
         The goal is to assess how stable and reliable the estimates of t<sub>nd</sub> are under these controlled conditions.
     </p>
 
@@ -766,15 +766,14 @@
         which are illustrated in the following example figures:
     </p>
 
-    <!-- Horizontal display of two figures -->
-    <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 20px;">
+    <div id="envelope-figures" style="display: flex; gap: 20px; justify-content: center; margin-bottom: 20px;">
         <!-- Figure for noise ducking time (tnd) -->
         <div style="flex: 1 1 300px; text-align: center;">
             <h4>Noise Ducking Time (t<sub>nd</sub>)</h4>
             <img src="DAFx25/envelopes_tnd.png" alt="Illustration of Noise Ducking Time"
                 style="width: 75%; border: 1px solid black;">
         </div>
-
+    
         <!-- Figure for attack duration (toff) -->
         <div style="flex: 1 1 300px; text-align: center;">
             <h4>Attack Duration (t<sub>off</sub>)</h4>
