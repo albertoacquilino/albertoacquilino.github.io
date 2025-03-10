@@ -734,49 +734,55 @@
     </p>
 
     <h2>Robustness Analysis on Noise Ducking Time</h2>
-    
+
     <p>
-        This section presents the robustness analysis of the <strong>noise ducking time (t<sub>nd</sub>)</strong>, 
-        which is estimated based on 500 simulations of a synthesized triangular wave at different noise levels. 
-        The analysis aims to assess the stability and reliability of the noise ducking time estimates across varying Signal-to-Noise Ratios (SNR).
+        This section presents the robustness analysis of the <strong>noise ducking time t<sub>nd</sub></strong>,
+        which is estimated based on different noise levels for a synthesized triangular wave.
+        The analysis aims to assess the stability and reliability of the noise ducking time estimates across varying
+        Signal-to-Noise Ratios (SNR).
     </p>
-    
+
     <div style="text-align: center; margin-top: 20px;">
         <img src="DAFx25/Hist_t_nd_triang.svg" alt="Distribution of Noise Ducking Time for Triangular Wave"
-             style="max-width: 80%; height: auto; border: 1px solid black;">
+            style="max-width: 80%; height: auto; border: 1px solid black;">
         <p style="margin-top: 10px;">
-            The figure above shows the histogram distribution of <strong>noise ducking time</strong> obtained for a 
-            synthesized triangular wave under different noise conditions. The data illustrates how the distribution shifts 
-            and varies with increasing noise levels, providing insights into the robustness of the noise ducking time estimation method.
+            The figure above shows the histogram distribution of <strong>noise ducking time</strong> obtained for a
+            synthesized triangular wave under different noise conditions, based on <strong>500 sounds</strong>.
+            The data illustrates how the distribution shifts and varies with increasing noise levels, providing insights
+            into
+            the robustness of the noise ducking time estimation method.
         </p>
     </div>
 
     <h2>Expanding the Analysis to Other Musical Instruments</h2>
     <p>
         To further assess the applicability of the proposed algorithm, we extended our analysis to sounds from other
-        musical instruments using the Good-sounds dataset. This dataset provides sound samples annotated with "good attack"
-        and "bad attack," offering a valuable basis for evaluating the algorithm's effectiveness across different timbres
+        musical instruments using the Good-sounds dataset. This dataset provides sound samples annotated with "good
+        attack"
+        and "bad attack," offering a valuable basis for evaluating the algorithm's effectiveness across different
+        timbres
         and attack characteristics.
     </p>
     <p>
-        For this analysis, we will use both the concepts of <strong>attack duration</strong> and <strong>noise ducking time</strong>, 
+        For this analysis, we will use both the concepts of <strong>attack duration</strong> and <strong>noise ducking
+            time</strong>,
         which are illustrated in the following example figures:
     </p>
-    
+
     <!-- Horizontal display of two figures -->
     <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 20px;">
         <!-- Figure for noise ducking time (tnd) -->
         <div style="flex: 1 1 300px; text-align: center;">
             <h4>Noise Ducking Time (t<sub>nd</sub>)</h4>
             <img src="DAFx25/envelopes_tnd.png" alt="Illustration of Noise Ducking Time"
-                 style="width: 75%; border: 1px solid black;">
+                style="width: 75%; border: 1px solid black;">
         </div>
-    
+
         <!-- Figure for attack duration (toff) -->
         <div style="flex: 1 1 300px; text-align: center;">
             <h4>Attack Duration (t<sub>off</sub>)</h4>
             <img src="DAFx25/envelopes_toff.png" alt="Illustration of Attack Duration"
-                 style="width: 75%; border: 1px solid black;">
+                style="width: 75%; border: 1px solid black;">
         </div>
     </div>
 
@@ -784,7 +790,8 @@
     <h3>Analysis of Flute Sounds</h3>
     <p>
         The Good-sounds dataset provides flute sounds annotated with "good attack" and "bad attack," without specifying
-        further details. Three different flute sound samples of the same pitch (i.e., G6) were selected as examples to evaluate the
+        further details. Three different flute sound samples of the same pitch (i.e., G6) were selected as examples to
+        evaluate the
         algorithm's applicability. The selected sounds include:
     </p>
     <ul>
@@ -841,47 +848,58 @@
     </div>
 
     <p style="text-align: justify;">
-        In the case of the good attack, the envelopes exhibit a behavior similar to that observed in the trumpet sounds. 
-        The envelope of the fluctuations remains low, while the envelope of the harmonic components increases very steeply. 
+        In the case of the good attack, the envelopes exhibit a behavior similar to that observed in the trumpet sounds.
+        The envelope of the fluctuations remains low, while the envelope of the harmonic components increases very
+        steeply.
         This leads to short noise ducking time and attack duration estimations.
     </p>
 
     <p style="text-align: justify;">
-        In contrast, in the case identified with a noisy attack, the envelope of the fluctuations presents higher values, 
-        indicating an unstable behavior of the sound. Additionally, the sound also features a short noise due to the air entering the instrument 
-        before the actual sound starts, which creates a mix between a noisy attack and a breathy attack. This is followed by a distinct growling sound 
-        characteristic in the attack, resulting in higher estimates of both the noise ducking time and the attack duration.  
+        In contrast, in the case identified with a noisy attack, the envelope of the fluctuations presents higher
+        values,
+        indicating an unstable behavior of the sound. Additionally, the sound also features a short noise due to the air
+        entering the instrument
+        before the actual sound starts, which creates a mix between a noisy attack and a breathy attack. This is
+        followed by a distinct growling sound
+        characteristic in the attack, resulting in higher estimates of both the noise ducking time and the attack
+        duration.
     </p>
 
     <p style="text-align: justify;">
-        Similarly to the trumpet case, the attack identified with breath noise shows an initial segment characterized by breath noise 
-        as air enters the instrument before the actual note starts. In this case as well, the adaptive threshold effectively captures 
+        Similarly to the trumpet case, the attack identified with breath noise shows an initial segment characterized by
+        breath noise
+        as air enters the instrument before the actual note starts. In this case as well, the adaptive threshold
+        effectively captures
         the characteristics of the attack, leading to long estimates of noise ducking time and attack duration.
     </p>
 
     <!-- Placeholder for Violin Analysis Subsection -->
     <h3>Analysis of Violin Sounds</h3>
     <p style="text-align: justify;">
-        The Good-sounds dataset provides violin sounds annotated with "good attack" and "bad attack". Of the sounds classified as bad attack:
+        The Good-sounds dataset provides violin sounds annotated with "good attack" and "bad attack". Of the sounds
+        classified as bad attack:
     </p>
     <ul style="text-align: justify;">
         <li>
             A group of them does not have any annotation, presenting a noisy transient characteristic.
         </li>
         <li>
-            A group of them is annotated with "bad pressure". We interpret this annotation as the player was applying 
-            an incorrect pressure of the bow on the string at the attack of a sound. Sounds with this annotation 
+            A group of them is annotated with "bad pressure". We interpret this annotation as the player was applying
+            an incorrect pressure of the bow on the string at the attack of a sound. Sounds with this annotation
             present longer and evident noise in the attack of the sound.
         </li>
         <li>
-            A group of them is annotated with "rebond". We interpret this annotation as coming from French, meaning "bounce", 
-            so the bow is bouncing on the violin string generating a very short note at the attack of the sound. 
-            This is reflected in the behaviour of the sound. This is not a type of sound that we intend to include in our analysis 
-            as the type of error is not related to the duration of the attack transient, but to the behavioural characteristics 
+            A group of them is annotated with "rebond". We interpret this annotation as coming from French, meaning
+            "bounce",
+            so the bow is bouncing on the violin string generating a very short note at the attack of the sound.
+            This is reflected in the behaviour of the sound. This is not a type of sound that we intend to include in
+            our analysis
+            as the type of error is not related to the duration of the attack transient, but to the behavioural
+            characteristics
             of having one short sound followed by the note.
         </li>
     </ul>
-    
+
     <!-- Audio player for "rebond" sound -->
     <div style="text-align: center; margin-bottom: 20px;">
         <h4>Example of "Rebond" Attack</h4>
@@ -890,7 +908,7 @@
             Your browser does not support the audio element.
         </audio>
     </div>
-    
+
     <p style="text-align: justify;">
         Three different violin sound samples were selected as examples to evaluate the algorithm's applicability.
     </p>
@@ -934,19 +952,23 @@
     </div>
 
     <p style="text-align: justify;">
-        For the good attack example, the envelope of fluctuations remains at low values even during the attack of the sound, 
-        while the harmonic envelope exhibits a smooth increase until it reaches a more steady level. 
-        In contrast, the bad attack examples show significantly higher values in the envelope of fluctuations during the attack transient, 
-        and the harmonic envelope presents a more unsteady behavior. 
-        In these cases, the noise ducking time emerges as the most salient feature to distinguish between good and bad attacks, 
+        For the good attack example, the envelope of fluctuations remains at low values even during the attack of the
+        sound,
+        while the harmonic envelope exhibits a smooth increase until it reaches a more steady level.
+        In contrast, the bad attack examples show significantly higher values in the envelope of fluctuations during the
+        attack transient,
+        and the harmonic envelope presents a more unsteady behavior.
+        In these cases, the noise ducking time emerges as the most salient feature to distinguish between good and bad
+        attacks,
         showing substantial differences in values between the two scenarios.
     </p>
-    
+
     <p style="text-align: justify;">
-        Depending on the particular type of instrument or articulation, both the estimated attack duration and the noise ducking time 
+        Depending on the particular type of instrument or articulation, both the estimated attack duration and the noise
+        ducking time
         proved to be important features for describing the transient attack characteristics of musical sounds.
     </p>
-    
+
 
 </body>
 
