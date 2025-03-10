@@ -733,6 +733,24 @@
         challenging conditions, such as signals with stronger vibrato.
     </p>
 
+    <h2>Robustness Analysis on Noise Ducking Time</h2>
+    
+    <p>
+        This section presents the robustness analysis of the <strong>noise ducking time (t<sub>nd</sub>)</strong>, 
+        which is estimated based on 500 simulations of a synthesized triangular wave at different noise levels. 
+        The analysis aims to assess the stability and reliability of the noise ducking time estimates across varying Signal-to-Noise Ratios (SNR).
+    </p>
+    
+    <div style="text-align: center; margin-top: 20px;">
+        <img src="DAFx25/Hist_t_nd_triang.svg" alt="Distribution of Noise Ducking Time for Triangular Wave"
+             style="max-width: 80%; height: auto; border: 1px solid black;">
+        <p style="margin-top: 10px;">
+            The figure above shows the histogram distribution of <strong>noise ducking time</strong> obtained for a 
+            synthesized triangular wave under different noise conditions. The data illustrates how the distribution shifts 
+            and varies with increasing noise levels, providing insights into the robustness of the noise ducking time estimation method.
+        </p>
+    </div>
+
     <h2>Expanding the Analysis to Other Musical Instruments</h2>
     <p>
         To further assess the applicability of the proposed algorithm, we extended our analysis to sounds from other
