@@ -462,7 +462,7 @@ nav a.home-link h1 {
   display: inline-block;
 }
 
-/* Dropdown button styling with arrow */
+/* Dropdown button styling with custom triangle arrow */
 .dropbtn {
   cursor: pointer;
   text-decoration: none;
@@ -471,13 +471,14 @@ nav a.home-link h1 {
 }
 
 .dropbtn::after {
-  content: " ▼";
-  font-size: 0.8em;
-  margin-left: 4px;
-}
-
-.dropbtn:hover {
-  text-decoration: none;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 6px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #333;
+  transition: transform 0.2s ease-in-out;
 }
 
 /* Dropdown content (hidden by default) */
