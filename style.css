@@ -462,11 +462,18 @@ nav a.home-link h1 {
   display: inline-block;
 }
 
-/* Dropdown button styling */
+/* Dropdown button styling with arrow */
 .dropbtn {
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+  position: relative;
+}
+
+.dropbtn::after {
+  content: " ▼";
+  font-size: 0.8em;
+  margin-left: 4px;
 }
 
 /* Dropdown content (hidden by default) */
