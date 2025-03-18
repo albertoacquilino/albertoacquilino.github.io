@@ -1,0 +1,104 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css"
+        integrity="sha384-BTL0nVi8DnMrNdMQZG1Ww6yasK9ZGnUxL1ZWukXQ7fygA1py52yPp9W4wrR00VML" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.js"
+        integrity="sha384-y6SGsNt7yZECc4Pf86XmQhC4hG2wxL6Upkt9N1efhFxfh6wlxBH0mJiTE8XYclC1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/contrib/auto-render.min.js"
+        integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+        crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+    <title>Alberto Acquilino</title>
+</head>
+
+<body>
+    <nav>
+        <a href="/index.html" class="home-link">
+            <h1>Alberto Acquilino</h1>
+        </a>
+        <!-- Add aria-label to indicate what this button does for screen readers -->
+        <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation">&#9776;</button>
+
+        <ul id="menu">
+            <li><a href="/">About</a></li>
+            <li><a href="/publications.html">Publications</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Portfolio</a>
+                <div class="dropdown-content">
+                    <a href="/portfolio_music_education_interface.html">Music Education Interface</a>
+                    <a href="/portfolio_student_compass.html">El Sistema Student Compass</a>
+                    <a href="/portfolio_hearing_care_platform.html">Hearing Care Platform</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h1>El Sistema Student Compass</h1>
+
+            <p>The <strong>El Sistema Student Compass</strong> is an innovative platform designed to support young
+                musicians'
+                holistic development by integrating music education with well-being tracking. By leveraging validated
+                psychological models and data-driven insights, this tool empowers students, teachers, and administrators
+                in El
+                Sistema-inspired programs worldwide.</p>
+
+            <h2>Key Features</h2>
+
+            <ul>
+                <li>📊 <strong>Holistic Well-being Assessment:</strong> Incorporates the <strong>PERMA
+                        framework</strong> and
+                    other validated models to track students' psychological and emotional growth alongside their musical
+                    progress.
+                </li>
+                <li>🎵 <strong>Music Education & Data Tracking:</strong> Provides real-time insights into
+                    <strong>students'
+                        practice habits, progress, and engagement</strong>, helping teachers tailor instruction more
+                    effectively.
+                </li>
+                <li>🎮 <strong>Gamified Interactive Learning:</strong> Uses <strong>interactive feedback, badges, and
+                        progress
+                        tracking</strong> to keep students engaged and motivated in their musical journey.</li>
+            </ul>
+
+            <h2>Impact & Future Development</h2>
+
+            <p>The Student Compass is designed to foster <strong>a deeper connection between music education and student
+                    well-being</strong>. With its data-driven approach, it enables <strong>personalized support</strong>
+                for each
+                musician while equipping educators with valuable insights to enhance their teaching strategies.</p>
+
+            <p>Future developments aim to scale the platform for broader educational applications, integrating AI-driven
+                analytics and expanding to additional El Sistema-inspired programs globally.</p>
+
+            <div class="student-compass-image">
+                <img src="assets/student_compass.png" alt="El Sistema Student Compass Interface"
+                    class="student-compass-image">
+            </div>
+
+            <!-- PDF Download Button -->
+            <p>
+                <a href="documents/El Sistema Student Compass.pdf" class="download-button" download>
+                    📄 Download Project Overview (PDF)
+                </a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2023 MEI-Trumpet. All rights reserved.</p>
+    </footer>
+    <script src="/script.js"></script>
+</body>
+
+</html>
