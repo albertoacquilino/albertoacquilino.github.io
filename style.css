@@ -21,7 +21,7 @@ nav {
   border-bottom: 1px solid #ddd;
   background-color: #f5f5f5;
   white-space: nowrap;
-  overflow: auto;
+  overflow: visible; /* allow dropdown to extend beyond nav */
   text-align: center;
 }
 
@@ -456,15 +456,9 @@ nav a.home-link h1 {
   text-decoration: none;
 }
 
-/* Make sure the parent nav has a higher stacking context if needed */
-nav {
-  position: relative; /* or absolute/fixed, depending on your layout */
-  z-index: 9999;      /* ensure the dropdown is on top */
-}
-
-/* Parent container for dropdown */
+/* Dropdown container */
 .dropdown {
-  position: relative; /* Needed so the .dropdown-content can position itself relative to this element */
+  position: relative;
   display: inline-block;
 }
 
@@ -472,33 +466,25 @@ nav {
 .dropbtn {
   cursor: pointer;
   text-decoration: none;
-  color: inherit;  /* Or pick a color that fits your design */
+  color: inherit;
 }
 
-/* The dropdown content (hidden by default) */
+/* Dropdown content (hidden by default) */
 .dropdown-content {
+  display: none;
   position: absolute;
-  display: none;           /* Hidden by default */
-  background-color: #333;  /* Dark background to match your reference image */
-  min-width: 160px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 9999;           /* Ensure it appears above everything else */
-  border-radius: 4px;      /* Slightly rounded corners (optional) */
-  padding: 0;
-  margin: 0;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  display: block;
+  color: black;
   padding: 12px 16px;
   text-decoration: none;
-  color: #fff;             /* Light text on a dark background */
-}
-
-/* Hover effect on dropdown links */
-.dropdown-content a:hover {
-  background-color: #444;  /* Slightly lighter shade on hover */
+  display: block;
 }
 
 /* Show the dropdown on hover */
@@ -506,13 +492,7 @@ nav {
   display: block;
 }
 
-/* Optional: Add an arrow pointing up */
-.dropdown-content::before {
-  content: '';
-  position: absolute;
-  top: -10px;              /* Adjust so the arrow lines up with the dropdown box */
-  left: 20px;              /* Adjust for horizontal position of the arrow */
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid #333; /* Match the dropdown background color */
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
 }
