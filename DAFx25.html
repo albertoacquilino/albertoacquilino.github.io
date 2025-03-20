@@ -316,7 +316,7 @@
     </p>
 
     <div style="text-align: center;">
-        <img src="DAFx25/envelopes.png" alt="Example of Sound and Noise Envelopes"
+        <img src="DAFx25/envelopes_toff.png" alt="Example of Sound and Noise Envelopes"
             style="width: 40%; height: auto; border: 1px solid black;">
     </div>
 
@@ -736,9 +736,18 @@
     <h2>Robustness Analysis on Noise Ducking Time</h2>
 
     <p>
-        In this section, we analyze the robustness of the <strong>noise ducking time (t<sub>nd</sub>)</strong>. 
-        We analyzed various synthesized waveshapes with trapezoidal envelopes mixed with short noise pulses with linear or exponential decay (<a href="#envelope-figures">see envelopes</a>), with various decay times, obtaining similar robustness and consistency results.
-        The goal is to assess how stable and reliable the estimates of t<sub>nd</sub> are under these controlled conditions.
+        In this section, we analyze the robustness of the <strong>noise ducking time (t<sub>nd</sub>)</strong>. The concept of noise ducking time is illustrated in the following example figure:
+    </p>
+    
+    <div id="envelope-figure" style="text-align: center;">
+        <h4>Noise Ducking Time (t<sub>nd</sub>)</h4>
+        <img src="DAFx25/envelopes_tnd.png" alt="Illustration of Noise Ducking Time"
+            style="width: 40%; height: auto; border: 1px solid black;">
+    </div>
+    
+    <p>
+        We analyzed various synthesized waveshapes with trapezoidal envelopes mixed with short noise pulses exhibiting linear or exponential decay (<a href="#envelope-figure">see envelopes</a>), testing different decay times. The results show similar robustness and consistency across conditions. 
+        The goal is to evaluate the stability and reliability of the t<sub>nd</sub> estimates under these controlled conditions.
     </p>
 
     <!-- Row of three images for Saw waves -->
@@ -796,27 +805,6 @@
         timbres
         and attack characteristics.
     </p>
-    <p>
-        For this analysis, we will use both the concepts of <strong>attack duration</strong> and <strong>noise ducking
-            time</strong>,
-        which are illustrated in the following example figures:
-    </p>
-
-    <div id="envelope-figures" style="display: flex; gap: 20px; justify-content: center; margin-bottom: 20px;">
-        <!-- Figure for noise ducking time (tnd) -->
-        <div style="flex: 1 1 300px; text-align: center;">
-            <h4>Noise Ducking Time (t<sub>nd</sub>)</h4>
-            <img src="DAFx25/envelopes_tnd.png" alt="Illustration of Noise Ducking Time"
-                style="width: 55%; border: 1px solid black;">
-        </div>
-    
-        <!-- Figure for attack duration (toff) -->
-        <div style="flex: 1 1 300px; text-align: center;">
-            <h4>Attack Duration (t<sub>off</sub>)</h4>
-            <img src="DAFx25/envelopes_toff.png" alt="Illustration of Attack Duration"
-                style="width: 55%; border: 1px solid black;">
-        </div>
-    </div>
 
     <!-- Flute Analysis Subsection -->
     <h3>Analysis of Flute Sounds</h3>
