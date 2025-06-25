@@ -156,7 +156,7 @@
       <h1>Contacts</h1>
       <dl>
         <dt>Email</dt>
-        <dd><a href="mailto:albertoacquilino@gmail.com">albertoacquilino@gmail.com</a></dd>
+        <dd><a href="#" id="email-link">Click to email</a></dd>
         <dt>Snail mail</dt>
         <dd>
           <address>
@@ -176,6 +176,15 @@
   </main>
   <script src="/script.js"></script>
   <script>renderMathInElement(document.body);</script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const user = "albertoacquilino";
+      const domain = "gmail.com";
+      const link = document.getElementById("email-link");
+      const email = user + "@" + domain;
+      link.setAttribute("href", "mailto:" + email);
+    });
+  </script>
 </body>
 
 </html>
