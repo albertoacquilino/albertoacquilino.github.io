@@ -33,7 +33,7 @@
             <li class="dropdown">
                 <a href="#" class="dropbtn">Portfolio</a>
                 <div class="dropdown-content">
-                    <a href="/portfolio_music_education_interface.html">Music Education Interface</a>
+                    <a href="/portfolio_harmonyhub.html">Harmony Hub</a>
                     <a href="/portfolio_student_compass.html">El Sistema Student Compass</a>
                     <a href="/portfolio_hearing_care_platform.html">Hearing Care Platform</a>
                 </div>
@@ -42,49 +42,181 @@
     </nav>
     <main>
         <section>
-            <h1>Hearing Care Platform</h1>
-            <p>The <strong>Hearing Care Platform (HCP)</strong> is an initiative aimed at raising awareness about noise
-                exposure and hearing health, particularly among musicians.
-                <!-- It was developed through a collaboration between CIRMMT, the NSERC-EERS Industrial Research Chair in In-Ear Technologies (CRITIAS) at École de technologie supérieure (ÉTS), and the Schulich School of Music at McGill University. -->
+            <img src="assets/mei-logo.png" alt="MEI-Trumpet Landscape Cover" class="cover-image"
+                style="margin-top: 35px; margin-bottom: 20px;">
+
+            <p><strong>MEI-Trumpet</strong> is an educational web application that supports users in mastering musical
+                competencies. The app facilitates learning through guided repetition, structured reflection, and
+                multi-sensory
+                engagement, addressing critical technical and auditory skills.</p>
+            <p>By allowing students to set custom parameters, MEI-Trumpet adapts to different skill levels, creating a
+                <strong>personalized learning experience</strong>.
+                Starting with a beginner-friendly interface, users can customize their practice by selecting:
             </p>
 
-            <h2>App Development</h2>
-            <p>As part of this project, a <strong>custom mobile app</strong> was developed to help musicians and
-                individuals
-                assess their sound exposure from both music and non-music activities. The app provides a personalized
-                assessment
-                of listening habits and potential hearing risks.</p>
+            <ul style="list-style-type: none; padding-left: 20px;">
+                <li>⏰ <strong>Metronome Speed:</strong> Adjust the tempo for practice.</li>
+                <li>🎵 <strong>Lowest Note & Highest Note:</strong> Define a custom range of notes to focus on.</li>
+            </ul>
 
+            <p>The image below shows the interactive controls where students can set these parameters before starting an
+                exercise.</p>
 
-            <h2>User Research and Development</h2>
-            <p>In addition to the app, a <strong>measuring kiosk</strong> was launched, allowing participants to analyze
-                their
-                headphone listening levels using their own devices. This approach ensures a more accurate and
-                personalized
-                assessment of hearing exposure.</p>
-
-            <div class="hcp-gallery">
-                <img src="assets/HCP1.png" alt="HCP Screenshot 1">
-                <img src="assets/HCP2.png" alt="HCP Screenshot 2">
-                <img src="assets/HCP3.png" alt="HCP Setup">
+            <div class="input-video">
+                <video autoplay loop muted playsinline>
+                    <source src="assets/input_video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
 
-            <p>As part of this initiative, research was conducted to refine the platform's effectiveness in promoting
-                hearing
-                conservation. The project involved leading <strong>user research sessions</strong> with musicians and
-                students
-                to evaluate their sound exposure levels and gather insights on hearing care practices.</p>
+            <p>Each exercise is structured in three steps:</p>
+            <ul>
+                <li>The first measure is a rest, allowing the student to prepare</li>
+                <li>The second measure plays a reference note, offering an example to imitate</li>
+                <li>The third measure is for the user to play the note</li>
+            </ul>
 
-            <p>By combining innovative technology with real-world data collection, this platform contributes to the
-                broader
-                goal of improving hearing health awareness and influencing hearing conservation policies.</p>
+            <p>On the top of the screen, an image showing the correct trumpet fingering, including adjustments for the
+                third
+                valve slide, is displayed. This helps students easily associate the note shown on the musical staff with
+                the
+                corresponding pitch and valve combination.</p>
+
+            <div class="app-screenshots">
+                <img src="assets/screenshot.png" alt="App Screenshot 1" class="app-screenshot"
+                    style="border: 3px solid #4CAF50; transition: border-color 0.5s ease-in-out, border-radius 10px; border-radius: 10px;"
+                    onmouseover="this.style.borderColor='#FF5733'" onmouseout="this.style.borderColor='#4CAF50'">
+            </div>
+
+
+            <p>MEI-Trumpet is available as a free beta version for both web and mobile devices:</p>
 
             <div class="app-store-links">
-                <a href="https://apps.apple.com/kn/app/hearing-care-platform/id6451453510" target="_blank">
+                <a href="https://apps.apple.com/us/app/mei-trumpet/id6452315691" target="_blank">
                     <img src="assets/appstore.png" alt="Download on the App Store" class="app-badge">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.meiteam.trumpet" target="_blank">
+                    <img src="assets/googleplay.png" alt="Get it on Google Play" class="app-badge">
                 </a>
             </div>
 
+            <p>
+                <a href="https://mei-trumpet.web.app/" target="_blank">
+                    <strong>Click HERE to try Harmony Hub on your browser now!</strong>
+                </a>
+            </p>
+        </section>
+
+        <section style="margin-top: 10px;">
+            <h2>Advancing Your Skills!</h2>
+            <p>Once users get the hang of playing the right note, scaffolding helps them take it to the next level!
+            <p>
+            <h3>Intonation and Dynamics</h3>
+            <p>Adding a chromatic tuner and dynamic markings, users are encouraged to fine-tune their pitch and volume
+                control
+                bringing more expression and style to their playing.</p>
+            <div class="app-screenshots">
+                <img src="assets/screen_tuner.png" alt="Tuner Screenshot" class="tuner-screenshot"
+                    style="border: 3px solid #4CAF50; transition: border-color 0.5s ease-in-out, border-radius 10px; border-radius: 10px;"
+                    onmouseover="this.style.borderColor='#FF5733'" onmouseout="this.style.borderColor='#4CAF50'">
+            </div>
+
+            <h3>Clear Articulation</h3>
+            <p>The latest feature of the Music Education Interface I am working on introduces <strong>articulation
+                    assessment</strong>. A state-of-the-art digital signal processing algorithm measures the
+                <strong>attack
+                    transient duration</strong> in milliseconds, providing users with real-time feedback on their
+                articulation
+                clarity.</p>
+            <blockquote
+                style="font-style: italic; border-left: 4px solid #4CAF50; padding-left: 10px; margin-left: 10px;">
+                "Attack clarity is finding the purity and the best beginning of sound"
+            </blockquote>
+
+            <p>Achieving a clean and controlled attack is a crucial skill for musicians, influencing both technical
+                precision
+                and artistic expression. The articulation analysis tool enables users to experiment with different
+                attack styles
+                (e.g., <strong>staccato, détaché, martelé</strong>) while receiving real-time feedback on their
+                performance. By
+                analyzing the transient development of their sound, students gain deeper control over articulation,
+                allowing
+                them to make more informed musical choices and refine their expressive capabilities.</p>
+            <p><strong>Audio Examples!</strong></p>
+            <p>Compare the difference between an unclear and a clean articulation:</p>
+            <div class="audio-container">
+                <div class="audio-example">
+                    <p><strong>Unclean Attack</strong></p>
+                    <audio controls>
+                        <source src="assets/unclean_attack.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="audio-example">
+                    <p><strong>Clean Attack</strong></p>
+                    <audio controls>
+                        <source src="assets/clean_attack.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+
+            <h3>Enhancing Sound Quality with Machine Learning</h3>
+            <p>To further refine the student's technique, a machine learning model was integrated into the learning
+                interface
+                to classify sounds based on their timbral quality. This functionality introduces a new layer of
+                complexity,
+                helping users develop their musical competencies.
+            <p>Watch the <strong>DEMO</strong>:</p>
+            </p>
+            <div class="video-container"
+                style="text-align: center; margin-top: 20px; max-width: 100%; overflow: hidden;">
+                <video style="width: 100%; height: auto; max-width: 560px;" controls>
+                    <source src="assets/Video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+        </section>
+
+        <section style="margin-top: 10px;">
+            <h2>What's next?</h2>
+            <p>Future developments of this project focus on enhancing its capabilities through adaptive learning
+                features. The
+                Music Education Interface aims to integrate generative AI to provide a more personalized and inclusive
+                learning
+                experience. Key advancements include:</p>
+
+            <ul>
+                <li>🎯 <strong>Personalized exercises</strong> tailored to students’ technical level, age, and
+                    progression
+                    speed.</li>
+                <li>📊 <strong>AI-driven analysis of student performance</strong>, offering recommendations for refining
+                    learning activities.</li>
+                <li>💡 <strong>A user-friendly, code-free interface</strong> enabling music educators to design and
+                    deploy
+                    customized exercises.</li>
+                <li>🌍 <strong>Enhanced inclusivity and accessibility</strong>, ensuring diverse learning experiences
+                    for
+                    students of all backgrounds and abilities.</li>
+            </ul>
+
+            <p>The objective is to make music education more engaging, effective, and adaptable to individual needs.</p>
+        </section>
+
+        <section>
+            <h2>Research Background</h2>
+            <p>MEI-Trumpet is part of an open-source research project led by Alberto Acquilino at the Schulich School of
+                Music
+                of McGill University, in collaboration with the International Neuroinformatics Coordinating Facility
+                (INCF).
+                Ongoing studies aim to further define the pedagogical foundations of the interface and discuss its
+                usability and
+                social validity through groups of participants.</p>
+
+            <p><strong>The source code for the app is publicly available <a
+                        href="https://github.com/albertoacquilino/music-education-interface-ionic/tree/gsoc-2024"
+                        target="_blank">here</a>.</strong></p>
         </section>
     </main>
 
