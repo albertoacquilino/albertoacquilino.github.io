@@ -1,0 +1,97 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css"
+        integrity="sha384-BTL0nVi8DnMrNdMQZG1Ww6yasK9ZGnUxL1ZWukXQ7fygA1py52yPp9W4wrR00VML" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.js"
+        integrity="sha384-y6SGsNt7yZECc4Pf86XmQhC4hG2wxL6Upkt9N1efhFxfh6wlxBH0mJiTE8XYclC1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/contrib/auto-render.min.js"
+        integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+        crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+    <title>Alberto Acquilino</title>
+</head>
+
+<body>
+    <nav>
+        <a href="/index.html" class="home-link">
+            <h1>Alberto Acquilino</h1>
+        </a>
+        <!-- Add aria-label to indicate what this button does for screen readers -->
+        <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation">&#9776;</button>
+
+        <ul id="menu">
+            <li><a href="/">About</a></li>
+            <li><a href="/publications.html">Publications</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Portfolio</a>
+                <div class="dropdown-content">
+                    <a href="/portfolio_music_education_interface.html">Music Education Interface</a>
+                    <a href="/portfolio_student_compass.html">El Sistema Student Compass</a>
+                    <a href="/portfolio_hearing_care_platform.html">Hearing Care Platform</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h1>Hearing Care Platform</h1>
+            <p>The <strong>Hearing Care Platform (HCP)</strong> is an initiative aimed at raising awareness about noise
+                exposure and hearing health, particularly among musicians.
+                <!-- It was developed through a collaboration between CIRMMT, the NSERC-EERS Industrial Research Chair in In-Ear Technologies (CRITIAS) at École de technologie supérieure (ÉTS), and the Schulich School of Music at McGill University. -->
+            </p>
+
+            <h2>App Development</h2>
+            <p>As part of this project, a <strong>custom mobile app</strong> was developed to help musicians and
+                individuals
+                assess their sound exposure from both music and non-music activities. The app provides a personalized
+                assessment
+                of listening habits and potential hearing risks.</p>
+
+
+            <h2>User Research and Development</h2>
+            <p>In addition to the app, a <strong>measuring kiosk</strong> was launched, allowing participants to analyze
+                their
+                headphone listening levels using their own devices. This approach ensures a more accurate and
+                personalized
+                assessment of hearing exposure.</p>
+
+            <div class="hcp-gallery">
+                <img src="assets/HCP1.png" alt="HCP Screenshot 1">
+                <img src="assets/HCP2.png" alt="HCP Screenshot 2">
+                <img src="assets/HCP3.png" alt="HCP Setup">
+            </div>
+
+            <p>As part of this initiative, research was conducted to refine the platform's effectiveness in promoting
+                hearing
+                conservation. The project involved leading <strong>user research sessions</strong> with musicians and
+                students
+                to evaluate their sound exposure levels and gather insights on hearing care practices.</p>
+
+            <p>By combining innovative technology with real-world data collection, this platform contributes to the
+                broader
+                goal of improving hearing health awareness and influencing hearing conservation policies.</p>
+
+            <div class="app-store-links">
+                <a href="https://apps.apple.com/kn/app/hearing-care-platform/id6451453510" target="_blank">
+                    <img src="assets/appstore.png" alt="Download on the App Store" class="app-badge">
+                </a>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 MEI-Trumpet. All rights reserved.</p>
+    </footer>
+    <script src="/script.js"></script>
+</body>
+
+</html>
