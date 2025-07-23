@@ -1,28 +1,38 @@
-<!-- portfolio_jamigo.html -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Jamigo • Stem-Separation Playground</title>
+  <title>Jamigo – Choose Your Language</title>
 
-  <!-- Link your stylesheet -->
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="style_jamigo.css" />
 </head>
 <body>
+  <main id="language-picker">
+    <h1 id="title">Choose Your Language</h1>
 
-  <main id="app">
-    <h1>Jamigo</h1>
-    <p class="tagline">Play. Learn. Remix.</p>
+    <div class="lang-grid">
+      <button class="lang-btn" data-lang="en" aria-label="English">
+        <span class="flag" role="img" aria-hidden="true">🇺🇸</span>
+        <span class="native-name">English</span>
+      </button>
 
-    <!-- Later: drag-and-drop zone -->
-    <section id="upload-area">
-      <input type="file" id="file-input" accept=".mp3,.wav,.flac" hidden>
-      <button id="choose-btn">Choose a track…</button>
-      <p id="file-name"></p>
-    </section>
+      <button class="lang-btn" data-lang="fr" aria-label="Français">
+        <span class="flag" role="img" aria-hidden="true">🇫🇷</span>
+        <span class="native-name">Français</span>
+      </button>
 
-    <!-- Later: progress bar & player -->
+      <button class="lang-btn" data-lang="es" aria-label="Español">
+        <span class="flag" role="img" aria-hidden="true">🇪🇸</span>
+        <span class="native-name">Español</span>
+      </button>
+
+      <button class="lang-btn" data-lang="pt" aria-label="Português">
+        <span class="flag" role="img" aria-hidden="true">🇧🇷</span>
+        <span class="native-name">Português</span>
+      </button>
+    </div>
   </main>
 
   <script src="script_jamigo.js"></script>
