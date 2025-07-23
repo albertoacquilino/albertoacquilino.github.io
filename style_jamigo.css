@@ -117,3 +117,17 @@ h1 {
 }
 .continue-btn:enabled { opacity: 1; }
 .continue-btn:hover:enabled { background:#2196f3; }
+
+.back-btn {
+  display: inline-block;
+  font-size: 1.25rem;
+  margin: 1rem 0 0;
+  color: #888888;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.back-btn:hover,
+.back-btn:focus-visible {
+  color: #666666;
+  outline: none;
+}
