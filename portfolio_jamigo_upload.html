@@ -8,27 +8,24 @@
 </head>
 <body>
   <main class="upload-main">
+    <a href="portfolio_jamigo_instrument.html"
+       class="back-btn"
+       aria-label="Back to instrument picker">
+      ← Back
+    </a>
     <h1 id="greeting">Welcome!</h1>
 
-    <label for="file-upload" class="upload-label">
-      ⬆️ Upload a Song
-    </label>
-    <input type="file"
-           id="file-upload"
-           accept=".mp3,.wav,.flac,.aiff"
-           hidden />
+    <div id="drop-area" class="drop-area">
+      <label for="file-upload" class="upload-label">
+        ⬆️ Upload a Song
+      </label>
+      <input type="file" id="file-upload" accept=".mp3,.wav,.flac,.aiff" hidden />
+      <p class="drop-hint">or drag &amp; drop a file here…</p>
+    </div>
 
-    <p>Drag and drop a file here…</p>
     <p>Supported formats: .mp3, .wav, .flac, .aiff</p>
   </main>
 
-  <script>
-    // Personalised heading
-    const name       = localStorage.getItem("jamigo_username")   || "friend";
-    const instrument = localStorage.getItem("jamigo_instrument") || "your instrument";
-    const capInst    = instrument.charAt(0).toUpperCase() + instrument.slice(1);
-    document.getElementById("greeting").textContent =
-      `Welcome back, ${name} — ready to jam on ${capInst}?`;
-  </script>
+  <script src="script_jamigo_upload.js"></script>
 </body>
 </html>
