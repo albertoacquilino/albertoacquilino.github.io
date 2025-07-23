@@ -5,8 +5,8 @@ body {
   place-items: center;
   min-height: 100vh;
   margin: 0;
-  background: #10141b;
-  color: #fff;
+  background: #ffffff;
+  color: #000;
 }
 h1 {
   font-size: 3rem;
