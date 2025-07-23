@@ -1,0 +1,23 @@
+/* style_jamigo.css */
+body {
+  font-family: system-ui, sans-serif;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: #10141b;
+  color: #fff;
+}
+h1 { font-size: 3rem; margin: .5rem 0; }
+.tagline { opacity: .7; margin-bottom: 2rem; }
+#choose-btn {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: .5rem;
+  background: #1976d2;
+  color: #fff;
+  cursor: pointer;
+}
+#choose-btn:hover { background: #2196f3; }
+#file-name { margin-top: 1rem; font-size: .9rem; }
