@@ -4,13 +4,24 @@
  */
 (function () {
   const STORAGE_KEY = "jamigo_lang";
-  const DEFAULT_NEXT_PAGE = "portfolio_jamigo_instrument.html";   // ← new target page
+  const DEFAULT_NEXT_PAGE = "portfolio_jamigo_registration.html";
 
-  /** Skip picker if language already chosen */
-  const savedLang = localStorage.getItem(STORAGE_KEY);
+  /** Skip picker if language already chosen.
+   * If the user has ALSO created a username, jump straight to the instrument picker.
+   * Otherwise, go to the registration page.
+   */
+  const savedLang  = localStorage.getItem(STORAGE_KEY);
+  const savedName  = localStorage.getItem("jamigo_username");
+
+  if (savedLang && savedName) {
+    document.documentElement.lang = savedLang;
+    window.location.href = "portfolio_jamigo_instrument.html";
+    return;
+  }
+
   if (savedLang) {
     document.documentElement.lang = savedLang;
-    window.location.href = DEFAULT_NEXT_PAGE;
+    window.location.href = DEFAULT_NEXT_PAGE;  // registration step
     return;
   }
 

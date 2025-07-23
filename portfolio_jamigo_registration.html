@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jamigo – Registration</title>
+  <link rel="stylesheet" href="style_jamigo.css" />
+</head>
+<body>
+  <main id="registration-page">
+    <a href="portfolio_jamigo.html" class="back-btn" aria-label="Back to language picker">← Back</a>
+
+    <h1 id="title">Create your Jamigo name</h1>
+
+    <form id="reg-form" class="reg-form" autocomplete="off">
+      <label for="username" class="visually-hidden">Username</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Your name"
+        required
+        class="reg-input"
+      />
+      <small id="error-msg" class="error-msg" aria-live="assertive"></small>
+
+      <button type="submit" id="reg-continue" class="continue-btn" disabled>Continue</button>
+    </form>
+  </main>
+
+  <script src="script_jamigo_registration.js"></script>
+</body>
+</html>

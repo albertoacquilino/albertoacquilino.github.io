@@ -1,3 +1,7 @@
+const user = localStorage.getItem("jamigo_username");
+if (!user) {
+  window.location.href = "registration_jamigo.html";
+}
 /**
  * Jamigo – Instrument picker
  * Saves choice, then forwards to the upload page.
