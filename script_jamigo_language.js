@@ -4,7 +4,7 @@
  */
 (function () {
   const STORAGE_KEY = "jamigo_lang";
-  const DEFAULT_NEXT_PAGE = "instrument_jamigo.html";   // ← new target page
+  const DEFAULT_NEXT_PAGE = "portfolio_jamigo_instrument.html";   // ← new target page
 
   /** Skip picker if language already chosen */
   const savedLang = localStorage.getItem(STORAGE_KEY);
