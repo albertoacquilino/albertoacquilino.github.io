@@ -131,3 +131,35 @@ h1 {
   color: #666666;
   outline: none;
 }
+
+/* ─── Responsive adjustments for small screens (≤600px) ───── */
+/* Stack buttons, scale down fonts and spacing for mobile UX */
+.lang-grid,
+.instrument-grid {
+  grid-template-columns: 1fr;
+  padding: 0 1rem;
+}
+
+.lang-btn,
+.instrument-btn {
+  font-size: 1.75rem;
+  padding: 1.5rem;
+}
+
+.instrument-btn .icon {
+  font-size: 3rem;
+}
+
+.continue-btn {
+  width: 100%;
+  font-size: 1.75rem;
+}
+
+.back-btn {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
