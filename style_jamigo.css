@@ -8,6 +8,8 @@ body {
   background: #ffffff;
   color: #000;
 }
+
+/* ─── General headings ─────────────────────────────── */
 h1 {
   font-size: 3rem;
   margin: 0.5rem 0;
@@ -15,6 +17,8 @@ h1 {
   font-weight: bold;
   text-align: center;
 }
+
+/* ─── Legacy demo upload-page bits (kept for later) ── */
 .tagline { opacity: .7; margin-bottom: 2rem; }
 #choose-btn {
   padding: 1rem 2rem;
@@ -28,10 +32,10 @@ h1 {
 #choose-btn:hover { background: #2196f3; }
 #file-name { margin-top: 1rem; font-size: .9rem; }
 
-/* Language picker layout and sizing */
+/* ─── Language picker layout ───────────────────────── */
 .lang-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); /* wider buttons */
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   gap: 2.5rem;
   max-width: 1000px;
   margin: 2rem auto;
@@ -65,3 +69,51 @@ h1 {
   font-size: 3.5rem;
   line-height: 1;
 }
+
+/* ─── Instrument picker layout ─────────────────────── */
+.instrument-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+.instrument-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  padding: 2rem;
+  font-size: 1.5rem;
+  gap: 1rem;
+  border: 3px solid #d6d6d6;
+  border-radius: 1rem;
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.instrument-btn .icon { font-size: 4rem; }
+
+.instrument-btn:hover,
+.instrument-btn.selected {
+  border-color: #0070f3;
+  box-shadow: 0 6px 16px rgba(0,0,0,.10);
+}
+
+.continue-btn {
+  display: block;
+  margin: 3rem auto 0;
+  padding: 1.25rem 3rem;
+  font-size: 2rem;
+  border: none;
+  border-radius: .75rem;
+  background: #1976d2;
+  color: #fff;
+  cursor: pointer;
+  opacity: .5;
+}
+.continue-btn:enabled { opacity: 1; }
+.continue-btn:hover:enabled { background:#2196f3; }
