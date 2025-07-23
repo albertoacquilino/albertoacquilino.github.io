@@ -132,13 +132,7 @@ h1 {
   outline: none;
 }
 
-/* ─── Responsive adjustments for small screens (≤600px) ───── */
-/* Stack buttons, scale down fonts and spacing for mobile UX */
-.lang-grid,
-.instrument-grid {
-  grid-template-columns: 1fr;
-  padding: 0 1rem;
-}
+/* Retain original layout (2–3 columns, no stacking) */
 
 .lang-btn,
 .instrument-btn {
