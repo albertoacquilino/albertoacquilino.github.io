@@ -1,7 +1,13 @@
-const user = localStorage.getItem("jamigo_username");
-if (!user) {
-  window.location.href = "registration_jamigo.html";
-}
+(function () {
+  const name = localStorage.getItem("jamigo_username");
+  if (!name) {
+    window.location.href = "registration_jamigo.html"; // fail-safe redirect
+    return;
+  }
+  const span = document.getElementById("user-name");
+  if (span) span.textContent = name;
+})();
+
 /**
  * Jamigo – Instrument picker
  * Saves choice, then forwards to the upload page.
