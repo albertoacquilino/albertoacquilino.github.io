@@ -27,8 +27,8 @@
   });
 
   continueBtn.addEventListener("click", () => {
-    if (!chosen) return;
-    localStorage.setItem("jamigo_instrument", chosen);
-    window.location.href = "jamigo_upload.html";   // placeholder for next step
-  });
+    if (!chosen) return;                 // `chosen` is the instrument the person clicked
+    localStorage.setItem("jamigo_instrument", chosen);   // remember their instrument
+    window.location.href = "portfolio_jamigo_upload.html";         // go to the upload page
+});
 })();
