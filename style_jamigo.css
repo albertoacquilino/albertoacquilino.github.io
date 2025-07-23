@@ -8,7 +8,13 @@ body {
   background: #10141b;
   color: #fff;
 }
-h1 { font-size: 3rem; margin: .5rem 0; }
+h1 {
+  font-size: 3rem;
+  margin: 0.5rem 0;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+}
 .tagline { opacity: .7; margin-bottom: 2rem; }
 #choose-btn {
   padding: 1rem 2rem;
