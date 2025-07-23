@@ -159,29 +159,46 @@ h1 {
 }
 
 /* ─── Ultra‑mobile layout (portrait phones ≤480px) ─────────── */
-/* Shrink tiles so all six fit: 3 rows × 2 columns */
+/* Fit all six instrument tiles on a single screen (3×2 grid) */
 
 @media (max-width: 480px) {
+  /* Let content start at the top instead of vertical‑centering */
+  body { display: block; }
+
+  /* Back link spacing */
+  .back-btn {
+    font-size: 1rem;
+    margin: 0.5rem 0 0.5rem 0;
+  }
+
+  /* Smaller heading */
+  h1 {
+    font-size: 1.55rem;
+    margin: 0.5rem 0 1rem;
+  }
+
+  /* Grid: 2 columns, tighter gap */
   .instrument-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    max-width: 100%;          /* allow full‑width grid */
-    margin: 1rem auto;
-  }
-
-  .instrument-btn {
-    min-height: 140px;        /* shorter tiles */
-    padding: 1rem;
-    font-size: 1.1rem;        /* smaller label text */
     gap: 0.5rem;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 0.5rem;
   }
-  .instrument-btn .icon { font-size: 2.4rem; }
 
+  /* Shrink each tile */
+  .instrument-btn {
+    min-height: 110px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    gap: 0.35rem;
+  }
+  .instrument-btn .icon { font-size: 2rem; }
+
+  /* Continue button */
   .continue-btn {
-    margin-top: 2rem;
-    font-size: 1.5rem;
-    padding: 1rem 2rem;
+    margin-top: 1.25rem;
+    font-size: 1.35rem;
+    padding: 0.75rem 1.5rem;
   }
-
-  h1 { font-size: 1.8rem; }
 }
