@@ -353,3 +353,21 @@ h1 {
   color: #555;
   text-align: center;
 }
+
+/* ─── Icon sizing: final override to keep images = emoji size ─── */
+.instrument-btn .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;           /* emoji size on desktop */
+}
+.instrument-btn .icon img {
+  width: 3rem;               /* image size to match emoji */
+  height: 3rem;
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .instrument-btn .icon { font-size: 2rem; }
+  .instrument-btn .icon img { width: 2rem; height: 2rem; }
+}
