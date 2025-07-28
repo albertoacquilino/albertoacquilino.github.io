@@ -1,4 +1,8 @@
 /* style_jamigo.css */
+/* Ensure padding/borders don't cause overflow */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { max-width: 100%; overflow-x: hidden; }
+
 body {
   font-family: system-ui, sans-serif;
   display: grid;
@@ -173,7 +177,7 @@ h1 {
 
   /* Smaller heading */
   h1 {
-    font-size: 1.55rem;
+    font-size: 1.35rem;
     margin: 0.5rem 0 1rem;
   }
 
@@ -269,6 +273,8 @@ h1 {
   padding: 2rem;
   text-align: center;
   position: relative;
+  width: min(900px, 92vw);
+  max-width: 900px;
 }
 
 .upload-main .back-btn {
@@ -284,7 +290,8 @@ h1 {
 
 .upload-label {
   display: block;
-  width: min(520px, 90%);
+  width: 100%;
+  max-width: 520px;
   text-align: center;
   background: #007bff;
   color: #fff;
@@ -297,7 +304,8 @@ h1 {
 
 /* Drag & drop zone */
 .drop-area {
-  width: min(680px, 90vw);
+  width: 100%;
+  max-width: 680px;
   border: 3px dashed #b3b3b3;
   border-radius: 0.75rem;
   padding: 2rem 1.5rem;
