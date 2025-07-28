@@ -100,6 +100,9 @@ h1 {
   transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
 .instrument-btn .icon { font-size: 4rem; }
+/* Ensure inline SVG icons match emoji size */
+.instrument-btn .icon { display: inline-flex; align-items: center; justify-content: center; }
+.instrument-btn .icon svg { width: 4rem; height: 4rem; }
 
 .instrument-btn:hover,
 .instrument-btn.selected {
@@ -198,6 +201,7 @@ h1 {
     gap: 0.35rem;
   }
   .instrument-btn .icon { font-size: 2rem; }
+  .instrument-btn .icon svg { width: 2rem; height: 2rem; }
 
   /* Continue button */
   .continue-btn {
