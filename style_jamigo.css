@@ -99,7 +99,17 @@ h1 {
   cursor: pointer;
   transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
-.instrument-btn .icon { font-size: 4rem; }
+.instrument-btn .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+.instrument-btn .icon img {
+  width: 4rem;
+  height: 4rem;
+  object-fit: contain;
+}
 
 .instrument-btn:hover,
 .instrument-btn.selected {
@@ -145,7 +155,15 @@ h1 {
 }
 
 .instrument-btn .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 3rem;
+}
+.instrument-btn .icon img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
 }
 
 .continue-btn {
@@ -197,7 +215,13 @@ h1 {
     font-size: 1rem;
     gap: 0.35rem;
   }
-  .instrument-btn .icon { font-size: 2rem; }
+  .instrument-btn .icon {
+    font-size: 2rem;
+  }
+  .instrument-btn .icon img {
+    width: 2rem;
+    height: 2rem;
+  }
 
   /* Continue button */
   .continue-btn {
