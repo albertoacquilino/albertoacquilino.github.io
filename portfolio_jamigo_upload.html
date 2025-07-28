@@ -15,7 +15,7 @@
     </a>
     <h1 id="greeting">Welcome!</h1>
 
-    <div id="drop-area" class="drop-area">
+    <div id="drop-area" class="drop-area" role="region" aria-label="Upload a song file — click to choose or drag & drop" tabindex="0">
       <label for="file-upload" class="upload-label">
         ⬆️ Upload a Song
       </label>
@@ -27,5 +27,8 @@
   </main>
 
   <script src="script_jamigo_upload.js"></script>
+  <noscript>
+    <p style="text-align:center;color:#b00020;">JavaScript is required for drag-and-drop uploads. Please enable JavaScript in your browser.</p>
+  </noscript>
 </body>
 </html>

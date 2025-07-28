@@ -277,16 +277,42 @@ h1 {
   left: 0.75rem;
 }
 
+
 .upload-main #greeting {
-  margin-top: 3rem; /* prevent overlap with fixed back button */
+  margin: 3rem 0 1.25rem; /* top space for back button, bottom space above upload button */
 }
 
 .upload-label {
+  display: block;
+  width: 100%;
+  text-align: center;
   background: #007bff;
   color: #fff;
   padding: 1rem 2rem;
   font-size: 1.5rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  margin: 1.5rem 0 1rem;
+  margin: 0.5rem 0; /* tighter so it fits within the drop box */
+}
+
+/* Drag & drop zone */
+.drop-area {
+  width: min(680px, 90vw);
+  border: 3px dashed #b3b3b3;
+  border-radius: 0.75rem;
+  padding: 2rem 1.5rem;
+  margin: 1rem auto 0;
+  background: #fafafa; /* subtle contrast to stand out */
+}
+
+.drop-area.drag-over {
+  border-color: #007bff;
+  background: rgba(0,123,255,0.06);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.drop-hint {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: #555;
 }
