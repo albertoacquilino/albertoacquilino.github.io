@@ -268,6 +268,17 @@ h1 {
   align-items: center;
   padding: 2rem;
   text-align: center;
+  position: relative;
+}
+
+.upload-main .back-btn {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+}
+
+.upload-main #greeting {
+  margin-top: 3rem; /* prevent overlap with fixed back button */
 }
 
 .upload-label {
