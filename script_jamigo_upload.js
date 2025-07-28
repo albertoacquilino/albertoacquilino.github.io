@@ -9,7 +9,7 @@
 
   const greetingEl = document.getElementById("greeting");
   if (greetingEl) greetingEl.textContent =
-      `Welcome back, ${name} — ready to jam on ${capInst}?`;
+      `Welcome back, ${name}! Ready to jam on ${capInst}?`;
 
   // ─────────────────────────────────────────────────────────────
   // 2) drag-and-drop upload logic
