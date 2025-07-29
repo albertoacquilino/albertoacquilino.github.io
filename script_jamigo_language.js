@@ -31,7 +31,7 @@
       const lang = btn.getAttribute("data-lang"); // "en" or "it"
       localStorage.setItem("jamigo_lang", lang);
       document.documentElement.lang = lang;
-      window.location.href = "registration_jamigo.html"; // or your next page
+      window.location.href = "portfolio_jamigo_registration.html"; // or your next page
     });
   });
 })();
