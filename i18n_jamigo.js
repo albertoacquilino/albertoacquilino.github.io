@@ -59,7 +59,7 @@ const JAMIGO_I18N = (() => {
       },
 
       // Upload
-      upload_heading: "Fantastico, {name}! Carica un brano per suonare con {article} {instrument}!",
+      upload_heading: "Fantastico, {name}! Carica un brano per suonare con {article} {Instrument}!",
       upload_button: "Carica un brano",
       drag_hint: "oppure trascina e rilascia un file qui…",
       formats: "Formati supportati: .mp3, .wav, .flac, .aiff",
