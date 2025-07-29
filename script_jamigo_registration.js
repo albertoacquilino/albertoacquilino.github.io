@@ -18,7 +18,14 @@
     e.preventDefault();
     const name = input.value.trim();
     if (!name) {
-      errorMsg.textContent = "Please enter a name.";
+      errorMsg.textContent = JAMIGO_I18N ? 
+        // use the English key and let i18n fill it
+        (document.querySelector('[data-i18n="registration_error_empty"]') 
+          ? "" : "") : "";
+      // Simpler: just call a helper:
+      errorMsg.textContent = (localStorage.getItem("jamigo_lang") === "it")
+        ? "Per favore, inserisci un nome."
+        : "Please enter a name.";
       return;
     }
     localStorage.setItem("jamigo_username", name);

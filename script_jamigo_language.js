@@ -28,10 +28,10 @@
   /** Wire language buttons */
   document.querySelectorAll(".lang-btn").forEach(btn => {
     btn.addEventListener("click", () => {
-      const lang = btn.dataset.lang;
-      localStorage.setItem(STORAGE_KEY, lang);
+      const lang = btn.getAttribute("data-lang"); // "en" or "it"
+      localStorage.setItem("jamigo_lang", lang);
       document.documentElement.lang = lang;
-      window.location.href = DEFAULT_NEXT_PAGE;
+      window.location.href = "registration_jamigo.html"; // or your next page
     });
   });
 })();

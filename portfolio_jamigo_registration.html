@@ -10,7 +10,7 @@
   <main id="registration-page">
     <a href="portfolio_jamigo.html" class="back-btn" aria-label="Back to language picker">← Back</a>
 
-    <h1 id="title">Create your Jamigo name</h1>
+    <h1 id="title" data-i18n="registration_title">Create your Jamigo name</h1>
 
     <form id="reg-form" class="reg-form" autocomplete="off">
       <label for="username" class="visually-hidden">Username</label>
@@ -24,10 +24,11 @@
       />
       <small id="error-msg" class="error-msg" aria-live="assertive"></small>
 
-      <button type="submit" id="reg-continue" class="continue-btn" disabled>Continue</button>
+      <button type="submit" id="reg-continue" class="continue-btn" disabled data-i18n="registration_continue">Continue</button>
     </form>
   </main>
 
+  <script src="i18n_jamigo.js"></script>
   <script src="script_jamigo_registration.js"></script>
 </body>
 </html>

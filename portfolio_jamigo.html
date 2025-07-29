@@ -10,7 +10,7 @@
 </head>
 <body>
   <main id="language-picker">
-    <h1 id="title">Choose Your Language</h1>
+    <h1 id="title" data-i18n="choose_language_title">Choose Your Language</h1>
 
     <div class="lang-grid">
       <button class="lang-btn" data-lang="en" aria-label="English">
@@ -18,23 +18,15 @@
         <span class="native-name">English</span>
       </button>
 
-      <button class="lang-btn" data-lang="fr" aria-label="Français">
-        <span class="flag" role="img" aria-hidden="true">🇫🇷</span>
-        <span class="native-name">Français</span>
+      <button class="lang-btn" data-lang="it" aria-label="Italiano">
+        <span class="flag" aria-hidden="true">🇮🇹</span>
+        <span class="native-name">Italiano</span>
       </button>
 
-      <button class="lang-btn" data-lang="es" aria-label="Español">
-        <span class="flag" role="img" aria-hidden="true">🇪🇸</span>
-        <span class="native-name">Español</span>
-      </button>
-
-      <button class="lang-btn" data-lang="pt" aria-label="Português">
-        <span class="flag" role="img" aria-hidden="true">🇧🇷</span>
-        <span class="native-name">Português</span>
-      </button>
     </div>
   </main>
 
+  <script src="i18n_jamigo.js"></script>
   <script src="script_jamigo_language.js"></script>
 </body>
 </html>

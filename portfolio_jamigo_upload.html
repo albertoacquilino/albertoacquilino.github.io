@@ -13,19 +13,18 @@
        aria-label="Back to instrument picker">
       ← Back
     </a>
-    <h1 id="greeting">Welcome!</h1>
+    <h1 id="greeting" data-i18n="upload_heading">Welcome back, friend — ready to jam on Instrument?</h1>
 
     <div id="drop-area" class="drop-area" role="region" aria-label="Upload a song file — click to choose or drag & drop" tabindex="0">
-      <label for="file-upload" class="upload-label">
-        ⬆️ Upload a Song
-      </label>
+      <label for="file-upload" class="upload-label" data-i18n="upload_button">⬆️ Upload a Song</label>
       <input type="file" id="file-upload" accept=".mp3,.wav,.flac,.aiff" hidden />
-      <p class="drop-hint">or drag &amp; drop a file here…</p>
+      <p class="drop-hint" data-i18n="drag_hint">or drag & drop a file here…</p>
     </div>
 
-    <p>Supported formats: .mp3, .wav, .flac, .aiff</p>
+    <p data-i18n="formats">Supported formats: .mp3, .wav, .flac, .aiff</p>
   </main>
 
+  <script src="i18n_jamigo.js"></script>
   <script src="script_jamigo_upload.js"></script>
   <noscript>
     <p style="text-align:center;color:#b00020;">JavaScript is required for drag-and-drop uploads. Please enable JavaScript in your browser.</p>

@@ -13,48 +13,46 @@
        aria-label="Back to language picker">
       ← Back
     </a>
-    <h1 id="title">
-      Hi <span id="user-name">friend</span>!<br />
-      What instrument do you play?
-    </h1>
+    <h1 id="title" data-i18n="instrument_heading">Hi friend! What instrument do you play?</h1>
 
     <div class="instrument-grid">
       <button class="instrument-btn" data-instrument="guitar">
         <span class="icon" role="img" aria-hidden="true">🎸</span>
-        <span class="label">Guitar</span>
+        <span class="label" data-i18n="guitar">Guitar</span>
       </button>
 
       <button class="instrument-btn" data-instrument="drums">
         <span class="icon" role="img" aria-hidden="true">🥁</span>
-        <span class="label">Drums</span>
+        <span class="label" data-i18n="drums">Drums</span>
       </button>
 
       <button class="instrument-btn" data-instrument="piano">
         <span class="icon" role="img" aria-hidden="true">🎹</span>
-        <span class="label">Piano</span>
+        <span class="label" data-i18n="piano">Piano</span>
       </button>
 
       <button class="instrument-btn" data-instrument="vocals">
         <span class="icon" role="img" aria-hidden="true">🎤</span>
-        <span class="label">Vocals</span>
+        <span class="label" data-i18n="vocals">Vocals</span>
       </button>
 
       <button class="instrument-btn" data-instrument="bass">
         <span class="icon" role="img" aria-hidden="true">
           <img src="assets_jamigo/bass.png" alt="Electric Bass" class="icon-img" />
         </span>
-        <span class="label">Bass</span>
+        <span class="label" data-i18n="bass">Bass</span>
       </button>
 
       <button class="instrument-btn" data-instrument="band">
         <span class="icon" role="img" aria-hidden="true">🎶</span>
-        <span class="label">Whole band</span>
+        <span class="label" data-i18n="band">Whole band</span>
       </button>
     </div>
 
-    <button id="continue-btn" class="continue-btn" disabled>Continue</button>
+    <button id="continue-btn" class="continue-btn" disabled data-i18n="continue">Continue</button>
   </main>
 
+  <script src="i18n_jamigo.js"></script>
   <script src="script_jamigo_instrument.js"></script>
 </body>
 </html>

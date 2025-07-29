@@ -1,18 +1,9 @@
 // script_jamigo_upload.js
 (function () {
-  // ─────────────────────────────────────────────────────────────
-  // 1) personalised greeting
-  // ─────────────────────────────────────────────────────────────
-  const name       = localStorage.getItem("jamigo_username")   || "friend";
-  const instrument = localStorage.getItem("jamigo_instrument") || "your instrument";
-  const capInst    = instrument.charAt(0).toUpperCase() + instrument.slice(1);
-
-  const greetingEl = document.getElementById("greeting");
-  if (greetingEl) greetingEl.textContent =
-      `Welcome back, ${name}! Ready to jam on ${capInst}?`;
+  
 
   // ─────────────────────────────────────────────────────────────
-  // 2) drag-and-drop upload logic
+  // Drag-and-drop upload logic
   // ─────────────────────────────────────────────────────────────
   const dropArea  = document.getElementById("drop-area");
   const fileInput = document.getElementById("file-upload");
