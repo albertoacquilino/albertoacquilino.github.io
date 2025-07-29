@@ -46,7 +46,7 @@ const JAMIGO_I18N = (() => {
       piano: "Pianoforte",
       vocals: "Voce",
       bass: "Basso",
-      band: "Band",
+      band: "Tutta la Band",
       continue: "Continua",
 
       articles: {
