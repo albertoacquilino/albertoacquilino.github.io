@@ -23,7 +23,7 @@ const JAMIGO_I18N = (() => {
       continue: "Continue",
 
       // Upload page
-      upload_heading: "Welcome back, {name} — ready to jam on {Instrument}?",
+      upload_heading: "Welcome back, {name}! Ready to jam on {Instrument}?",
       upload_button: "Upload a Song",
       drag_hint: "or drag & drop a file here…",
       formats: "Supported formats: .mp3, .wav, .flac, .aiff",
@@ -41,16 +41,25 @@ const JAMIGO_I18N = (() => {
 
       // Strumenti
       instrument_heading: "Ciao {name}! Quale strumento suoni?",
-      guitar: "Chitarra",
-      drums: "Batteria",
-      piano: "Pianoforte",
-      vocals: "Voce",
-      bass: "Basso",
-      band: "Tutta la band",
+      guitar: "chitarra",
+      drums: "batteria",
+      piano: "pianoforte",
+      vocals: "voce",
+      bass: "basso",
+      band: "band",
       continue: "Continua",
 
+      articles: {
+        guitar: "la",
+        drums: "la",
+        piano: "il",
+        vocals: "la",
+        bass: "il",
+        band: "la",
+      },
+
       // Upload
-      upload_heading: "Bentornato/a, {name} — pronto/a a suonare {Instrument}?",
+      upload_heading: "Fantastico, {name}! Carica un brano per suonare con {article} {instrument}!",
       upload_button: "Carica un brano",
       drag_hint: "oppure trascina e rilascia un file qui…",
       formats: "Formati supportati: .mp3, .wav, .flac, .aiff",
@@ -72,6 +81,7 @@ const JAMIGO_I18N = (() => {
     const name = localStorage.getItem("jamigo_username") || "friend";
     const code = localStorage.getItem("jamigo_instrument") || "";
     const label = (table[code] || dict.en[code] || code || "instrument");
+    const article = (table.articles && table.articles[code]) || "";
 
     root.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
@@ -80,8 +90,9 @@ const JAMIGO_I18N = (() => {
       // Replace placeholders
       str = str
         .replaceAll("{name}", name)
-        .replaceAll("{Instrument}", label)     // capitalized label from dict
-        .replaceAll("{instrument}", label.toLowerCase());
+        .replaceAll("{Instrument}", label)     // capitalized label from dict (as provided)
+        .replaceAll("{instrument}", label.toLowerCase())
+        .replaceAll("{article}", article);
 
       if (el.getAttribute("data-i18n-html") === "true") {
         el.innerHTML = str;
