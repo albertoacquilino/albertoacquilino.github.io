@@ -41,12 +41,12 @@ const JAMIGO_I18N = (() => {
 
       // Strumenti
       instrument_heading: "Ciao {name}! Quale strumento suoni?",
-      guitar: "chitarra",
-      drums: "batteria",
-      piano: "pianoforte",
-      vocals: "voce",
-      bass: "basso",
-      band: "band",
+      guitar: "Chitarra",
+      drums: "Batteria",
+      piano: "Pianoforte",
+      vocals: "Voce",
+      bass: "Basso",
+      band: "Band",
       continue: "Continua",
 
       articles: {
