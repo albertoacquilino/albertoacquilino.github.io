@@ -67,6 +67,9 @@
 
     const sizeMB = (file.size / (1024 * 1024)).toFixed(1);
     statusEl.textContent = `Selected: ${file.name} (${sizeMB} MB)`;
+    // Remember selection and move to the Action Choice page
+    localStorage.setItem('jamigo_file_name', file.name);
+    window.location.href = 'portfolio_jamigo_karaoke.html';
 
     // TODO: send "file" to your separation API and show progress
   }

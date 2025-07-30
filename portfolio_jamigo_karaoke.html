@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jamigo – Choose Action</title>
+  <link rel="stylesheet" href="style_jamigo.css" />
+</head>
+<body>
+  <main class="action-main">
+    <a href="portfolio_jamigo_upload.html" class="back-btn" aria-label="Back to upload">
+      <span class="back-arrow" aria-hidden="true">←</span>
+      <span data-i18n="back">Back</span>
+    </a>
+
+    <h1 data-i18n="action_heading">What do you want to do with this song?</h1>
+
+    <section class="action-grid">
+      <!-- Extract -->
+      <button class="action-card" id="card-extract" aria-label="Extract part">
+        <div class="action-icon" aria-hidden="true">🎸</div>
+        <div class="action-text">
+          <h2 class="action-title" data-i18n="action_extract_title">
+            Extract the {Instrument} Part
+          </h2>
+          <p class="action-sub" data-i18n="action_extract_sub">
+            Solo it to study and learn the original playing
+          </p>
+        </div>
+      </button>
+
+      <!-- Karaoke -->
+      <button class="action-card" id="card-karaoke" aria-label="Karaoke">
+        <div class="action-icon" aria-hidden="true">🎵</div>
+        <div class="action-text">
+          <h2 class="action-title" data-i18n="action_karaoke_title">
+            Karaoke for {Instrument}
+          </h2>
+          <p class="action-sub" data-i18n="action_karaoke_sub">
+            Remove your part and step in with the band
+          </p>
+        </div>
+      </button>
+    </section>
+
+    <button class="advanced-btn" id="advanced-toggle" data-i18n="advanced_options">
+      ⚙️ Advanced Options
+    </button>
+
+    <!-- Optional: collapsible container for future advanced controls -->
+    <div id="advanced-panel" class="advanced-panel" hidden>
+      <!-- put quality/model settings here later -->
+      <p style="opacity:.7" data-i18n="advanced_placeholder">More controls coming soon…</p>
+    </div>
+  </main>
+
+  <script src="i18n_jamigo.js"></script>
+  <script src="script_jamigo_karaoke.js"></script>
+</body>
+</html>

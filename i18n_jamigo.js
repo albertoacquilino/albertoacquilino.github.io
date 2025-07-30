@@ -28,6 +28,15 @@ const JAMIGO_I18N = (() => {
       drag_hint: "or drag & drop a file here…",
       formats: "Supported formats: .mp3, .wav, .flac, .aiff",
       back: "Back",
+
+      // Action page
+      action_heading: "What do you want to do with this song?",
+      action_extract_title: "Extract the {Instrument} Part",
+      action_extract_sub: "Solo it to study and learn the original playing",
+      action_karaoke_title: "Karaoke for {Instrument}",
+      action_karaoke_sub: "Remove your part and step in with the band",
+      advanced_options: "Advanced Options",
+      advanced_placeholder: "More controls coming soon…",
     },
 
     it: {
@@ -64,6 +73,15 @@ const JAMIGO_I18N = (() => {
       drag_hint: "oppure trascina e rilascia un file qui…",
       formats: "Formati supportati: .mp3, .wav, .flac, .aiff",
       back: "Indietro",
+
+      // Pagina azioni
+      action_heading: "Cosa vuoi fare con questo brano?",
+      action_extract_title: "Estrai la parte di {Instrument}",
+      action_extract_sub: "Ascoltala in solo per studiare l’esecuzione originale",
+      action_karaoke_title: "Karaoke per {Instrument}",
+      action_karaoke_sub: "Rimuovi la tua parte e suona con la band",
+      advanced_options: "Opzioni avanzate",
+      advanced_placeholder: "Altri controlli in arrivo…",
     },
   };
 
