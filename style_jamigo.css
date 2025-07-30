@@ -378,11 +378,18 @@ h1 {
   margin: 0 auto;
   padding: 2rem 1rem 3rem;
   text-align: center;
+  position: relative; /* allow absolute-positioned back button */
+}
+
+.action-main .back-btn {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
 }
 
 .action-main h1 {
   font-size: 2rem;
-  margin: 0 0 1.75rem;
+  margin: 3rem 0 1.75rem; /* top clearance for back button */
 }
 
 .action-grid {
@@ -425,14 +432,15 @@ h1 {
 }
 
 .action-title {
-  font-size: 1.25rem;
+  font-size: 1.35rem; /* slightly larger */
   margin: 0 0 .25rem;
 }
 
 .action-sub {
   margin: 0;
   opacity: .75;
-  line-height: 1.35;
+  font-size: 1.05rem; /* slightly larger */
+  line-height: 1.4;   /* a touch more breathing room */
 }
 
 .advanced-btn {
@@ -456,8 +464,9 @@ h1 {
 
 /* Mobile tweaks */
 @media (max-width: 480px) {
-  .action-main h1 { font-size: 1.4rem; }
+  .action-main h1 { font-size: 1.4rem; margin-top: 2.25rem; }
   .action-card { grid-template-columns: 56px 1fr; }
   .action-icon { font-size: 2.25rem; }
-  .action-title { font-size: 1.1rem; }
+  .action-title { font-size: 1.2rem; }
+  .action-sub   { font-size: 1rem; }
 }
