@@ -16,14 +16,24 @@
   // Guard: if elements are missing, stop here to avoid errors
   if (!dropArea || !fileInput) return;
 
-  // Make the entire drop-area clickable to open the file dialog
-  dropArea.addEventListener('click', () => fileInput.click());
+  // Make the entire drop-area clickable to open the file dialog, with guard for label clicks
+  dropArea.addEventListener('click', (e) => {
+    // If the click originated on the <label for="file-upload">, let the label handle it
+    if (e.target.closest('label')) return;
+    fileInput.click();
+  });
 
   // Create a small status line inside the drop-area to show the chosen file
   const statusEl = document.createElement('p');
   statusEl.className = 'upload-status';
   statusEl.setAttribute('aria-live', 'polite');
   dropArea.appendChild(statusEl);
+
+  // Prevent label click from bubbling to dropArea and triggering a second click
+  const uploadLabel = dropArea.querySelector('label[for="file-upload"]');
+  if (uploadLabel) {
+    uploadLabel.addEventListener('click', (e) => e.stopPropagation());
+  }
 
   // a. Highlight drop area on drag-over
   ["dragenter", "dragover"].forEach(evt =>
@@ -69,6 +79,7 @@
     statusEl.textContent = `Selected: ${file.name} (${sizeMB} MB)`;
     // Remember selection and move to the Action Choice page
     localStorage.setItem('jamigo_file_name', file.name);
+    fileInput.value = '';
     window.location.href = 'portfolio_jamigo_karaoke.html';
 
     // TODO: send "file" to your separation API and show progress
