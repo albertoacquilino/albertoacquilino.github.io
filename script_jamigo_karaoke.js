@@ -38,15 +38,14 @@
   if (extractBtn) {
     extractBtn.addEventListener("click", () => {
       localStorage.setItem("jamigo_action", "extract"); // solo the instrument
-      // TODO: navigate to processing page
-      window.location.href = "processing_jamigo.html";
+      window.location.href = "portfolio_jamigo_player.html"; // temporary demo player page
     });
   }
 
   if (karaokeBtn) {
     karaokeBtn.addEventListener("click", () => {
       localStorage.setItem("jamigo_action", "karaoke"); // remove the instrument
-      window.location.href = "processing_jamigo.html";
+      window.location.href = "portfolio_jamigo_player.html"; // temporary demo player page
     });
   }
 })();

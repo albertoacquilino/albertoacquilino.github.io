@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jamigo – Player</title>
+  <link rel="stylesheet" href="style_jamigo.css" />
+</head>
+<body>
+  <main class="player-main">
+    <!-- Back / Indietro -->
+    <a href="portfolio_jamigo_karaoke.html" class="back-btn" aria-label="Back to action page">
+      <span class="back-arrow" aria-hidden="true">←</span>
+      <span data-i18n="back">Back</span>
+    </a>
+
+    <!-- Title + optional instrument icon -->
+    <h1 data-i18n="player_heading">Listen & practice</h1>
+    <div class="player-sub">
+      <span id="player-icon" aria-hidden="true" class="player-icon">🎵</span>
+      <span id="now-playing" data-i18n="now_playing">Now playing: test.mp3</span>
+    </div>
+
+    <!-- Native HTML audio (simple, accessible) -->
+    <div class="audio-wrap">
+      <audio id="audio" controls preload="metadata">
+        <source src="assets_jamigo/test.mp3" type="audio/mpeg" />
+        <!-- fallback text -->
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </main>
+
+  <script src="i18n_jamigo.js"></script>
+  <script src="script_jamigo_player.js"></script>
+</body>
+</html>

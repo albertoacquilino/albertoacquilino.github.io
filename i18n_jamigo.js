@@ -37,6 +37,10 @@ const JAMIGO_I18N = (() => {
       action_karaoke_sub: "Remove your part and step in with the band",
       advanced_options: "Advanced Options",
       advanced_placeholder: "More controls coming soon…",
+
+      // Player page
+      player_heading: "Listen & practice",
+      now_playing: "Now playing: {file}",
     },
 
     it: {
@@ -82,6 +86,10 @@ const JAMIGO_I18N = (() => {
       action_karaoke_sub: "Rimuovi la tua parte e suona con la band",
       advanced_options: "Opzioni avanzate",
       advanced_placeholder: "Altri controlli in arrivo…",
+
+      // Pagina player
+      player_heading: "Ascolta ed esercitati",
+      now_playing: "In riproduzione: {file}",
     },
   };
 
@@ -100,6 +108,7 @@ const JAMIGO_I18N = (() => {
     const code = localStorage.getItem("jamigo_instrument") || "";
     const label = (table[code] || dict.en[code] || code || "instrument");
     const article = (table.articles && table.articles[code]) || "";
+    const file = localStorage.getItem("jamigo_file_name") || "test.mp3";
 
     root.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
@@ -108,9 +117,10 @@ const JAMIGO_I18N = (() => {
       // Replace placeholders
       str = str
         .replaceAll("{name}", name)
-        .replaceAll("{Instrument}", label)     // capitalized label from dict (as provided)
+        .replaceAll("{Instrument}", label)
         .replaceAll("{instrument}", label.toLowerCase())
-        .replaceAll("{article}", article);
+        .replaceAll("{article}", article)
+        .replaceAll("{file}", file);
 
       if (el.getAttribute("data-i18n-html") === "true") {
         el.innerHTML = str;
