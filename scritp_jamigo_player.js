@@ -44,5 +44,58 @@
       };
       iconDiv.innerHTML = icons[instrument] || "🎵";
     }
+
+    // ── Playback speed controls (0.25x – 4x) ─────────────────────────
+    const readout = document.getElementById("rate-readout");
+    const slider  = document.getElementById("rate-slider");
+    const btns    = Array.from(document.querySelectorAll(".rate-btn"));
+
+    if (audio && readout && slider) {
+      // Try to preserve pitch when changing speed (browser-dependent)
+      try {
+        if ("preservesPitch" in audio) audio.preservesPitch = true;
+        if ("mozPreservesPitch" in audio) audio.mozPreservesPitch = true;
+        if ("webkitPreservesPitch" in audio) audio.webkitPreservesPitch = true;
+      } catch {}
+
+      // Restore last chosen speed if available
+      const savedRate = parseFloat(localStorage.getItem("jamigo_playback_rate") || "1") || 1;
+      setRate(clamp(savedRate, 0.25, 4), { updateUI: true });
+
+      // Large preset buttons
+      btns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const rate = parseFloat(btn.getAttribute("data-rate"));
+          setRate(rate, { updateUI: true });
+        });
+      });
+
+      // Fine slider
+      slider.addEventListener("input", () => {
+        const rate = parseFloat(slider.value);
+        setRate(rate, { updateUI: true, fromSlider: true });
+      });
+
+      function setRate(rate, { updateUI = false, fromSlider = false } = {}) {
+        const clamped = clamp(rate, 0.25, 4);
+        audio.playbackRate = clamped;
+        localStorage.setItem("jamigo_playback_rate", String(clamped));
+        readout.textContent = `Speed: ${clamped.toFixed(2)}×`;
+
+        if (updateUI) {
+          // Highlight the matching preset button
+          btns.forEach((b) => b.classList.toggle(
+            "active",
+            Math.abs(parseFloat(b.dataset.rate) - clamped) < 0.001
+          ));
+          // Keep slider in sync unless it originated the change
+          if (!fromSlider) slider.value = clamped;
+        }
+      }
+
+      function clamp(v, min, max) {
+        return Math.max(min, Math.min(max, v));
+      }
+    }
   });
 })();

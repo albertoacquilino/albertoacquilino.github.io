@@ -29,6 +29,34 @@
         Your browser does not support the audio element.
       </audio>
     </div>
+
+    <!-- Playback speed controls -->
+    <section class="player-controls" aria-label="Playback speed">
+      <div class="rate-header">
+        <strong id="rate-readout" aria-live="polite">Speed: 1.00×</strong>
+      </div>
+
+      <!-- Large preset buttons (boomer-friendly) -->
+      <div class="rate-grid">
+        <button type="button" class="rate-btn" data-rate="0.25">25%</button>
+        <button type="button" class="rate-btn" data-rate="0.50">50%</button>
+        <button type="button" class="rate-btn" data-rate="0.75">75%</button>
+        <button type="button" class="rate-btn active" data-rate="1.00">100%</button>
+        <button type="button" class="rate-btn" data-rate="1.25">125%</button>
+        <button type="button" class="rate-btn" data-rate="1.50">150%</button>
+        <button type="button" class="rate-btn" data-rate="2.00">200%</button>
+        <button type="button" class="rate-btn" data-rate="3.00">300%</button>
+        <button type="button" class="rate-btn" data-rate="4.00">400%</button>
+      </div>
+
+      <!-- Fine control slider -->
+      <label for="rate-slider" class="visually-hidden">Playback speed</label>
+      <input id="rate-slider" class="rate-slider" type="range"
+             min="0.25" max="4" step="0.01" value="1">
+      <div class="rate-scale">
+        <span>0.25×</span><span>1×</span><span>4×</span>
+      </div>
+    </section>
   </main>
 
   <script src="i18n_jamigo.js"></script>
