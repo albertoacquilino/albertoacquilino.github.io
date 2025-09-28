@@ -431,6 +431,19 @@ h1 {
   color: #1976d2;      /* blue tone like your UI */
 }
 
+.action-icon img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .action-icon img {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
+
 .action-title {
   font-size: 1.35rem; /* slightly larger */
   margin: 0 0 .25rem;
