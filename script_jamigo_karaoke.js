@@ -2,6 +2,25 @@
 (function () {
   // personalize titles via i18n (already handled by i18n_jamigo.js)
 
+  // Dynamically set the instrument icon
+  document.addEventListener("DOMContentLoaded", () => {
+    const instrument = localStorage.getItem("jamigo_instrument");
+    const iconDiv = document.getElementById("action-icon");
+
+    if (iconDiv && instrument) {
+      const instrumentIcons = {
+        guitar: "🎸",
+        drums: "🥁",
+        piano: "🎹",
+        vocals: "🎤",
+        bass: '<img src="assets_jamigo/bass.png" alt="Electric Bass" class="icon-img" />',
+        band: "🎶"
+      };
+
+      iconDiv.innerHTML = instrumentIcons[instrument] || "🎵";
+    }
+  });
+
   // Click handlers
   const extractBtn = document.getElementById("card-extract");
   const karaokeBtn = document.getElementById("card-karaoke");
