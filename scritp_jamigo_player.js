@@ -48,7 +48,9 @@
     // ── Playback speed controls (0.25x – 4x) ─────────────────────────
     const readout = document.getElementById("rate-readout");
     const slider  = document.getElementById("rate-slider");
-    const btns    = Array.from(document.querySelectorAll(".rate-btn"));
+    const reset   = document.getElementById("rate-reset");
+    const input   = document.getElementById("rate-input");
+    const setBtn  = document.getElementById("rate-set-btn");
 
     if (audio && readout && slider) {
       // Try to preserve pitch when changing speed (browser-dependent)
@@ -62,13 +64,24 @@
       const savedRate = parseFloat(localStorage.getItem("jamigo_playback_rate") || "1") || 1;
       setRate(clamp(savedRate, 0.25, 4), { updateUI: true });
 
-      // Large preset buttons
-      btns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const rate = parseFloat(btn.getAttribute("data-rate"));
-          setRate(rate, { updateUI: true });
+      // Reset to 100%
+      if (reset) {
+        reset.addEventListener("click", () => setRate(1));
+      }
+
+      // Custom percent input (25–400%)
+      if (setBtn && input) {
+        const applyInput = () => {
+          let pct = parseFloat(input.value);
+          if (Number.isNaN(pct)) pct = 100;
+          pct = clamp(pct, 25, 400);
+          setRate(pct / 100, { updateUI: true, fromInput: true });
+        };
+        setBtn.addEventListener("click", applyInput);
+        input.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") { e.preventDefault(); applyInput(); }
         });
-      });
+      }
 
       // Fine slider
       slider.addEventListener("input", () => {
@@ -76,20 +89,17 @@
         setRate(rate, { updateUI: true, fromSlider: true });
       });
 
-      function setRate(rate, { updateUI = false, fromSlider = false } = {}) {
+      function setRate(rate, { updateUI = false, fromSlider = false, fromInput = false } = {}) {
         const clamped = clamp(rate, 0.25, 4);
         audio.playbackRate = clamped;
         localStorage.setItem("jamigo_playback_rate", String(clamped));
         readout.textContent = `Speed: ${clamped.toFixed(2)}×`;
 
         if (updateUI) {
-          // Highlight the matching preset button
-          btns.forEach((b) => b.classList.toggle(
-            "active",
-            Math.abs(parseFloat(b.dataset.rate) - clamped) < 0.001
-          ));
           // Keep slider in sync unless it originated the change
           if (!fromSlider) slider.value = clamped;
+          // Keep input in sync unless it originated the change
+          if (input && !fromInput) input.value = Math.round(clamped * 100);
         }
       }
 

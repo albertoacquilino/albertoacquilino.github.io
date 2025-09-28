@@ -592,3 +592,35 @@ h1 {
   .rate-grid { grid-template-columns: repeat(3, 1fr); }
   .rate-btn { font-size: 1rem; padding: 0.55rem 0.35rem; }
 }
+/* ─── Player controls (simplified): reset + custom % ───────── */
+.rate-inline{
+  display:flex;
+  gap:.75rem;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-bottom:.75rem;
+}
+
+.rate-custom{ display:flex; gap:.5rem; align-items:center; }
+
+#rate-input{
+  width:6rem;
+  padding:.5rem .6rem;
+  font-size:1rem;
+  border:2px solid #e6e6e6;
+  border-radius:.5rem;
+  text-align:right;
+}
+
+#rate-reset, #rate-set-btn{
+  padding:.6rem .9rem;
+  font-size:1rem;
+  border:2px solid #e6e6e6;
+  border-radius:.65rem;
+  background:#fff;
+  cursor:pointer;
+  transition: border-color .15s ease, transform .05s ease;
+}
+#rate-reset:hover, #rate-set-btn:hover{ border-color:#bcd6ff; }
+#rate-reset:active, #rate-set-btn:active{ transform: scale(.98); }
