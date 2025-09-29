@@ -592,6 +592,36 @@ h1 {
   .rate-grid { grid-template-columns: repeat(3, 1fr); }
   .rate-btn { font-size: 1rem; padding: 0.55rem 0.35rem; }
 }
+
+/* ─── Transpose controls ───────────────────────────────────── */
+.player-transpose {
+  width: min(900px, 92vw);
+  margin: 1.5rem auto 0;
+  text-align: center;
+}
+
+.transpose-header {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.transpose-slider {
+  width: 100%;
+  margin: 0.25rem 0 0.25rem;
+}
+
+.transpose-scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  opacity: 0.75;
+}
+
+@media (max-width: 600px) {
+  .player-transpose {
+    margin-top: 1rem;
+  }
+}
 /* ─── Player controls (simplified): reset + custom % ───────── */
 .rate-inline{
   display:flex;
