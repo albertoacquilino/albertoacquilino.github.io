@@ -54,15 +54,37 @@
     const transposeSlider  = document.getElementById("transpose-slider");
     const transposeReadout = document.getElementById("transpose-readout");
 
+    const playToggle    = document.getElementById("play-toggle");
+    const seekSlider    = document.getElementById("seek-slider");
+    const volumeSlider  = document.getElementById("volume-slider");
+    const muteToggle    = document.getElementById("mute-toggle");
+    const currentTimeEl = document.getElementById("current-time");
+    const durationEl    = document.getElementById("duration");
+
+    const formatTime = (seconds) => {
+      if (!Number.isFinite(seconds)) return "0:00";
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60).toString().padStart(2, "0");
+      return `${mins}:${secs}`;
+    };
+
+    const clampVolume = (value) => {
+      if (!Number.isFinite(value)) return 1;
+      return Math.max(0, Math.min(1, value));
+    };
+
+    const savedVolume = clampVolume(parseFloat(localStorage.getItem("jamigo_volume") || "1"));
+    const savedMuted = localStorage.getItem("jamigo_muted") === "true";
+
     const transposeState = {
       current: 0,
       mediaSource: null,
       pitchNode: null,
       gainNode: null,
       initialized: false,
-      volumeHandlerAttached: false,
-      userMuted: audio ? audio.muted : false,
-      userVolume: audio ? audio.volume ?? 1 : 1,
+      userMuted: savedMuted,
+      userVolume: savedVolume,
+      lastNonZeroVolume: savedMuted ? 1 : savedVolume || 1,
       forceMuted: false,
     };
 
@@ -76,9 +98,20 @@
     };
 
     const syncVolume = () => {
-      if (!audio || !transposeState.gainNode) return;
+      if (!transposeState.gainNode) return;
       const effectiveVolume = transposeState.userMuted ? 0 : transposeState.userVolume;
       transposeState.gainNode.gain.value = effectiveVolume;
+      localStorage.setItem("jamigo_volume", String(transposeState.userVolume));
+      localStorage.setItem("jamigo_muted", String(transposeState.userMuted));
+      if (volumeSlider && !volumeSlider.matches(":active")) {
+        volumeSlider.value = transposeState.userMuted ? "0" : String(transposeState.userVolume);
+      }
+      if (muteToggle) {
+        const icon = transposeState.userMuted ? "🔇" : "🔊";
+        muteToggle.querySelector(".audio-icon").textContent = icon;
+        muteToggle.setAttribute("aria-label", transposeState.userMuted ? "Unmute" : "Mute");
+        muteToggle.querySelector(".visually-hidden").textContent = transposeState.userMuted ? "Unmute" : "Mute";
+      }
     };
 
     const ensureToneGraph = async () => {
@@ -103,22 +136,10 @@
 
         audio.muted = true;
         transposeState.forceMuted = true;
-
-        syncVolume();
-        if (!transposeState.volumeHandlerAttached) {
-          audio.addEventListener("volumechange", () => {
-            transposeState.userMuted = audio.muted;
-            transposeState.userVolume = audio.volume ?? transposeState.userVolume;
-            syncVolume();
-            if (transposeState.forceMuted && !audio.muted) {
-              audio.muted = true;
-            }
-          });
-          transposeState.volumeHandlerAttached = true;
-        }
       }
 
       transposeState.initialized = true;
+      syncVolume();
       return true;
     };
 
@@ -222,14 +243,97 @@
         if (audio) {
           audio.addEventListener("play", () => {
             ensureToneGraph().catch(() => {});
-          }, { once: true });
-          audio.addEventListener("pause", () => {
-            if (!transposeState.mediaSource) return;
-            transposeState.userMuted = audio.muted;
-            transposeState.userVolume = audio.volume ?? transposeState.userVolume;
+            updatePlayUI();
+          });
+          audio.addEventListener("pause", updatePlayUI);
+          audio.addEventListener("ended", () => {
+            updatePlayUI();
+            setTimeout(() => { if (audio) audio.currentTime = 0; }, 0);
           });
         }
       }
     }
+
+    const updatePlayUI = () => {
+      if (!audio || !playToggle) return;
+      const isPlaying = !audio.paused && !audio.ended;
+      const iconSpan = playToggle.querySelector(".audio-icon");
+      const labelSpan = playToggle.querySelector(".visually-hidden");
+      iconSpan.textContent = isPlaying ? "❚❚" : "▶︎";
+      const label = isPlaying ? "Pause" : "Play";
+      playToggle.setAttribute("aria-label", label);
+      labelSpan.textContent = label;
+    };
+
+    const updateTimeUI = () => {
+      if (!audio) return;
+      if (currentTimeEl) currentTimeEl.textContent = formatTime(audio.currentTime);
+      if (durationEl) durationEl.textContent = formatTime(audio.duration);
+      if (seekSlider && !seekSlider.matches(":active")) {
+        const progress = audio.duration ? (audio.currentTime / audio.duration) * 100 : 0;
+        seekSlider.value = progress.toString();
+      }
+    };
+
+    if (audio) {
+      audio.addEventListener("loadedmetadata", updateTimeUI);
+      audio.addEventListener("timeupdate", updateTimeUI);
+    }
+
+    if (playToggle && audio) {
+      playToggle.addEventListener("click", async () => {
+        if (audio.paused) {
+          try {
+            await audio.play();
+          } catch (err) {
+            console.warn("Audio play failed", err);
+          }
+        } else {
+          audio.pause();
+        }
+        updatePlayUI();
+      });
+      updatePlayUI();
+    }
+
+    if (seekSlider && audio) {
+      seekSlider.addEventListener("input", () => {
+        if (!audio.duration) return;
+        const target = (parseFloat(seekSlider.value) / 100) * audio.duration;
+        if (currentTimeEl) currentTimeEl.textContent = formatTime(target);
+      });
+      seekSlider.addEventListener("change", () => {
+        if (!audio.duration) return;
+        const target = (parseFloat(seekSlider.value) / 100) * audio.duration;
+        audio.currentTime = target;
+      });
+    }
+
+    if (volumeSlider) {
+      volumeSlider.addEventListener("input", () => {
+        const value = clampVolume(parseFloat(volumeSlider.value));
+        transposeState.userVolume = Number.isNaN(value) ? transposeState.userVolume : value;
+        if (transposeState.userVolume > 0) {
+          transposeState.lastNonZeroVolume = transposeState.userVolume;
+          transposeState.userMuted = false;
+        } else {
+          transposeState.userMuted = true;
+        }
+        syncVolume();
+      });
+    }
+
+    if (muteToggle) {
+      muteToggle.addEventListener("click", () => {
+        transposeState.userMuted = !transposeState.userMuted;
+        if (!transposeState.userMuted && transposeState.lastNonZeroVolume > 0) {
+          transposeState.userVolume = transposeState.lastNonZeroVolume;
+        }
+        syncVolume();
+      });
+    }
+
+    updateTimeUI();
+    syncVolume();
   });
 })();
