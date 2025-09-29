@@ -91,9 +91,19 @@
 
       function setRate(rate, { updateUI = false, fromSlider = false, fromInput = false } = {}) {
         const clamped = clamp(rate, 0.25, 4);
-        audio.playbackRate = clamped;
+        audio.defaultPlaybackRate = clamped; // keep future plays at this rate
+        audio.playbackRate = clamped;        // apply immediately
         localStorage.setItem("jamigo_playback_rate", String(clamped));
         readout.textContent = `Speed: ${clamped.toFixed(2)}×`;
+
+        // Gray out the reset icon when already at 1.00×
+        if (reset) {
+          if (clamped === 1) {
+            reset.classList.add("inactive");
+          } else {
+            reset.classList.remove("inactive");
+          }
+        }
 
         if (updateUI) {
           // Keep slider in sync unless it originated the change
