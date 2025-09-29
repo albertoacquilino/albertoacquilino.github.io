@@ -192,9 +192,12 @@
       dryGain.gain.setTargetAtTime(0, audioCtx.currentTime, 0.015);
       pitchedGain.gain.setTargetAtTime(1, audioCtx.currentTime, 0.015);
 
-      const ratio = Math.pow(2, Math.abs(currentSemitone) / 12);
       const direction = currentSemitone > 0 ? 1 : -1;
-      jungle.setPitchOffset(direction * ratio);
+      const targetRatio = Math.pow(2, currentSemitone / 12);
+      const baseDelay = typeof Jungle.BASE_DELAY_TIME === "number" ? Jungle.BASE_DELAY_TIME : 0.1;
+      const denom = 5 * baseDelay;
+      const pitchMultiplier = denom > 0 ? Math.abs(targetRatio - 1) / denom : 0;
+      jungle.setPitchOffset(direction * pitchMultiplier);
     }
 
     function updatePitchUI() {

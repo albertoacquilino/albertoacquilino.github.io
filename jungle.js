@@ -60,6 +60,9 @@ var delayTime = 0.1;
 var fadeTime = 0.05;
 var bufferTime = 0.1;
 
+// Expose the base delay so consumers can derive precise multipliers.
+Jungle.BASE_DELAY_TIME = delayTime;
+
 function Jungle(context) {
   this.context = context;
   var input = context.createGain();
