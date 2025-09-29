@@ -59,11 +59,17 @@
     <section class="pitch-controls" aria-label="Pitch shift">
       <div class="pitch-header">
         <strong id="pitch-readout" aria-live="polite">Pitch: 0 sem</strong>
+        <span id="pitch-status" class="pitch-status visually-hidden">Processing…</span>
       </div>
       <div class="pitch-buttons">
-        <button type="button" id="pitch-down" class="rate-btn" aria-label="Shift pitch down one semitone">−1 semitone</button>
+        <button type="button" id="pitch-down" class="rate-btn" aria-label="Shift pitch down one semitone">− semitone</button>
         <button type="button" id="pitch-reset" class="rate-btn" aria-label="Reset pitch shift">Reset</button>
-        <button type="button" id="pitch-up" class="rate-btn" aria-label="Shift pitch up one semitone">+1 semitone</button>
+        <button type="button" id="pitch-up" class="rate-btn" aria-label="Shift pitch up one semitone">+ semitone</button>
+      </div>
+      <label for="pitch-slider" class="visually-hidden">Pitch shift slider</label>
+      <input id="pitch-slider" class="pitch-slider" type="range" min="-6" max="6" step="1" value="0">
+      <div class="pitch-scale" aria-hidden="true">
+        <span>−6</span><span>0</span><span>+6</span>
       </div>
     </section>
   </main>
