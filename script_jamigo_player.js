@@ -51,6 +51,94 @@
     const reset   = document.getElementById("rate-reset");
     const input   = document.getElementById("rate-input");
     const setBtn  = document.getElementById("rate-set-btn");
+    const transposeSlider  = document.getElementById("transpose-slider");
+    const transposeReadout = document.getElementById("transpose-readout");
+
+    const transposeState = {
+      current: 0,
+      mediaSource: null,
+      pitchNode: null,
+      gainNode: null,
+      initialized: false,
+      volumeHandlerAttached: false,
+      userMuted: audio ? audio.muted : false,
+      userVolume: audio ? audio.volume ?? 1 : 1,
+      forceMuted: false,
+    };
+
+    const clampTranspose = (value) => Math.max(-5, Math.min(5, value));
+
+    const updateTransposeReadout = (value) => {
+      if (!transposeReadout) return;
+      const prefix = value > 0 ? "+" : "";
+      const suffix = Math.abs(value) === 1 ? "semitone" : "semitones";
+      transposeReadout.textContent = `Transpose: ${prefix}${value} ${suffix}`;
+    };
+
+    const syncVolume = () => {
+      if (!audio || !transposeState.gainNode) return;
+      const effectiveVolume = transposeState.userMuted ? 0 : transposeState.userVolume;
+      transposeState.gainNode.gain.value = effectiveVolume;
+    };
+
+    const ensureToneGraph = async () => {
+      if (!audio || !window.Tone) return false;
+      if (!transposeState.mediaSource) {
+        try {
+          await Tone.start();
+        } catch (err) {
+          console.warn("Tone.js context start failed", err);
+          return false;
+        }
+
+        const toneCtx = Tone.getContext();
+        const rawCtx = toneCtx.rawContext;
+        transposeState.mediaSource = rawCtx.createMediaElementSource(audio);
+        transposeState.pitchNode = new Tone.PitchShift({ pitch: transposeState.current });
+        transposeState.gainNode = new Tone.Gain(transposeState.userMuted ? 0 : transposeState.userVolume);
+
+        Tone.connect(transposeState.mediaSource, transposeState.pitchNode);
+        transposeState.pitchNode.connect(transposeState.gainNode);
+        transposeState.gainNode.toDestination();
+
+        audio.muted = true;
+        transposeState.forceMuted = true;
+
+        syncVolume();
+        if (!transposeState.volumeHandlerAttached) {
+          audio.addEventListener("volumechange", () => {
+            transposeState.userMuted = audio.muted;
+            transposeState.userVolume = audio.volume ?? transposeState.userVolume;
+            syncVolume();
+            if (transposeState.forceMuted && !audio.muted) {
+              audio.muted = true;
+            }
+          });
+          transposeState.volumeHandlerAttached = true;
+        }
+      }
+
+      transposeState.initialized = true;
+      return true;
+    };
+
+    const applyTranspose = async (semitones, { fromSlider = false } = {}) => {
+      const clamped = clampTranspose(semitones);
+      transposeState.current = clamped;
+      localStorage.setItem("jamigo_transpose", String(clamped));
+      updateTransposeReadout(clamped);
+
+      if (!fromSlider && transposeSlider) {
+        transposeSlider.value = String(clamped);
+      }
+
+      if (!window.Tone) return;
+
+      const initialized = await ensureToneGraph();
+      if (initialized && transposeState.pitchNode) {
+        transposeState.pitchNode.pitch = clamped;
+      }
+    };
 
     if (audio && readout && slider) {
       // Try to preserve pitch when changing speed (browser-dependent)
@@ -115,6 +203,32 @@
 
       function clamp(v, min, max) {
         return Math.max(min, Math.min(max, v));
+      }
+    }
+
+    if (transposeSlider && transposeReadout) {
+      if (!window.Tone) {
+        transposeSlider.disabled = true;
+        updateTransposeReadout(0);
+      } else {
+        const savedTranspose = parseInt(localStorage.getItem("jamigo_transpose") || "0", 10);
+        applyTranspose(Number.isNaN(savedTranspose) ? 0 : savedTranspose);
+
+        transposeSlider.addEventListener("input", async () => {
+          const value = parseInt(transposeSlider.value, 10);
+          await applyTranspose(Number.isNaN(value) ? 0 : value, { fromSlider: true });
+        });
+
+        if (audio) {
+          audio.addEventListener("play", () => {
+            ensureToneGraph().catch(() => {});
+          }, { once: true });
+          audio.addEventListener("pause", () => {
+            if (!transposeState.mediaSource) return;
+            transposeState.userMuted = audio.muted;
+            transposeState.userVolume = audio.volume ?? transposeState.userVolume;
+          });
+        }
       }
     }
   });
