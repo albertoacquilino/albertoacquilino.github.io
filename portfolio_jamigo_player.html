@@ -21,34 +21,13 @@
       <span id="now-playing" data-i18n="now_playing">Now playing: test.mp3</span>
     </div>
 
-    <!-- Audio element & custom controls -->
+    <!-- Native HTML audio (simple, accessible) -->
     <div class="audio-wrap">
-      <audio id="audio" preload="metadata" aria-hidden="true">
+      <audio id="audio" controls preload="metadata">
         <source src="assets_jamigo/test.mp3" type="audio/mpeg" />
         <!-- fallback text -->
         Your browser does not support the audio element.
       </audio>
-
-      <div class="audio-controls" aria-label="Playback controls">
-        <button type="button" id="play-toggle" class="audio-btn" aria-label="Play">
-          <span class="audio-icon" aria-hidden="true">▶︎</span>
-          <span class="visually-hidden">Play</span>
-        </button>
-
-        <div class="audio-timeline">
-          <span id="current-time" class="audio-time">0:00</span>
-          <input id="seek-slider" type="range" min="0" max="100" value="0" step="0.1" aria-label="Seek">
-          <span id="duration" class="audio-time">0:00</span>
-        </div>
-
-        <div class="audio-volume" aria-label="Volume">
-          <button type="button" id="mute-toggle" class="audio-btn" aria-label="Mute">
-            <span class="audio-icon" aria-hidden="true">🔊</span>
-            <span class="visually-hidden">Mute</span>
-          </button>
-          <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume level">
-        </div>
-      </div>
     </div>
 
     <!-- Playback speed controls -->
@@ -75,23 +54,9 @@
         <span>0.25×</span><span>1×</span><span>4×</span>
       </div>
     </section>
-
-    <!-- Transpose controls -->
-    <section class="player-transpose" aria-label="Transpose">
-      <div class="transpose-header">
-        <strong id="transpose-readout" aria-live="polite">Transpose: 0 semitones</strong>
-      </div>
-      <label for="transpose-slider" class="visually-hidden">Transpose amount</label>
-      <input id="transpose-slider" class="transpose-slider" type="range" min="-5" max="5" step="1" value="0">
-      <div class="transpose-scale" aria-hidden="true">
-        <span>-5</span><span>0</span><span>+5</span>
-      </div>
-    </section>
-
   </main>
 
   <script src="i18n_jamigo.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="script_jamigo_player.js"></script>
 </body>
 </html>

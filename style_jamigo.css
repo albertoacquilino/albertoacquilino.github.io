@@ -531,69 +531,7 @@ h1 {
   margin: 0 auto;
 }
 .audio-wrap audio {
-  display: none;
-}
-
-.audio-controls {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
-.audio-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 2px solid #1976d2;
-  background: #1976d2;
-  color: #fff;
-  font-size: 1.25rem;
-  cursor: pointer;
-  transition: background 0.15s ease, transform 0.1s ease;
-}
-.audio-btn:hover,
-.audio-btn:focus-visible {
-  background: #2196f3;
-  transform: translateY(-1px);
-  outline: none;
-}
-
-.audio-timeline {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex: 1 1 320px;
-}
-
-.audio-time {
-  font-variant-numeric: tabular-nums;
-  min-width: 3.5ch;
-}
-
-#seek-slider {
-  flex: 1;
-}
-
-.audio-volume {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-#volume-slider {
-  width: 140px;
-}
-
-.audio-volume .audio-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-}
+  width: 100%;
 }
 
 @media (max-width: 480px) {
@@ -653,50 +591,6 @@ h1 {
 @media (max-width: 600px) {
   .rate-grid { grid-template-columns: repeat(3, 1fr); }
   .rate-btn { font-size: 1rem; padding: 0.55rem 0.35rem; }
-}
-
-/* ─── Transpose controls ───────────────────────────────────── */
-.player-transpose {
-  width: min(900px, 92vw);
-  margin: 1.5rem auto 0;
-  text-align: center;
-}
-
-.transpose-header {
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-}
-
-.transpose-slider {
-  width: 100%;
-  margin: 0.25rem 0 0.25rem;
-}
-
-.transpose-scale {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.95rem;
-  opacity: 0.75;
-}
-
-@media (max-width: 600px) {
-  .player-transpose {
-    margin-top: 1rem;
-  }
-  .audio-controls {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .audio-timeline {
-    width: 100%;
-  }
-  .audio-volume {
-    width: 100%;
-    justify-content: space-between;
-  }
-  #volume-slider {
-    width: 100%;
-  }
 }
 
 /* ─── Player controls (simplified): reset + custom % ───────── */
