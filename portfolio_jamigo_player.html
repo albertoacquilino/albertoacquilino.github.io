@@ -37,7 +37,10 @@
       </div>
 
       <div class="rate-inline">
-        <button type="button" id="rate-reset" class="rate-btn">Reset to 100%</button>
+        <button type="button" id="rate-reset" class="rate-btn reset-icon" aria-label="Reset to 100%">
+          <span class="icon-reset" aria-hidden="true">↻</span>
+          <span class="visually-hidden">Reset to 100%</span>
+        </button>
         <div class="rate-custom">
           <label for="rate-input" class="visually-hidden">Custom speed percent</label>
           <input id="rate-input" type="number" min="25" max="400" step="1" value="100" />
@@ -56,4 +59,4 @@
   <script src="i18n_jamigo.js"></script>
   <script src="script_jamigo_player.js"></script>
 </body>
-</html>
+</html>style_jamigo.css

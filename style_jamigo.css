@@ -624,3 +624,20 @@ h1 {
 }
 #rate-reset:hover, #rate-set-btn:hover{ border-color:#bcd6ff; }
 #rate-reset:active, #rate-set-btn:active{ transform: scale(.98); }
+#
+/* Reset icon-only button for player */
+.reset-icon{
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-reset{ font-size: 20px; line-height: 1; }
+
+@media (max-width: 600px){
+  .reset-icon{ width: 40px; height: 40px; }
+  .icon-reset{ font-size: 18px; }
+}
