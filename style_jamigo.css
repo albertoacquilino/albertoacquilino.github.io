@@ -636,6 +636,11 @@ h1 {
 }
 .icon-reset{ font-size: 20px; line-height: 1; }
 
+.rate-btn.reset-icon.inactive .icon-reset {
+  color: #aaa;
+  opacity: 0.6;
+}
+
 @media (max-width: 600px){
   .reset-icon{ width: 40px; height: 40px; }
   .icon-reset{ font-size: 18px; }
