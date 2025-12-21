@@ -341,7 +341,7 @@ p {
 
 .responsive-video {
   position: relative;
-  padding-bottom: 38%;
+  padding-bottom: 48%;
   height: 0;
   overflow: hidden;
   border-radius: var(--radius);
@@ -357,6 +357,13 @@ p {
   height: 100%;
   border: 0;
   border-radius: var(--radius);
+}
+
+@media (max-width: 640px) {
+  .responsive-video {
+    padding-bottom: 56.25%;
+    max-width: 100%;
+  }
 }
 
 blockquote {
