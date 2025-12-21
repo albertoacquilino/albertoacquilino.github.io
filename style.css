@@ -198,6 +198,57 @@ p {
   margin: 0.75em 0;
 }
 
+.teaching-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.teaching-item {
+  display: flex;
+  gap: 1em;
+  padding: 1em 1.1em;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.teaching-year {
+  min-width: 7.5em;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.teaching-body h2 {
+  margin: 0 0 0.4em;
+  font-size: 1.05rem;
+}
+
+.teaching-body p {
+  margin: 0;
+}
+
+.teaching-desc {
+  font-size: 0.9em;
+  margin-top: 0.6em;
+}
+
+.plain-link {
+  color: inherit;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.plain-link:hover,
+.plain-link:focus-visible {
+  color: inherit;
+  text-decoration: underline;
+  transform: none;
+}
+
 blockquote {
   border-left: 4px solid var(--accent);
   padding: 0.8em 1.1em;
@@ -498,6 +549,11 @@ h3 {
 
 /* Hide the menu by default on mobile */
 @media (max-width: 768px) {
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35em;
+  }
 
   /* Hide #menu by default */
   #menu {
@@ -507,28 +563,34 @@ h3 {
     /* same background as nav */
     margin: 0;
     padding: 0;
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
   }
 
   /* Show it when we toggle the .show-mobile class */
   #menu.show-mobile {
     display: block;
+    margin-top: 0.25em;
   }
 
   /* Stack items vertically */
   #menu li {
     display: block;
     /* stacked in a column */
-    text-align: center;
+    text-align: left;
     /* optional: center each item text */
     border-top: 1px solid var(--border);
     /* optional separator line */
     margin: 0;
-    padding: 1em;
+    padding: 0.95em 1em;
   }
 
   /* Use same text color as before */
   #menu li a {
     color: var(--text);
+    display: block;
   }
 
   /* Show the hamburger on mobile */
