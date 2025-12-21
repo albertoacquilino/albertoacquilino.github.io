@@ -5,15 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css"
-    integrity="sha384-BTL0nVi8DnMrNdMQZG1Ww6yasK9ZGnUxL1ZWukXQ7fygA1py52yPp9W4wrR00VML" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.js"
-    integrity="sha384-y6SGsNt7yZECc4Pf86XmQhC4hG2wxL6Upkt9N1efhFxfh6wlxBH0mJiTE8XYclC1"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/contrib/auto-render.min.js"
-    integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
-    crossorigin="anonymous"></script>
-    
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
@@ -22,21 +14,24 @@
 </head>
 
 <body>
-  <nav>
-    <a href="/index.html" class="home-link">
-      <h1>Alberto Acquilino</h1>
-    </a>
-    <!-- Add aria-label to indicate what this button does for screen readers -->
-    <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation">&#9776;</button>
-    
-    <ul id="menu">
-      <li><a href="/">About</a></li>
-      <li><a href="/publications.html">Publications</a></li>
-      <li><a href="/portfolio.html">Portfolio</a></li>
-    </ul>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/index.html" class="home-link">
+        <h1>Alberto Acquilino</h1>
+      </a>
+      <!-- Add aria-label to indicate what this button does for screen readers -->
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation" aria-controls="menu" aria-expanded="false">&#9776;</button>
+      
+      <ul id="menu">
+        <li><a href="/">About</a></li>
+        <li><a href="/publications.html">Publications</a></li>
+        <li><a href="/portfolio.html">Portfolio</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <main>
+  <main id="main-content">
     <header>
       <h1>Selected Projects</h1>
       <p>Here are some of the exciting projects I've been working on, blending education, technology, and creativity to
