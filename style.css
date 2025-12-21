@@ -550,9 +550,11 @@ h3 {
 /* Hide the menu by default on mobile */
 @media (max-width: 768px) {
   .nav-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.35em;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6em;
+    flex-wrap: wrap;
   }
 
   /* Hide #menu by default */
@@ -564,6 +566,7 @@ h3 {
     margin: 0;
     padding: 0;
     width: 100%;
+    order: 2;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
@@ -572,7 +575,7 @@ h3 {
   /* Show it when we toggle the .show-mobile class */
   #menu.show-mobile {
     display: block;
-    margin-top: 0.25em;
+    margin-top: 0.5em;
   }
 
   /* Stack items vertically */
@@ -600,7 +603,7 @@ h3 {
     background: none;
     border: none;
     cursor: pointer;
-    margin-left: 1em;
+    margin-left: 0.75em;
     color: var(--text);
   }
 }
