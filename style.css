@@ -360,6 +360,7 @@ p {
 .portfolio-card h2 {
   margin: 0 0 0.35em;
   font-size: 1.2rem;
+  text-align: center;
 }
 
 .portfolio-thumb {
@@ -375,10 +376,23 @@ p {
   height: auto;
 }
 
+.mei-thumb img,
+.hh-thumb img {
+  max-width: 240px;
+  width: 85%;
+}
+
+.small-thumb img {
+  max-width: 150px;
+  width: 55%;
+}
+
 .tag-row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   gap: 0.35em;
+  row-gap: 0.3em;
   margin-bottom: 0.5em;
 }
 
@@ -405,6 +419,16 @@ p {
 
 .tag-community {
   background: rgba(76, 175, 80, 0.14);
+  color: var(--text);
+}
+
+.tag-composition {
+  background: rgba(255, 165, 0, 0.16);
+  color: var(--text);
+}
+
+.tag-wellbeing {
+  background: rgba(244, 67, 54, 0.14);
   color: var(--text);
 }
 
