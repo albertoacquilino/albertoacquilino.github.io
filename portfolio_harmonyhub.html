@@ -33,198 +33,111 @@
     <main id="main-content">
         <p><a href="/portfolio.html" class="plain-link strong">← Back to Portfolio</a></p>
         <section class="project-overview">
+            <p class="muted support-text">This project is supported by:</p>
+            <div class="supporting-logos" aria-label="Supporting organizations">
+                <img src="assets/Western_logo.jpg" alt="Western University logo">
+                <img src="assets/CDSI_logo.png" alt="Canadian Disability Studies Initiative logo">
+                <img src="assets/gsoc_logo.png" alt="Google Summer of Code logo">
+                <img src="assets/incf_logo.png" alt="International Neuroinformatics Coordinating Facility logo">
+            </div>
             <img src="assets/HarmonyHub_logo.png" alt="HarmonyHub Landscape Cover"
-                class="cover-image"
-                style="display: block; padding-top: 0px; margin: 40px auto 20px auto; width: auto; max-width: 50%;">
+                class="cover-image" tabindex="0">
 
-            <p><strong>HarmonyHub</strong> is an open-source, community-driven framework for rapidly building music education apps for web and mobile. Written in <a href="https://ionicframework.com/" target="_blank" rel="noopener">Ionic</a> and <a href="https://angular.io/" target="_blank" rel="noopener">Angular</a>, and published under the <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener">AGPL-3.0</a> license, it offers a library of <strong>plug‑and‑play components</strong>: from responsive score rendering to real‑time audio analysis.</p>
+            <h1 class="project-title">An adaptable music book for inclusive music learning</h1>
 
-            <p>HarmonyHub’s design is grounded in student-centered pedagogy. It integrates evidence-based practices such as scaffolding, errorless learning, auditory imagery, imitation, and multi-sensory engagement. Instead of enforcing a rigid sequence of lessons, HarmonyHub empowers educators and developers to design adaptive experiences tailored to each learner’s pace and goals.</p>
+            <p>People who want to learn a musical instrument can choose from several methods and exercise books, printed or as PDFs. But most of these resources quietly assume a standard learner: one way to read notation, one way to interact with instructions, the same sequence of exercises for everyone.</p>
 
-            <div class="cta-buttons">
-                <a href="https://github.com/albertoacquilino/music-education-interface-ionic" class="btn-primary" target="_blank" rel="noopener">View on GitHub</a>
-            </div>
-        </section>
+            <p>When a learner has a disability (or simply learns differently!) that assumption breaks. The burden often falls on the teacher to redesign materials on the fly: modify passages, change pitch ranges, rewrite rhythms, invent alternatives to visual notation and keep the learning experience engaging. And while great teachers are great at teaching, they are not necessarily also composers, arrangers, or software developers.</p>
 
-        <section id="components">
-            <h2>What’s in the box?</h2>
+            <p>HarmonyHub is a work in progress that tackles this gap. It is an open source project built to help teachers and diverse students create accessible, musically meaningful exercises quickly, creatively and in ways that can adapt to different learner needs.</p>
+
+            <h2>From static methods to an adaptable music book</h2>
+            <p>HarmonyHub reframes the music book as a dynamic system. Instead of a fixed sequence of pages, the platform generates and reshapes exercises from user prompts and pedagogical goals. Exercises can be adapted across several musical dimensions:</p>
             <ul>
-                <li>🎼 <strong>Score Display Component</strong> — Responsive staff notation rendered with VexFlow</li>
-                <li>🕒 <strong>Tempo Selector</strong> — Mobile‑friendly BPM controller</li>
-                <li>🎯 <strong>Note Selector</strong> — Scrollable gallery to choose target notes</li>
-                <li>🎺 <strong>Fingering Display</strong> — SVG instrument diagrams that light up the specific valve or key positions</li>
-                <li>🚦 <strong>Exercise Guide</strong> — Traffic‑light cues to indicate actions (i.e., REST · LISTEN · PLAY)</li>
-                <li>🎙️ <strong>Audio I/O Services</strong> — Low‑latency playback + microphone capture</li>
-                <li>🟢 <strong>Chromatic Tuner</strong> — Cent‑accurate pitch tracker with intuitive visual feedback</li>
-                <li>📈 <strong>User Performance Tracking</strong> — Firebase logging of events and scores for data‑driven pedagogy</li>
+                <li>instrument specific constraints and accessible instrument choices</li>
+                <li>note range and register</li>
+                <li>key and tonality</li>
+                <li>time signature and rhythmic density</li>
+                <li>rhythmic density</li>
+                <li>technical focus</li>
+                <li>representation in Western notation, piano roll as well as accessible music notations</li>
             </ul>
-            
-            <p>By allowing students to set custom parameters, HarmonyHub adapts to different skill levels, creating a
-                <strong>personalized learning experience</strong>.
-                Starting with a beginner-friendly interface, users can customize their practice by selecting:
-            </p>
-
-            <ul style="list-style-type: none; padding-left: 20px;">
-                <li>⏰ <strong>Metronome Speed:</strong> Adjust the tempo for practice.</li>
-                <li>🎵 <strong>Lowest Note & Highest Note:</strong> Define a custom range of notes to focus on.</li>
-            </ul>
-
-            <p>The image below shows the interactive controls where students can set these parameters before starting an
-                exercise.</p>
-
-            <div class="input-video">
-                <video autoplay loop muted playsinline>
-                    <source src="assets/input_video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+            <p>The intention is not only to personalize content, but to support better student&ndash;teacher interaction: making it easier to iterate, compare versions and reflect on how music is learned and experienced.</p>
+            <p>Below is an example of HarmonyHub generating a beginner violin exercise: eight measures, rhythmic focus in E minor, 3/4 time, shown in a piano roll view. Every parameter can be adjusted to match a learner&rsquo;s preferences.</p>
+            <img src="assets/HH.png" alt="HarmonyHub interface mockups" class="full-width-image">
+            <div class="cta-center">
+                <a class="button" href="https://huggingface.co/spaces/SHIKARICHACHA/adaptive-music-exercise-generator" target="_blank" rel="noopener">Try the live demo on Hugging Face</a>
             </div>
 
-            <p>Each exercise is structured in three steps:</p>
+            <h2>Multisensory interaction as a design goal</h2>
+            <p>Playing a musical instrument inherently engages multiple senses. Musicians learn through sound, touch, movement and bodily feedback, feeling vibrations in the instrument, listening to the results of their actions and engaging physically with music. These sensory pathways are essential to how musical skills are developed.</p>
+
+            <p>HarmonyHub builds on this idea by supporting different ways of accessing and engaging with musical material. Rather than focusing on a single mode of interaction, the platform intentionally supports multiple, complementary ways of accessing and engaging with musical material. In practice, this means offering a range of interaction and feedback modalities, including:</p>
             <ul>
-                <li>The first measure is a rest, allowing the student to prepare</li>
-                <li>The second measure plays a reference note, offering an example to imitate</li>
-                <li>The third measure is for the user to play the note</li>
+                <li>textual prompts and structured instructions</li>
+                <li>vocal prompts and audio cues</li>
+                <li>interactive visualizations</li>
+                <li>integration with haptic hardware</li>
             </ul>
+            <p>These modalities are not treated as extras. They shape the project’s direction, supporting the ongoing development of a broader range of accessible musical representations.</p>
 
-            <p>On the top of the screen, an image showing the correct trumpet fingering, including adjustments for the
-                third
-                valve slide, is displayed. This helps students easily associate the note shown on the musical staff with
-                the
-                corresponding pitch and valve combination.</p>
+            <h2>How exercises are generated</h2>
 
-            <div class="app-screenshots">
-                <img src="assets/screenshot.png" alt="App Screenshot 1" class="app-screenshot"
-                    style="border: 3px solid #4CAF50; transition: border-color 0.5s ease-in-out, border-radius 10px; border-radius: 10px;"
-                    onmouseover="this.style.borderColor='#FF5733'" onmouseout="this.style.borderColor='#4CAF50'">
-            </div>
+            <p>HarmonyHub includes an intentionally constrained generative pipeline. The goal is not unrestricted AI creativity, but control, repeatability and pedagogical relevance.</p>
 
+            <p>The current architecture follows a clear and iterative input → processing → output flow:</p>
 
-            <p>HarmonyHub is available as a free beta version for both web and mobile devices:</p>
+            <ol>
+                <li><strong>Input:</strong> set instrument, difficulty, key and time signature.</li>
+                <li><strong>Processing:</strong> the system structures a prompt and queries a language model for a machine readable exercise.</li>
+                <li><strong>Post processing:</strong> parse, validate and rescale to enforce consistency and exact durations.</li>
+                <li><strong>Rendering:</strong> produce the exercise in multiple formats to support different learning interactions.</li>
+            </ol>
 
-            <div class="app-store-links">
-                <a href="https://apps.apple.com/us/app/mei-trumpet/id6452315691" target="_blank">
-                    <img src="assets/appstore.png" alt="Download on the App Store" class="app-badge">
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=com.meiteam.trumpet" target="_blank">
-                    <img src="assets/googleplay.png" alt="Get it on Google Play" class="app-badge">
-                </a>
-            </div>
+            <figure>
+                <img src="assets/HH_pipeline.png" alt="HarmonyHub pipeline diagram from input to processing to output" class="full-width-image">
+                <figcaption>The pipeline is designed for iteration: adjust inputs, review outputs, and regenerate as needed.</figcaption>
+            </figure>
 
-            <p>
-                <a href="https://mei-trumpet.web.app/" target="_blank">
-                    <strong>Click HERE to try HarmonyHub on your browser now!</strong>
-                </a>
-            </p>
-        </section>
-
-        <section style="margin-top: 10px;">
-            <h2>Advancing Your Skills!</h2>
-            <p>Once users get the hang of playing the right note, scaffolding helps them take it to the next level!<p></p>
-            <h3>Intonation and Dynamics</h3>
-            <p>Adding a chromatic tuner and dynamic markings, users are encouraged to fine-tune their pitch and volume
-                control bringing more expression and style to their playing.</p>
-            <div class="app-screenshots">
-                <img src="assets/screen_tuner.png" alt="Tuner Screenshot" class="tuner-screenshot"
-                    style="border: 3px solid #4CAF50; transition: border-color 0.5s ease-in-out, border-radius 10px; border-radius: 10px;"
-                    onmouseover="this.style.borderColor='#FF5733'" onmouseout="this.style.borderColor='#4CAF50'">
-            </div>
-
-            <h3>Clear Articulation</h3>
-            <p>The latest feature of the Music Education Interface I am working on introduces <strong>articulation
-                    assessment</strong>. A state-of-the-art digital signal processing algorithm measures the
-                <strong>attack
-                    transient duration</strong> in milliseconds, providing users with real-time feedback on their
-                articulation
-                clarity.</p>
-            <blockquote
-                style="font-style: italic; border-left: 4px solid #4CAF50; padding-left: 10px; margin-left: 10px;">
-                "Attack clarity is finding the purity and the best beginning of sound"
-            </blockquote>
-
-            <p>Achieving a clean and controlled attack is a crucial skill for musicians, influencing both technical
-                precision
-                and artistic expression. The articulation analysis tool enables users to experiment with different
-                attack styles
-                (e.g., <strong>staccato, détaché, martelé</strong>) while receiving real-time feedback on their
-                performance. By
-                analyzing the transient development of their sound, students gain deeper control over articulation,
-                allowing
-                them to make more informed musical choices and refine their expressive capabilities.</p>
-            <p><strong>Audio Examples!</strong></p>
-            <p>Compare the difference between an unclear and a clean articulation:</p>
-            <div class="audio-container">
-                <div class="audio-example">
-                    <p><strong>Unclean Attack</strong></p>
-                    <audio controls>
-                        <source src="assets/unclean_attack.wav" type="audio/wav">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="audio-example">
-                    <p><strong>Clean Attack</strong></p>
-                    <audio controls>
-                        <source src="assets/clean_attack.wav" type="audio/wav">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-            </div>
-
-            <h3>Enhancing Sound Quality with Machine Learning</h3>
-            <p>To further refine the student's technique, a machine learning model was integrated into the learning
-                interface
-                to classify sounds based on their timbral quality. This functionality introduces a new layer of
-                complexity,
-                helping users develop their musical competencies.
-            <p>Watch the <strong>DEMO</strong>:</p>
-            </p>
-            <div class="video-container"
-                style="text-align: center; margin-top: 20px; max-width: 100%; overflow: hidden;">
-                <video style="width: 100%; height: auto; max-width: 560px;" controls>
-                    <source src="assets/Video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-        </section>
-
-        <section style="margin-top: 10px;">
-            <h2>What's next?</h2>
-            <p>Future developments of this project focus on enhancing its capabilities through adaptive learning
-                features. The
-                Music Education Interface aims to integrate generative AI to provide a more personalized and inclusive
-                learning
-                experience. Key advancements include:</p>
+            <p>Current outputs include:</p>
 
             <ul>
-                <li>🎯 <strong>Personalized exercises</strong> tailored to students’ technical level, age, and
-                    progression
-                    speed.</li>
-                <li>📊 <strong>AI-driven analysis of student performance</strong>, offering recommendations for refining
-                    learning activities.</li>
-                <li>💡 <strong>A user-friendly, code-free interface</strong> enabling music educators to design and
-                    deploy
-                    customized exercises.</li>
-                <li>🌍 <strong>Enhanced inclusivity and accessibility</strong>, ensuring diverse learning experiences
-                    for
-                    students of all backgrounds and abilities.</li>
+                <li>MIDI</li>
+                <li>piano roll visualizations</li>
+                <li>rendered audio MP3</li>
             </ul>
 
-            <p>The objective is to make music education more engaging, effective, and adaptable to individual needs.</p>
-        </section>
+            <p>This modular structure is designed to support future accessibility layers, such as alternative notations or assistive interfaces, without changing the core pipeline.</p>
 
-        <section>
-            <h2>Research Background</h2>
-            <p>HarmonyHub is part of an open-source research project led by Alberto Acquilino at the Schulich School of
-                Music
-                of McGill University, in collaboration with the International Neuroinformatics Coordinating Facility
-                (INCF).
-                Ongoing studies aim to further define the pedagogical foundations of the interface and discuss its
-                usability and
-                social validity through groups of participants.</p>
+            <p>Implementation notes and runnable material are available in the project’s <a href="https://github.com/PRIYANSHU2026/Music-Generation-LLM" target="_blank" rel="noopener">GitHub repository</a>.</p>
 
-            <p><strong>The source code for the app is publicly available <a
-                        href="https://github.com/albertoacquilino/music-education-interface-ionic/tree/gsoc-2024"
-                        target="_blank">here</a>.</strong></p>
+            <h2>Inclusive and disability led development</h2>
+            <p>HarmonyHub is being developed through an equity driven, disability&ndash;led approach. Disabled learners, educators and artists contribute as co&ndash;designers, shaping requirements that influence interface design, content structure and evaluation criteria. This work is ongoing and directly informs future milestones.</p>
+
+            <h2>Research and development status</h2>
+            <p>HarmonyHub is an active R&amp;D project. Near term milestones include:</p>
+            <ul>
+                <li>disability co led prototyping and co design workshops</li>
+                <li>expanding controllable parameters and accessible representations</li>
+                <li>iterative testing in authentic learning contexts</li>
+                <li>longer term deployments and publication of design and implementation guidance</li>
+            </ul>
+
+            <h2>Collaboration context</h2>
+            <p>HarmonyHub is developed within a network of researchers, educators, and cultural organizations, with established partnerships in Canada and across Europe to ground the work in diverse educational and cultural contexts.</p>
+
+            <h2>Open source orientation</h2>
+            <p>HarmonyHub is fully open source. Code, documentation, design processes, and open access publications are shared to support transparency, reuse, and long term sustainability&mdash;contributing not only a tool, but a reproducible approach to inclusive, adaptive music learning.</p>
+            <div class="resource-links">
+                <a class="resource-link" href="https://github.com/PRIYANSHU2026/Music-Generation-LLM" target="_blank" rel="noopener">
+                    <img class="resource-icon" src="assets/github_logo.png" alt="GitHub logo">
+                    <span class="resource-text">GitHub repository</span>
+                </a>
+                <a class="resource-link" href="https://huggingface.co/spaces/SHIKARICHACHA/adaptive-music-exercise-generator" target="_blank" rel="noopener">
+                    <img class="resource-icon" src="assets/hugging_face_logo.svg" alt="Hugging Face logo">
+                    <span class="resource-text">Hugging Face demo</span>
+                </a>
+            </div>
         </section>
     </main>
     <script src="/script.js"></script>
