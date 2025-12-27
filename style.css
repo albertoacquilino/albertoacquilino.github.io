@@ -198,6 +198,18 @@ p {
   margin: 0.75em 0;
 }
 
+.scholar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+}
+
+.scholar-link img {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
 .teaching-list {
   list-style: none;
   padding: 0;
@@ -644,6 +656,10 @@ a.button:hover {
   border-radius: 4px;
 }
 
+.spaced-top {
+  margin-top: 1.6em;
+}
+
 figure {
   margin: 1.5em 0;
   text-align: center;
@@ -724,10 +740,8 @@ pre {
 }
 
 .input-image img {
-  width: 80%;
-  /* Default size (bigger than before but still smaller than full width) */
-  max-width: 400px;
-  /* Prevent it from getting too small */
+  width: 95%;
+  max-width: 720px;
   transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
   cursor: pointer;
   border-radius: 8px;

@@ -43,14 +43,13 @@
             <img src="assets/mei-logo.png" alt="MEI-Trumpet Landscape Cover" class="cover-image"
                 style="display: block; margin: 25px auto 20px; max-width: 420px; width: 88%;">
 
-            <p><strong>MEI-Trumpet</strong> is an educational web application that supports users in mastering musical
-                competencies. The app facilitates learning through guided repetition, structured reflection, and
-                multi-sensory
-                engagement, addressing critical technical and auditory skills.</p>
-            <p>By allowing students to set custom parameters, MEI-Trumpet adapts to different skill levels, creating a
+            <p><strong>Music Education Interface (MEI)</strong> is an educational web application that supports users in mastering musical competencies. Instrumental pedagogy expects learners to build fundamental technical skills (e.g., rhythm, fingering, intonation, dynamics, articulation, timbre) so their musical ideas are not limited by technique. Metronomes and tuners help with rhythm and pitch, but other skills still lack focused technological support. MEI addresses this gap with dedicated modules for different competencies. The app facilitates learning through guided repetition, structured reflection and multi-sensory engagement, addressing critical technical and auditory skills.</p>
+            
+            <h2>Fingering fundamentals</h2>
+            <p>The fingering module helps learners connect what they see, hear and play: a note on the staff, its name, pitch and corresponding fingering are presented in sequence. Each sequence in the exercise shows the fingering next to the notation, pairs it with aural cues and cycles through rest → reference → play so students can internalize those associations at a steady tempo.</p>
+            <p>By allowing students to set custom parameters, MEI adapts to different skill levels, creating a
                 <strong>personalized learning experience</strong>.
-                Starting with a beginner-friendly interface, users can customize their practice by selecting:
-            </p>
+                Starting with a beginner-friendly interface, users can customize their practice by selecting:</p>
 
             <ul style="list-style-type: none; padding-left: 20px;">
                 <li>⏰ <strong>Metronome Speed:</strong> Adjust the tempo for practice.</li>
@@ -74,11 +73,7 @@
                 <li>The third measure is for the user to play the note</li>
             </ul>
 
-            <p>On the top of the screen, an image showing the correct trumpet fingering, including adjustments for the
-                third
-                valve slide, is displayed. This helps students easily associate the note shown on the musical staff with
-                the
-                corresponding pitch and valve combination.</p>
+            <p>On the top of the screen, an instrument-specific fingering chart is displayed so students can match notes on the staff to the correct fingerings. The current implementation supports clarinet, oboe and trumpet.</p>
 
             <div class="app-screenshots">
                 <img src="assets/screenshot.png" alt="App Screenshot 1" class="app-screenshot"
@@ -86,8 +81,17 @@
                     onmouseover="this.style.borderColor='#FF5733'" onmouseout="this.style.borderColor='#4CAF50'">
             </div>
 
+            <div class="cta-center">
+                <a class="button" href="https://mei-trumpet.web.app/" target="_blank" rel="noopener">Click here to try MEI in your browser</a>
+            </div>
 
-            <p>MEI-Trumpet is available as a free beta version for both web and mobile devices:</p>
+            <div class="responsive-video">
+                <iframe src="https://www.youtube.com/embed/VMZdWEXNwi8" title="MEI Trumpet fingering demo" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+
+            <p class="spaced-top">MEI is also available as a free beta version for iOS and Android devices:</p>
 
             <div class="app-store-links">
                 <a href="https://apps.apple.com/us/app/mei-trumpet/id6452315691" target="_blank">
@@ -98,48 +102,27 @@
                 </a>
             </div>
 
-            <p>
-                <a href="https://mei-trumpet.web.app/" target="_blank">
-                    <strong>Click HERE to try MEI-Trumpet on your browser now!</strong>
-                </a>
-            </p>
         </section>
 
         <section style="margin-top: 10px;">
-            <h2>Advancing Your Skills!</h2>
-            <p>Once users get the hang of playing the right note, scaffolding helps them take it to the next level!
-            <p>
-            <h3>Intonation and Dynamics</h3>
-            <p>Adding a chromatic tuner and dynamic markings, users are encouraged to fine-tune their pitch and volume
-                control
-                bringing more expression and style to their playing.</p>
+            <h2>Intonation and Dynamics</h2>
+            <p>Once learners can reliably play the right notes, they can focus deliberate practice on other technical skills. Adding a chromatic tuner and dynamic markings, users are encouraged to fine-tune their pitch and volume
+                control bringing more expression and style to their playing.</p>
             <div class="app-screenshots">
                 <img src="assets/screen_tuner.png" alt="Tuner Screenshot" class="tuner-screenshot"
                     style="border: 3px solid #4CAF50; transition: border-color 0.5s ease-in-out, border-radius 10px; border-radius: 10px;"
                     onmouseover="this.style.borderColor='#FF5733'" onmouseout="this.style.borderColor='#4CAF50'">
             </div>
+            <p>The repository includes a chromatic tuner module for real-time intonation feedback, so players can hear and see how close they are to pitch. Dynamic markings are also baked into the score and mirrored in the reference sound, inviting learners to practice the same passage at different volume levels.</p>
 
-            <h3>Clear Articulation</h3>
-            <p>The latest feature of the Music Education Interface I am working on introduces <strong>articulation
-                    assessment</strong>. A state-of-the-art digital signal processing algorithm measures the
-                <strong>attack
-                    transient duration</strong> in milliseconds, providing users with real-time feedback on their
-                articulation
-                clarity.</p>
+            <h2>Articulation</h2>
+            <p>A further feature addressed in the Music Education Interface is the <strong>attack clarity</strong> of a produced tone. A digital signal processing algorithm measures the <strong>attack transient duration</strong> in milliseconds, providing users with real-time feedback on their articulation clarity.</p>
             <blockquote
                 style="font-style: italic; border-left: 4px solid #4CAF50; padding-left: 10px; margin-left: 10px;">
                 "Attack clarity is finding the purity and the best beginning of sound"
             </blockquote>
 
-            <p>Achieving a clean and controlled attack is a crucial skill for musicians, influencing both technical
-                precision
-                and artistic expression. The articulation analysis tool enables users to experiment with different
-                attack styles
-                (e.g., <strong>staccato, détaché, martelé</strong>) while receiving real-time feedback on their
-                performance. By
-                analyzing the transient development of their sound, students gain deeper control over articulation,
-                allowing
-                them to make more informed musical choices and refine their expressive capabilities.</p>
+            <p>Achieving a clean and controlled attack is a fundamental skill for wind and bowed string musicians, influencing both technical precision and artistic expression. A dedicated articulation analysis tool enables learners to experiment with different attack styles (e.g., <strong>staccato, détaché, martelé</strong>) while receiving real-time feedback on the duration of their sound's attack phase. This immediate insight allows students to adjust their technique dynamically, fostering a deeper understanding of how articulation affects overall musical performance. By analyzing the transient development of their sound, students gain deeper control over articulation, allowing them to make more informed musical choices and refine their expressive capabilities.</p>
             <p><strong>Audio Examples!</strong></p>
             <p>Compare the difference between an unclear and a clean articulation:</p>
             <div class="audio-container">
@@ -158,15 +141,11 @@
                     </audio>
                 </div>
             </div>
+            <p><a href="https://dafx25.dii.univpm.it/wp-content/uploads/2025/07/DAFx25_paper_25.pdf" target="_blank" rel="noopener">Read the full paper</a> for details on the developed algorithm.</p>
 
-            <h3>Enhancing Sound Quality with Machine Learning</h3>
-            <p>To further refine the student's technique, a machine learning model was integrated into the learning
-                interface
-                to classify sounds based on their timbral quality. This functionality introduces a new layer of
-                complexity,
-                helping users develop their musical competencies.
-            <p>Watch the <strong>DEMO</strong>:</p>
-            </p>
+            <h2>Timbre</h2>
+            <p>Brass pedagogy often notes that tensions in a player’s body affect their sound. In other words, timbre can reveal how efficiently a tone is produced. Building on that idea, a machine learning model for trumpet was trained on an extensive audio dataset graded by expert teachers, reaching accuracy comparable to human evaluators. The model classifies timbral quality inside MEI, adding a new layer of feedback for developing a resonant, efficient sound.</p>
+            <p>Watch the <strong>DEMO</strong> to see the timbre model inside the pedagogical app:</p>
             <div class="video-container"
                 style="text-align: center; margin-top: 20px; max-width: 100%; overflow: hidden;">
                 <video style="width: 100%; height: auto; max-width: 560px;" controls>
@@ -174,6 +153,12 @@
                     Your browser does not support the video tag.
                 </video>
             </div>
+            <p>For trumpet, a 3D visualization of extracted spectral features maps sound efficiency in real time, from red (poor) to green (excellent). As students play, their sound traces this space, making it easy to experiment, explore timbral possibilities, possibly aiming for a resonant, efficient tone. A similar pattern is observed in a preliminary test for flute on a smaller dataset, suggesting potential cross-instrument insights that warrant further study.</p>
+
+            <div class="input-image">
+                <img src="assets/zenarmonics.png" alt="3D visualization of timbre quality from red (poor) to green (excellent)">
+            </div>
+            <p>See the two articles for more details: <a href="https://kth.diva-portal.org/smash/get/diva2:1840508/FULLTEXT01.pdf#page=78" target="_blank" rel="noopener">SMAC article</a> and <a href="https://ismir2023program.ismir.net/poster_213.html" target="_blank" rel="noopener">ISMIR article</a>.</p>
 
         </section>
 
@@ -204,7 +189,7 @@
 
         <section>
             <h2>Research Background</h2>
-            <p>MEI-Trumpet is part of an open-source research project led by Alberto Acquilino at the Schulich School of
+            <p>MEI is part of an open-source research project led by Alberto Acquilino at the Schulich School of
                 Music
                 of McGill University, in collaboration with the International Neuroinformatics Coordinating Facility
                 (INCF).
@@ -220,7 +205,7 @@
 
     <footer>
         <div class="footer-inner">
-            <p>&copy; 2023 MEI-Trumpet. All rights reserved.</p>
+            <p>&copy; 2023 MEI-Music Education Interface. All rights reserved.</p>
         </div>
     </footer>
     <script src="/script.js"></script>
