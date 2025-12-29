@@ -460,6 +460,26 @@ p {
   outline: none;
 }
 
+.four-arts-logo {
+  max-width: 70%;
+}
+
+.take-part-image {
+  max-width: 55%;
+}
+
+.location-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.location-label img {
+  width: 20px;
+  height: 20px;
+}
+
 .project-title {
   text-align: center;
   font-size: clamp(1.4rem, 0.9vw + 1.05rem, 1.85rem);
