@@ -394,6 +394,21 @@ p {
   margin: 0.4em 0 0.6em;
 }
 
+.portfolio-placeholder {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  border-radius: var(--radius);
+  background: rgba(45, 108, 223, 0.08);
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+
 .portfolio-thumb img {
   max-width: 220px;
   width: 80%;
@@ -417,6 +432,25 @@ p {
   max-width: 55%;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   border-radius: var(--radius);
+}
+
+.student-compass-logo {
+  max-width: 260px;
+  width: 60%;
+  margin: 28px auto 18px;
+}
+
+.student-compass-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #000;
+  margin-top: -0.2em;
+}
+
+.snb-logo {
+  max-width: 280px;
+  width: 60%;
+  margin: 32px auto 20px;
 }
 
 .cover-image:hover,
