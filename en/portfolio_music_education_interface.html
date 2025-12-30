@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/style.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,33 +14,44 @@
 
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
-    <nav aria-label="Main navigation">
-        <div class="nav-inner">
-            <a href="/index.html" class="home-link">
-                <h1>Alberto Acquilino</h1>
-            </a>
-            <!-- Add aria-label to indicate what this button does for screen readers -->
-            <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation" aria-controls="menu" aria-expanded="false">&#9776;</button>
-
-            <ul id="menu">
-                <li><a href="/">About</a></li>
-                <li><a href="/research.html">Research</a></li>
-                <li><a href="/teaching.html">Teaching</a></li>
-                <li><a href="/portfolio.html">Portfolio</a></li>
+          <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/en/index.html" class="home-link">
+        <h1>Alberto Acquilino</h1>
+      </a>
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation" aria-controls="menu" aria-expanded="false">&#9776;</button>
+      <div class="nav-actions">
+        <ul id="menu">
+          <li><a href="/en/index.html">About</a></li>
+          <li><a href="/en/research.html">Research</a></li>
+          <li><a href="/en/teaching.html">Teaching</a></li>
+          <li><a href="/en/portfolio.html">Portfolio</a></li>
         </ul>
+        <div class="language-switcher" aria-label="Language selector">
+          <button class="lang-toggle" type="button" onclick="toggleLangMenu()" aria-haspopup="true" aria-expanded="false">
+            <span class="lang-flag flag-en" data-lang-flag></span>
+            <span class="lang-code" data-lang-label>EN</span>
+          </button>
+          <ul class="lang-menu" id="lang-menu" role="menu">
+            <li><button type="button" data-lang-option="en" onclick="setPreferredLanguage('en')" role="menuitem"><span class="lang-flag flag-en"></span><span>English</span></button></li>
+            <li><button type="button" data-lang-option="fr" onclick="setPreferredLanguage('fr')" role="menuitem"><span class="lang-flag flag-fr"></span><span>Français</span></button></li>
+            <li><button type="button" data-lang-option="it" onclick="setPreferredLanguage('it')" role="menuitem"><span class="lang-flag flag-it"></span><span>Italiano</span></button></li>
+          </ul>
+        </div>
+      </div>
     </div>
-    </nav>
+  </nav>
     <main id="main-content">
-        <p><a href="/portfolio.html" class="plain-link strong">← Back to Portfolio</a></p>
+        <p><a href="/en/portfolio.html" class="plain-link strong">← Back to Portfolio</a></p>
         <section>
             <div class="supporting-inline" aria-label="Supporting organizations">
                 <span class="muted support-text">This project is supported by:</span>
                 <div class="supporting-logos">
-                    <img src="assets/gsoc_logo.png" alt="Google Summer of Code logo">
-                    <img src="assets/incf_logo.png" alt="International Neuroinformatics Coordinating Facility logo">
+                    <img src="/assets/gsoc_logo.png" alt="Google Summer of Code logo">
+                    <img src="/assets/incf_logo.png" alt="International Neuroinformatics Coordinating Facility logo">
                 </div>
             </div>
-            <img src="assets/mei-logo.png" alt="MEI-Trumpet Landscape Cover" class="cover-image"
+            <img src="/assets/mei-logo.png" alt="MEI-Trumpet Landscape Cover" class="cover-image"
                 style="display: block; margin: 25px auto 20px; max-width: 420px; width: 88%;">
 
             <p><strong>Music Education Interface (MEI)</strong> is an educational web application that supports users in mastering musical competencies. Instrumental pedagogy expects learners to build fundamental technical skills (e.g., rhythm, fingering, intonation, dynamics, articulation, timbre) so their musical ideas are not limited by technique. Metronomes and tuners help with rhythm and pitch, but other skills still lack focused technological support. MEI addresses this gap with dedicated modules for different competencies. The app facilitates learning through guided repetition, structured reflection and multi-sensory engagement, addressing critical technical and auditory skills.</p>
@@ -61,7 +72,7 @@
 
             <div class="input-video">
                 <video autoplay loop muted playsinline>
-                    <source src="assets/input_video.mp4" type="video/mp4">
+                    <source src="/assets/input_video.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -76,7 +87,7 @@
             <p>On the top of the screen, an instrument-specific fingering chart is displayed so students can match notes on the staff to the correct fingerings. The current implementation supports clarinet, oboe and trumpet.</p>
 
             <div class="app-screenshots">
-                <img src="assets/screenshot.png" alt="App Screenshot 1" class="app-screenshot"
+                <img src="/assets/screenshot.png" alt="App Screenshot 1" class="app-screenshot"
                     style="border: 3px solid #4CAF50; transition: border-color 0.5s ease-in-out, border-radius 10px; border-radius: 10px;"
                     onmouseover="this.style.borderColor='#FF5733'" onmouseout="this.style.borderColor='#4CAF50'">
             </div>
@@ -95,10 +106,10 @@
 
             <div class="app-store-links">
                 <a href="https://apps.apple.com/us/app/mei-trumpet/id6452315691" target="_blank" rel="noopener">
-                    <img src="assets/appstore.png" alt="Download on the App Store" class="app-badge">
+                    <img src="/assets/appstore.png" alt="Download on the App Store" class="app-badge">
                 </a>
                 <a href="https://play.google.com/store/apps/details?id=com.meiteam.trumpet" target="_blank" rel="noopener">
-                    <img src="assets/googleplay.png" alt="Get it on Google Play" class="app-badge">
+                    <img src="/assets/googleplay.png" alt="Get it on Google Play" class="app-badge">
                 </a>
             </div>
 
@@ -109,7 +120,7 @@
             <p>Once learners can reliably play the right notes, they can focus deliberate practice on other technical skills. Adding a chromatic tuner and dynamic markings, users are encouraged to fine-tune their pitch and volume
                 control bringing more expression and style to their playing.</p>
             <div class="app-screenshots">
-                <img src="assets/screen_tuner.png" alt="Tuner Screenshot" class="tuner-screenshot"
+                <img src="/assets/screen_tuner.png" alt="Tuner Screenshot" class="tuner-screenshot"
                     style="border: 3px solid #4CAF50; transition: border-color 0.5s ease-in-out, border-radius 10px; border-radius: 10px;"
                     onmouseover="this.style.borderColor='#FF5733'" onmouseout="this.style.borderColor='#4CAF50'">
             </div>
@@ -129,14 +140,14 @@
                 <div class="audio-example">
                     <p><strong>Unclean Attack</strong></p>
                     <audio controls>
-                        <source src="assets/unclean_attack.wav" type="audio/wav">
+                        <source src="/assets/unclean_attack.wav" type="audio/wav">
                         Your browser does not support the audio element.
                     </audio>
                 </div>
                 <div class="audio-example">
                     <p><strong>Clean Attack</strong></p>
                     <audio controls>
-                        <source src="assets/clean_attack.wav" type="audio/wav">
+                        <source src="/assets/clean_attack.wav" type="audio/wav">
                         Your browser does not support the audio element.
                     </audio>
                 </div>
@@ -149,14 +160,14 @@
             <div class="video-container"
                 style="text-align: center; margin-top: 20px; max-width: 100%; overflow: hidden;">
                 <video style="width: 100%; height: auto; max-width: 560px;" controls>
-                    <source src="assets/Video.mp4" type="video/mp4">
+                    <source src="/assets/Video.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
             <p>For trumpet, a 3D visualization of extracted spectral features maps sound efficiency in real time, from red (poor) to green (excellent). As students play, their sound traces this space, making it easy to experiment, explore timbral possibilities, possibly aiming for a resonant, efficient tone. A similar pattern is observed in a preliminary test for flute on a smaller dataset, suggesting potential cross-instrument insights that warrant further study.</p>
 
             <div class="input-image">
-                <img src="assets/zenarmonics.png" alt="3D visualization of timbre quality from red (poor) to green (excellent)">
+                <img src="/assets/zenarmonics.png" alt="3D visualization of timbre quality from red (poor) to green (excellent)">
             </div>
             <p>See the two articles for more details: <a href="https://kth.diva-portal.org/smash/get/diva2:1840508/FULLTEXT01.pdf#page=78" target="_blank" rel="noopener">SMAC article</a> and <a href="https://ismir2023program.ismir.net/poster_213.html" target="_blank" rel="noopener">ISMIR article</a>.</p>
 
@@ -187,12 +198,12 @@
                 <a class="resource-link"
                     href="https://github.com/albertoacquilino/HarmonyHub/tree/gsoc-2024"
                     target="_blank" rel="noopener">
-                    <img class="resource-icon" src="assets/github_logo.png" alt="GitHub logo">
+                    <img class="resource-icon" src="/assets/github_logo.png" alt="GitHub logo">
                     <span class="resource-text">GitHub repository</span>
                 </a>
                 <a class="resource-link" href="https://mei-trumpet.web.app/home/exercise" target="_blank"
                     rel="noopener">
-                    <img class="resource-icon" src="assets/mei-logo.png" alt="MEI logo">
+                    <img class="resource-icon" src="/assets/mei-logo.png" alt="MEI logo">
                     <span class="resource-text">Try the demo</span>
                 </a>
             </div>
@@ -204,7 +215,8 @@
             <p>&copy; 2023 MEI-Music Education Interface. All rights reserved.</p>
         </div>
     </footer>
-    <script src="/script.js"></script>
+    <script src="/assets/js/script.js"></script>
+  <script src="/assets/js/lang.js"></script>
 </body>
 
 </html>

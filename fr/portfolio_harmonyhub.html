@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/assets/css/style.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+    <title>HarmonyHub</title>
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Passer au contenu principal</a>
+          <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/fr/index.html" class="home-link">
+        <h1>Alberto Acquilino</h1>
+      </a>
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation" aria-controls="menu" aria-expanded="false">&#9776;</button>
+      <div class="nav-actions">
+        <ul id="menu">
+          <li><a href="/fr/index.html">À propos</a></li>
+          <li><a href="/fr/research.html">Recherche</a></li>
+          <li><a href="/fr/teaching.html">Enseignement</a></li>
+          <li><a href="/fr/portfolio.html">Portfolio</a></li>
+        </ul>
+        <div class="language-switcher" aria-label="Language selector">
+          <button class="lang-toggle" type="button" onclick="toggleLangMenu()" aria-haspopup="true" aria-expanded="false">
+            <span class="lang-flag flag-en" data-lang-flag></span>
+            <span class="lang-code" data-lang-label>EN</span>
+          </button>
+          <ul class="lang-menu" id="lang-menu" role="menu">
+            <li><button type="button" data-lang-option="en" onclick="setPreferredLanguage('en')" role="menuitem"><span class="lang-flag flag-en"></span><span>English</span></button></li>
+            <li><button type="button" data-lang-option="fr" onclick="setPreferredLanguage('fr')" role="menuitem"><span class="lang-flag flag-fr"></span><span>Français</span></button></li>
+            <li><button type="button" data-lang-option="it" onclick="setPreferredLanguage('it')" role="menuitem"><span class="lang-flag flag-it"></span><span>Italiano</span></button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+    <main id="main-content">
+        <p><a href="/fr/portfolio.html" class="plain-link strong">← Retour au portfolio</a></p>
+        <section class="project-overview">
+            <p class="muted support-text">Ce projet est soutenu par :</p>
+            <div class="supporting-logos" aria-label="Organisations de soutien">
+                <img src="/assets/Western_logo.jpg" alt="Western University logo">
+                <img src="/assets/CDSI_logo.png" alt="Canadian Disability Studies Initiative logo">
+                <img src="/assets/gsoc_logo.png" alt="Google Summer of Code logo">
+                <img src="/assets/incf_logo.png" alt="International Neuroinformatics Coordinating Facility logo">
+            </div>
+            <img src="/assets/HarmonyHub_logo.png" alt="HarmonyHub Landscape Cover"
+                class="cover-image" tabindex="0">
+
+            <h1 class="project-title">Un livre de musique adaptable pour un apprentissage musical inclusif</h1>
+
+            <p>Les personnes qui veulent apprendre un instrument peuvent choisir parmi plusieurs méthodes et livres d’exercices, imprimés ou en PDF. Mais la plupart de ces ressources supposent tacitement un apprenant standard : une seule façon de lire la notation, une seule façon d’interagir avec les consignes, la même suite d’exercices pour tous.</p>
+
+            <p>Quand un apprenant a un handicap (ou apprend simplement différemment), cette hypothèse ne tient plus. La charge revient souvent à l’enseignant, qui doit réimaginer les supports à la volée : modifier des passages, changer les tessitures, réécrire les rythmes, inventer des alternatives à la notation visuelle et maintenir l’engagement. Et si d’excellents enseignants savent enseigner, ils ne sont pas nécessairement aussi compositeurs, arrangeurs ou développeurs.</p>
+
+            <p>HarmonyHub est un projet en cours qui comble ce manque. C’est un projet open source conçu pour aider enseignants et élèves divers à creare des exercices accessibles, musicalement pertinents, de façon rapide et créative, et adaptables à différents besoins d’apprentissage.</p>
+
+            <h2>Des méthodes statiques à un livre de musique adaptable</h2>
+            <p>HarmonyHub reconsidère le livre de musique comme un système dynamique. Au lieu d’une suite fixe de pages, la plateforme génère et remodèle les exercices à partir de prompts et d’objectifs pédagogiques. Les exercices peuvent être adaptés selon plusieurs dimensions musicales :</p>
+            <ul>
+                <li>contraintes spécifiques à l’instrument et choix d’instruments accessibles</li>
+                <li>étendue et registre</li>
+                <li>tonalité et mode</li>
+                <li>métrique et densité rythmique</li>
+                <li>densité rythmique</li>
+                <li>focus technique</li>
+                <li>représentation en notation occidentale, piano roll ainsi que notations musicales accessibles</li>
+            </ul>
+            <p>Le but n’est pas seulement de personnaliser le contenu, mais d’améliorer l’interaction élève&ndash;enseignant : faciliter l’itération, la comparaison des versions et la réflexion sur la manière dont la musique est apprise et vécue.</p>
+            <p>Voici un exemple où HarmonyHub génère un exercice pour violon débutant : huit mesures, accent rythmique en mi mineur, en 3/4, affiché en vue piano roll. Chaque paramètre peut être ajusté pour correspondre aux préférences de l’apprenant.</p>
+            <img src="/assets/HH.png" alt="HarmonyHub interface mockups" class="full-width-image">
+            <div class="cta-center">
+                <a class="button" href="https://huggingface.co/spaces/SHIKARICHACHA/adaptive-music-exercise-generator" target="_blank" rel="noopener">Essayer la démo en direct sur Hugging Face</a>
+            </div>
+
+            <h2>Interaction multisensorielle comme objectif de conception</h2>
+            <p>Jouer d’un instrument mobilise intrinsèquement plusieurs sens. Les musiciens apprennent par le son, le toucher, le mouvement et le feedback corporel, ressentant les vibrations dans l’instrument, écoutant le résultat de leurs actions et s’engageant physiquement avec la musique. Ces voies sensorielles sont essentielles au développement des compétences musicales.</p>
+
+            <p>HarmonyHub s’appuie sur cette idée en soutenant différentes manières d’accéder au matériau musical et d’y interagir. Plutôt que de se focaliser sur un mode unique, la plateforme prend en charge de façon intentionnelle des modes multiples et complémentaires. En pratique, cela signifie offrir une gamme de modalités d’interaction et de feedback, notamment :</p>
+            <ul>
+                <li>prompts textuels et instructions structurées</li>
+                <li>prompts vocaux et signaux audio</li>
+                <li>visualisations interactives</li>
+                <li>intégration avec du matériel haptique</li>
+            </ul>
+            <p>Ces modalités ne sont pas traitées comme des options. Elles orientent la trajectoire du projet et soutiennent le développement continu d’un éventail plus large de représentations musicales accessibles.</p>
+
+            <h2>Comment les exercices sont générés</h2>
+
+            <p>HarmonyHub inclut une pipeline générative volontairement contrainte. L’objectif n’est pas une créativité IA illimitée, mais le contrôle, la répétabilité et la pertinence pédagogique.</p>
+
+            <p>L’architecture actuelle suit un flux clair et itératif input → processing → output :</p>
+
+            <ol>
+                <li><strong>Input :</strong> définir instrument, difficulté, tonalité et métrique.</li>
+                <li><strong>Processing :</strong> le système structure un prompt et interroge un modèle linguistique pour obtenir un exercice lisible par la machine.</li>
+                <li><strong>Post processing :</strong> analyser, valider et remettre à l’échelle pour garantir cohérence et durées exactes.</li>
+                <li><strong>Rendering :</strong> produire l’exercice en plusieurs formats pour soutenir différentes interactions d’apprentissage.</li>
+            </ol>
+
+            <figure>
+                <img src="/assets/HH_pipeline.png" alt="HarmonyHub pipeline diagram from input to processing to output" class="full-width-image">
+                <figcaption>La pipeline est conçue pour l’itération : ajuster les entrées, revoir les sorties et régénérer si nécessaire.</figcaption>
+            </figure>
+
+            <p>Les sorties actuelles incluent :</p>
+
+            <ul>
+                <li>MIDI</li>
+                <li>visualisations piano roll</li>
+                <li>audio MP3 rendu</li>
+            </ul>
+
+            <p>Cette structure modulaire est conçue pour supporter de futurs niveaux d’accessibilité, comme des notations alternatives ou des interfaces d’assistance, sans changer la pipeline de base.</p>
+
+            <p>Des notes d’implémentation et du matériel exécutable sont disponibles dans le <a href="https://github.com/PRIYANSHU2026/Music-Generation-LLM" target="_blank" rel="noopener">référentiel GitHub</a> du projet.</p>
+
+            <h2>Développement inclusif et guidé par le handicap</h2>
+            <p>HarmonyHub est développé avec une approche axée sur l’équité et guidée par le handicap. Des apprenants, enseignants et artistes en situation de handicap contribuent comme co-concepteurs, définissant des exigences qui influencent le design de l’interface, la structure du contenu et les critères d’évaluation. Ce travail est en cours et informe directement les étapes futures.</p>
+
+            <h2>État de la recherche et du développement</h2>
+            <p>HarmonyHub est un projet de R&amp;D actif. Les jalons à court terme incluent :</p>
+            <ul>
+                <li>prototypage et ateliers de co-conception co-dirigés par des personnes en situation de handicap</li>
+                <li>élargissement des paramètres contrôlables et des représentations accessibles</li>
+                <li>tests itératifs dans des contextes d’apprentissage authentiques</li>
+                <li>déploiements à plus long terme et publication de guides de conception et d’implémentation</li>
+            </ul>
+
+            <h2>Contexte de collaboration</h2>
+            <p>HarmonyHub est développé au sein d’un réseau de chercheurs, d’éducateurs et d’organisations culturelles, avec des partenariats établis au Canada et en Europe pour ancrer le travail dans des contextes éducatifs et culturels variés.</p>
+
+            <h2>Orientation open source</h2>
+            <p>HarmonyHub est entièrement open source. Code, documentation, processus de conception et publications en libre accès sont partagés pour favoriser la transparence, la réutilisation et la durabilité à long terme&mdash;offrant non seulement un outil, mais aussi une approche reproductible de l’apprentissage musical inclusif et adaptatif.</p>
+            <div class="resource-links">
+                <a class="resource-link" href="https://github.com/PRIYANSHU2026/Music-Generation-LLM" target="_blank" rel="noopener">
+                    <img class="resource-icon" src="/assets/github_logo.png" alt="GitHub logo">
+                    <span class="resource-text">Référentiel GitHub</span>
+                </a>
+                <a class="resource-link" href="https://huggingface.co/spaces/SHIKARICHACHA/adaptive-music-exercise-generator" target="_blank" rel="noopener">
+                    <img class="resource-icon" src="/assets/hugging_face_logo.svg" alt="Hugging Face logo">
+                    <span class="resource-text">Démo Hugging Face</span>
+                </a>
+            </div>
+        </section>
+    </main>
+    <script src="/assets/js/script.js"></script>
+  <script src="/assets/js/lang.js"></script>
+</body>
+
+</html>

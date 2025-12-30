@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/assets/css/style.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+  <title>TEMES | Tech-Enhanced Music Education Symposium</title>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
+        <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/fr/index.html" class="home-link">
+        <h1>Alberto Acquilino</h1>
+      </a>
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation" aria-controls="menu" aria-expanded="false">&#9776;</button>
+      <div class="nav-actions">
+        <ul id="menu">
+          <li><a href="/fr/index.html">À propos</a></li>
+          <li><a href="/fr/research.html">Recherche</a></li>
+          <li><a href="/fr/teaching.html">Enseignement</a></li>
+          <li><a href="/fr/portfolio.html">Portfolio</a></li>
+        </ul>
+        <div class="language-switcher" aria-label="Language selector">
+          <button class="lang-toggle" type="button" onclick="toggleLangMenu()" aria-haspopup="true" aria-expanded="false">
+            <span class="lang-flag flag-en" data-lang-flag></span>
+            <span class="lang-code" data-lang-label>EN</span>
+          </button>
+          <ul class="lang-menu" id="lang-menu" role="menu">
+            <li><button type="button" data-lang-option="en" onclick="setPreferredLanguage('en')" role="menuitem"><span class="lang-flag flag-en"></span><span>English</span></button></li>
+            <li><button type="button" data-lang-option="fr" onclick="setPreferredLanguage('fr')" role="menuitem"><span class="lang-flag flag-fr"></span><span>Français</span></button></li>
+            <li><button type="button" data-lang-option="it" onclick="setPreferredLanguage('it')" role="menuitem"><span class="lang-flag flag-it"></span><span>Italiano</span></button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <p><a href="/fr/portfolio.html" class="plain-link strong">← Retour au portfolio</a></p>
+    <section class="temes-hero">
+      <img src="/assets/TEMES_logo.png" alt="TEMES — Tech-Enhanced Music Education Symposium" class="temes-logo" loading="lazy" />
+      <p class="pill">2024 · McGill University · Co-fondé &amp; Présidé</p>
+      <h1>Tech-Enhanced Music Education Symposium (TEMES)</h1>
+      <p>Co-fondé par Alberto Acquilino, Theodora Nestorova et Ziyue Piao, TEMES a réuni chercheurs, enseignants, technologues et étudiants d’Amérique du Nord et d’Europe pour explorer comment la technologie peut faire progresser l’apprentissage et la créativité musicale. Le panel hybride a accueilli plus de 100 participants en personne et à distance, ainsi que des démonstrations étudiantes d’institutions internationales dont Mila - Quebec AI Institute, Ottawa University et University of Music and Performing Arts Vienna.</p>
+      <div class="temes-actions">
+        <a class="button" href="https://www.cirmmt.org/fr/events/special/temes_may-9" target="_blank" rel="noopener">Voir la page de l’événement TEMES</a>
+      </div>
+    </section>
+
+    <section class="temes-card">
+      <h2>Points forts</h2>
+      <ul>
+        <li>Keynote par Eran Egozy (MIT Music Technology Lab; co-fondateur, Harmonix Music Systems — Guitar Hero™, Rock Band™)</li>
+        <li>Panels avec des professeurs de McGill et des experts internationaux de Carnegie Mellon University, New England Conservatory et University of Luxembourg</li>
+        <li>Démos étudiantes de Mila, Ottawa University et University of Music and Performing Arts Vienna</li>
+        <li>Performances live et collaborations mettant en valeur l’apprentissage musical augmenté par la technologie</li>
+      </ul>
+    </section>
+
+    <section class="temes-card">
+      <h2>Thèmes &amp; Structure</h2>
+      <p><strong>Avec l’évolution rapide de la technologie, quelles tendances dans les prochaines années auront, selon vous, un impact majeur sur l’éducation musicale ?</strong> Cette question a structuré le symposium en quatre axes : améliorer la formation et la performance musicales ; impact pédagogique de la technologie du studio à la scène ; participation et engagement musicaux ; accessibilité et inclusion.</p>
+      <ol class="temes-themes" type="I">
+        <li><strong>Améliorer la formation et la performance musicales</strong></li>
+        <li><strong>Impact pédagogique de la technologie du studio à la scène</strong></li>
+        <li><strong>Participation et engagement musicaux</strong></li>
+        <li><strong>Accessibilité et inclusion</strong></li>
+      </ol>
+      <p>Chacun des trois premiers thèmes associait deux experts (un sur place, un en ligne) pour susciter des perspectives contrastées pour le public hybride, suivi d’une discussion ouverte. Un dialogue collectif final reliait tous les enseignements à l’inclusion et à l’accessibilité, avec les réflexions des modérateurs pour clôturer la session.</p>
+    </section>
+
+    <section class="temes-card">
+      <h2>Panélistes</h2>
+      <ul>
+        <li><strong>Eran Egozy (MIT)</strong> — Co-fondateur d’Harmonix (Guitar Hero™, Rock Band™) ; Professor of the Practice of Music Technology au MIT, spécialisé dans les systèmes musicaux interactifs.</li>
+        <li><strong>Roger Dannenberg (Carnegie Mellon)</strong> — Pionnier de la musique informatique, derrière l’accompagnement assisté par ordinateur, Audacity et le premier Piano Tutor intelligent ; professeur émérite en CS, Art &amp; Music.</li>
+        <li><strong>Isabelle Cossette (McGill)</strong> — Dirige le Music Performance and Body Lab ; développe des pédagogies instrumentales fondées sur la science et la technologie, axées sur la biomécanique et la santé des musiciens.</li>
+        <li><strong>Ian Howell (New England Conservatory)</strong> — Voice scientist et Associate Professor of Voice ; relie analyse acoustique, traitement du signal numérique et pédagogie vocale.</li>
+        <li><strong>Andrea Creech (McGill)</strong> — Professeure de pédagogie musicale ; recherche inclusion, apprentissage informel et musique tout au long de la vie, James McGill Professor.</li>
+        <li><strong>Luc Nijs (University of Luxembourg)</strong> — Étudie l’apprentissage musical incarné et l’interaction musicien-instrument médiée par la technologie ; co-fondateur de la Jonet Chair on Music Making and Social Action.</li>
+      </ul>
+    </section>
+
+    <section class="temes-card">
+      <h2>Modérateurs</h2>
+      <ul>
+        <li><strong>Dr. Liliana Ara&uacute;jo (McGill)</strong> — Chercheuse en Applied Performance Sciences dirigeant le premier APS Hub du Canada ; centrée sur la santé, le bien-être et des carrières artistiques durables.</li>
+        <li><strong>Andr&eacute; Janu&aacute;rio (McGill)</strong> — Bassoniste, enseignant et chercheur explorant le design d’instrument et la pratique interprétative ; actif à l’international comme interprète et collaborateur.</li>
+      </ul>
+    </section>
+
+    <section class="temes-card">
+      <h2>Impact</h2>
+      <p>Le symposium a été reconnu par le <a class="plain-link strong" href="https://www.mcgill.ca/gps/students/grad-soar/student-engagement-fund/student-engagement-fund-winners-2024" target="_blank" rel="noopener">McGill University Engagement Fund</a> pour son impact sur la communauté académique et locale. TEMES a favorisé collaboration et innovation dans l’éducation musicale augmentée par la technologie, faisant progresser des pratiques inclusives et fondées sur la recherche ainsi que l’engagement communautaire.</p>
+    </section>
+  </main>
+
+  <script src="/assets/js/script.js"></script>
+  <script src="/assets/js/lang.js"></script>
+</body>
+
+</html>

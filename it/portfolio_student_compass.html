@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/assets/css/style.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+    <title>Alberto Acquilino</title>
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Salta al contenuto principale</a>
+          <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/it/index.html" class="home-link">
+        <h1>Alberto Acquilino</h1>
+      </a>
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation" aria-controls="menu" aria-expanded="false">&#9776;</button>
+      <div class="nav-actions">
+        <ul id="menu">
+          <li><a href="/it/index.html">Info</a></li>
+          <li><a href="/it/research.html">Ricerca</a></li>
+          <li><a href="/it/teaching.html">Didattica</a></li>
+          <li><a href="/it/portfolio.html">Portfolio</a></li>
+        </ul>
+        <div class="language-switcher" aria-label="Language selector">
+          <button class="lang-toggle" type="button" onclick="toggleLangMenu()" aria-haspopup="true" aria-expanded="false">
+            <span class="lang-flag flag-en" data-lang-flag></span>
+            <span class="lang-code" data-lang-label>EN</span>
+          </button>
+          <ul class="lang-menu" id="lang-menu" role="menu">
+            <li><button type="button" data-lang-option="en" onclick="setPreferredLanguage('en')" role="menuitem"><span class="lang-flag flag-en"></span><span>English</span></button></li>
+            <li><button type="button" data-lang-option="fr" onclick="setPreferredLanguage('fr')" role="menuitem"><span class="lang-flag flag-fr"></span><span>Français</span></button></li>
+            <li><button type="button" data-lang-option="it" onclick="setPreferredLanguage('it')" role="menuitem"><span class="lang-flag flag-it"></span><span>Italiano</span></button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+    <main id="main-content">
+        <p><a href="/it/portfolio.html" class="plain-link strong">← Torna al Portfolio</a></p>
+        <section>
+            <h1 class="project-title">Sistema Student Compass</h1>
+            <img src="/assets/student_compass_logo.png" alt="Sistema Student Compass logo" class="cover-image student-compass-logo">
+
+            <h2 class="student-compass-subtitle">Valutazione del benessere guidata dai dati per programmi di educazione musicale</h2>
+
+            <h2 class="spaced-top">Contesto e problema</h2>
+            <p>I programmi di educazione musicale, in particolare le iniziative ispirate a El Sistema orientate all’impatto sociale, spesso non dispongono di strumenti sistematici per monitorare benessere emotivo, coinvolgimento ed esperienza di apprendimento degli studenti. Sebbene la partecipazione musicale sia ampiamente associata a esiti positivi, questi effetti restano di frequente non misurati. Di conseguenza, i bisogni degli studenti possono non emergere, l’efficacia didattica è difficile da valutare in tempo reale e l’impatto dei programmi è complesso da documentare per sostenibilità e finanziamenti a lungo termine.</p>
+            <p>Docenti e amministratori devono quindi prendere decisioni pedagogiche e strategiche con feedback quantitativi limitati, soprattutto in contesti con risorse ridotte dove studi di valutazione su larga scala non sono praticabili.</p>
+
+            <h2>Panoramica del progetto</h2>
+            <p>Sistema Student Compass è una piattaforma digitale pensata per integrare educazione musicale e valutazione strutturata del benessere. Il sistema combina brevi questionari studenteschi inseriti nel curriculum con analisi automatizzata dei dati per offrire insight utili a studenti, docenti, genitori e amministratori di programma.</p>
+            <p>Basata su framework psicologici validati, la piattaforma consente un monitoraggio continuo dell’esperienza emotiva e sociale degli studenti insieme alla loro partecipazione musicale. Non è concepita come valutazione esterna, ma come parte integrante delle attività musicali quotidiane, riducendo le interruzioni e massimizzando qualità e rilevanza dei dati.</p>
+
+            <h2>Architettura e componenti</h2>
+            <h3>Misurazione del benessere</h3>
+            <p>La piattaforma integra modelli psicologici validati, tra cui il <a href="https://ppc.sas.upenn.edu/learn-more/perma-theory-well-being-and-perma-workshops" target="_blank" rel="noopener"><strong>framework PERMA</strong></a>. Il <em>Modello PERMA del benessere</em>, sviluppato dallo psicologo Martin Seligman, è una cornice per il fiorire umano basata su cinque elementi: Positive Emotion, Engagement, Relationships, Meaning e Accomplishment. Offre un approccio olistico alla costruzione di una vita appagante oltre la felicità momentanea ed è ampiamente usato in psicologia positiva per crescita personale e sviluppo organizzativo. I questionari sono brevi, adeguati all’età e pensati per essere compilati regolarmente durante le attività.</p>
+
+            <h3>Interazione integrata nel curriculum</h3>
+            <p>I check-in sul benessere sono inseriti in attività musicali e interazioni gamificate, incoraggiando riflessione e coinvolgimento senza interrompere il flusso didattico. Questo design permette anche agli studenti più riservati di comunicare la propria esperienza in modo anonimo e a bassa pressione.</p>
+
+            <h3>Analisi e reportistica automatizzata</h3>
+            <p>I dati raccolti sono elaborati tramite modelli statistici per generare report differenziati per i vari stakeholder:</p>
+            <ul>
+                <li>Studenti e genitori ricevono profili individuali di benessere</li>
+                <li>Docenti ricevono feedback aggregato e anonimizzato a livello di classe su coinvolgimento e comprensione</li>
+                <li>I direttori di programma ricevono indicatori longitudinali di efficacia, rischio di abbandono e impatto</li>
+            </ul>
+
+            <h3>Scalabilità e deployment</h3>
+            <p>Progettato come sistema web distribuito su piattaforme mobili e desktop, Student Compass supporta raccolta dati multi-sito, confronto regionale e valutazione di programma nel lungo periodo.</p>
+
+            <h2>Framework concettuale</h2>
+            <figure>
+                <img src="/assets/sistema_student_compass.png" alt="Conceptual framework for the Sistema Student Compass" class="full-width-image">
+            </figure>
+
+            <h2>Impatto</h2>
+            <p>Rendendo il benessere degli studenti misurabile e visibile, Student Compass favorisce interventi precoci, maggiore retention e strategie didattiche più reattive. A livello organizzativo, consente ai programmi musicali di articolare il proprio impatto con evidenze quantitative, rafforzando la rendicontazione verso i finanziatori e sostenendo la sostenibilità a lungo termine.</p>
+            <p>Il sistema ridefinisce la valutazione non come requisito esterno, ma come ciclo continuo di feedback che informa progettazione curriculare, pratica didattica e pianificazione strategica.</p>
+
+            <h2>Direzioni future</h2>
+            <p>Lo sviluppo futuro di Student Compass si concentra sull’uso come framework di valutazione longitudinale per programmi musicali orientati al cambiamento sociale. Abilitando raccolte dati consistenti su periodi estesi e in più siti, la piattaforma è pensata per supportare analisi comparative e longitudinali di benessere, coinvolgimento e retention degli studenti entro e tra programmi.</p>
+            <p>Questo approccio apre alla possibilità di modellare come la partecipazione prolungata all’educazione musicale influenzi esiti psicologici e sociali nel tempo, soprattutto in contesti a risorse limitate. Dataset aggregati e anonimizzati possono informare la progettazione curriculare basata su evidenze, contribuire alla valutazione d’impatto a livello organizzativo e di rete e sostenere la ricerca sul ruolo a lungo termine dell’educazione musicale nello sviluppo sociale.</p>
+            <p>Le estensioni previste includono analitiche longitudinali avanzate, benchmarking cross-programma e integrazione con workflow di ricerca, posizionando Student Compass sia come strumento operativo per i professionisti sia come infrastruttura di ricerca per studiare programmi musicali orientati al cambiamento sociale.</p>
+
+            <!-- PDF Download Button -->
+            <p>
+                <a href="/documents/Sistema Student Compass.pdf" class="download-button" download>
+                    📄 Scarica la panoramica del progetto in inglese (PDF)
+                </a>
+            </p>
+
+        </section>
+
+    </main>
+    <script src="/assets/js/script.js"></script>
+  <script src="/assets/js/lang.js"></script>
+</body>
+
+</html>

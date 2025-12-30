@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/assets/css/style.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+    <title>Alberto Acquilino</title>
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Salta al contenuto principale</a>
+          <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/it/index.html" class="home-link">
+        <h1>Alberto Acquilino</h1>
+      </a>
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation" aria-controls="menu" aria-expanded="false">&#9776;</button>
+      <div class="nav-actions">
+        <ul id="menu">
+          <li><a href="/it/index.html">Info</a></li>
+          <li><a href="/it/research.html">Ricerca</a></li>
+          <li><a href="/it/teaching.html">Didattica</a></li>
+          <li><a href="/it/portfolio.html">Portfolio</a></li>
+        </ul>
+        <div class="language-switcher" aria-label="Language selector">
+          <button class="lang-toggle" type="button" onclick="toggleLangMenu()" aria-haspopup="true" aria-expanded="false">
+            <span class="lang-flag flag-en" data-lang-flag></span>
+            <span class="lang-code" data-lang-label>EN</span>
+          </button>
+          <ul class="lang-menu" id="lang-menu" role="menu">
+            <li><button type="button" data-lang-option="en" onclick="setPreferredLanguage('en')" role="menuitem"><span class="lang-flag flag-en"></span><span>English</span></button></li>
+            <li><button type="button" data-lang-option="fr" onclick="setPreferredLanguage('fr')" role="menuitem"><span class="lang-flag flag-fr"></span><span>Français</span></button></li>
+            <li><button type="button" data-lang-option="it" onclick="setPreferredLanguage('it')" role="menuitem"><span class="lang-flag flag-it"></span><span>Italiano</span></button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+    <main id="main-content">
+        <p><a href="/it/portfolio.html" class="plain-link strong">← Torna al Portfolio</a></p>
+        <section>
+            <div class="supporting-inline" aria-label="Organizzazioni che supportano">
+                <span class="muted support-text">Questo progetto è supportato da:</span>
+                <div class="supporting-logos">
+                    <img src="/assets/gsoc_logo.png" alt="Google Summer of Code logo">
+                    <img src="/assets/incf_logo.png" alt="International Neuroinformatics Coordinating Facility logo">
+                </div>
+            </div>
+            <img src="/assets/mei-logo.png" alt="MEI-Trumpet Landscape Cover" class="cover-image"
+                style="display: block; margin: 25px auto 20px; max-width: 420px; width: 88%;">
+
+            <p><strong>Music Education Interface (MEI)</strong> è un’applicazione web educativa che aiuta gli utenti a padroneggiare competenze musicali. La pedagogia strumentale richiede lo sviluppo di abilità tecniche fondamentali (ritmo, diteggiatura, intonazione, dinamiche, articolazione, timbro) affinché le idee musicali non siano limitate dalla tecnica. Metronomi e accordatori supportano ritmo e intonazione, ma altre competenze hanno ancora poco supporto tecnologico dedicato. MEI colma questo vuoto con moduli specifici per diverse competenze. L’app facilita l’apprendimento tramite ripetizione guidata, riflessione strutturata e coinvolgimento multisensoriale, affrontando abilità tecniche e uditive cruciali.</p>
+            
+            <h2>Diteggiatura</h2>
+            <p>Il modulo di diteggiatura aiuta gli studenti a collegare ciò che vedono, sentono e suonano: una nota sul pentagramma, il suo nome, l’altezza e la corrispondente diteggiatura sono presentati in sequenza. Ogni sequenza mostra la diteggiatura accanto alla notazione, la associa a segnali uditivi e cicla tra pausa → riferimento → esecuzione, così gli studenti interiorizzano queste associazioni a tempo costante.</p>
+            <p>Consentendo di impostare parametri personalizzati, MEI si adatta a diversi livelli di abilità, creando un’esperienza di apprendimento <strong>personalizzata</strong>. Con un’interfaccia adatta ai principianti, gli utenti possono configurare la pratica scegliendo:</p>
+
+            <ul style="list-style-type: none; padding-left: 20px;">
+                <li>⏰ <strong>Velocità del metronomo:</strong> regola il tempo di pratica.</li>
+                <li>🎵 <strong>Nota più bassa e più alta:</strong> definisci l’estensione su cui concentrarti.</li>
+            </ul>
+
+            <p>L’immagine seguente mostra i controlli interattivi dove impostare questi parametri prima di iniziare
+                un esercizio.</p>
+
+            <div class="input-video">
+                <video autoplay loop muted playsinline>
+                    <source src="/assets/input_video.mp4" type="video/mp4">
+                    Il tuo browser non supporta il tag video.
+                </video>
+            </div>
+
+            <p>Ogni esercizio è strutturato in tre passaggi:</p>
+            <ul>
+                <li>La prima battuta è di pausa, per prepararsi</li>
+                <li>La seconda battuta riproduce una nota di riferimento, da imitare</li>
+                <li>La terza battuta è per eseguire la nota</li>
+            </ul>
+
+            <p>In alto è mostrata una tabella di diteggiatura specifica per lo strumento, così gli studenti possono associare le note sul pentagramma alle diteggiature corrette. L’implementazione attuale supporta clarinetto, oboe e tromba.</p>
+
+            <div class="app-screenshots">
+                <img src="/assets/screenshot.png" alt="App Screenshot 1" class="app-screenshot"
+                    style="border: 3px solid #4CAF50; transition: border-color 0.5s ease-in-out, border-radius 10px; border-radius: 10px;"
+                    onmouseover="this.style.borderColor='#FF5733'" onmouseout="this.style.borderColor='#4CAF50'">
+            </div>
+
+            <div class="cta-center">
+                <a class="button" href="https://mei-trumpet.web.app/" target="_blank" rel="noopener">Prova MEI nel browser</a>
+            </div>
+
+            <div class="responsive-video">
+                <iframe src="https://www.youtube.com/embed/VMZdWEXNwi8" title="MEI Trumpet fingering demo" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+
+            <p class="spaced-top">MEI è disponibile anche come beta gratuita per dispositivi iOS e Android:</p>
+
+            <div class="app-store-links">
+                <a href="https://apps.apple.com/us/app/mei-trumpet/id6452315691" target="_blank" rel="noopener">
+                    <img src="/assets/appstore.png" alt="Download on the App Store" class="app-badge">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.meiteam.trumpet" target="_blank" rel="noopener">
+                    <img src="/assets/googleplay.png" alt="Get it on Google Play" class="app-badge">
+                </a>
+            </div>
+
+        </section>
+
+        <section style="margin-top: 10px;">
+            <h2>Intonazione e dinamica</h2>
+            <p>Quando gli studenti sanno produrre le note corrette con costanza, possono dedicare la pratica mirata ad altre abilità tecniche. Integrando un accordatore cromatico e indicazioni dinamiche, sono incoraggiati a affinare controllo di intonazione e volume, aggiungendo espressività e stile all’esecuzione.</p>
+            <div class="app-screenshots">
+                <img src="/assets/screen_tuner.png" alt="Tuner Screenshot" class="tuner-screenshot"
+                    style="border: 3px solid #4CAF50; transition: border-color 0.5s ease-in-out, border-radius 10px; border-radius: 10px;"
+                    onmouseover="this.style.borderColor='#FF5733'" onmouseout="this.style.borderColor='#4CAF50'">
+            </div>
+            <p>Il repository include un modulo di accordatore cromatico per feedback in tempo reale, così chi suona può sentire e vedere quanto è vicino all’intonazione. Le indicazioni dinamiche sono inserite in partitura e rispecchiate nel suono di riferimento, invitando a praticare lo stesso passaggio a diversi livelli di volume.</p>
+
+            <h2>Articolazione</h2>
+            <p>Un’ulteriore funzionalità affrontata in Music Education Interface è la <strong>chiarezza dell’attacco</strong> del suono. Un algoritmo di elaborazione digitale del segnale misura la <strong>durata del transitorio d’attacco</strong> in millisecondi, fornendo feedback in tempo reale sulla nitidezza dell’articolazione.</p>
+            <blockquote
+                style="font-style: italic; border-left: 4px solid #4CAF50; padding-left: 10px; margin-left: 10px;">
+                "Attack clarity is finding the purity and the best beginning of sound"
+            </blockquote>
+
+            <p>Ottenere un attacco pulito e controllato è una competenza fondamentale per strumenti a fiato e ad arco, influenzando precisione tecnica ed espressione artistica. Uno strumento dedicato di analisi dell’articolazione permette di sperimentare diversi stili di attacco (es. <strong>staccato, détaché, martelé</strong>) con feedback in tempo reale sulla durata della fase di attacco del suono. Questo consente di adattare dinamicamente la tecnica, approfondendo come l’articolazione influisca sulla performance. Analizzando lo sviluppo transitorio del suono, gli studenti acquisiscono maggiore controllo, prendendo decisioni musicali più informate e raffinando la propria espressività.</p>
+            <p><strong>Esempi audio!</strong></p>
+            <p>Confronta la differenza tra un’articolazione poco chiara e una pulita:</p>
+            <div class="audio-container">
+                <div class="audio-example">
+                    <p><strong>Unclean Attack</strong></p>
+                    <audio controls>
+                        <source src="/assets/unclean_attack.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="audio-example">
+                    <p><strong>Clean Attack</strong></p>
+                    <audio controls>
+                        <source src="/assets/clean_attack.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+            <p><a href="https://dafx25.dii.univpm.it/wp-content/uploads/2025/07/DAFx25_paper_25.pdf" target="_blank" rel="noopener">Leggi l’articolo completo</a> per i dettagli sull’algoritmo sviluppato.</p>
+
+            <h2>Timbro</h2>
+            <p>Nella pedagogia degli ottoni si nota spesso come tensioni corporee influenzino il suono: il timbro può rivelare l’efficienza con cui un tono è prodotto. Partendo da questa idea, un modello di machine learning per tromba è stato addestrato su un ampio dataset audio valutato da docenti esperti, raggiungendo accuratezza comparabile a valutatori umani. Il modello classifica la qualità timbrica in MEI, aggiungendo un nuovo livello di feedback per sviluppare un suono risonante ed efficiente.</p>
+            <p>Guarda la <strong>DEMO</strong> per vedere il modello timbrico nell’app didattica:</p>
+            <div class="video-container"
+                style="text-align: center; margin-top: 20px; max-width: 100%; overflow: hidden;">
+                <video style="width: 100%; height: auto; max-width: 560px;" controls>
+                    <source src="/assets/Video.mp4" type="video/mp4">
+                    Il tuo browser non supporta il tag video.
+                </video>
+            </div>
+            <p>Per la tromba, una visualizzazione 3D delle caratteristiche spettrali estratte mappa in tempo reale l’efficienza del suono, dal rosso (scarso) al verde (ottimo). Suonando, il percorso del suono attraversa questo spazio, facilitando la sperimentazione e l’esplorazione timbrica verso un tono risonante ed efficiente. Un andamento simile si osserva in un test preliminare per flauto su un dataset più piccolo, suggerendo possibili spunti cross-strumentali da approfondire.</p>
+
+            <div class="input-image">
+                <img src="/assets/zenarmonics.png" alt="3D visualization of timbre quality from red (poor) to green (excellent)">
+            </div>
+            <p>Per maggiori dettagli, vedi: <a href="https://kth.diva-portal.org/smash/get/diva2:1840508/FULLTEXT01.pdf#page=78" target="_blank" rel="noopener">articolo SMAC</a> e <a href="https://ismir2023program.ismir.net/poster_213.html" target="_blank" rel="noopener">articolo ISMIR</a>.</p>
+
+        </section>
+
+        <section style="margin-top: 10px;">
+            <h2>Roadmap</h2>
+            <p>Il lavoro futuro punta a espandere i componenti attuali in app mobili per gli studenti e a potenziare gli strumenti pedagogici. I prossimi passi includono:</p>
+
+            <ul>
+                <li>📱 <strong>Esperienze mobile-first</strong> che integrano tutti i moduli di feedback in un’app adatta agli allievi.</li>
+                <li>🎼 <strong>Indicazioni di diteggiatura per ulteriori strumenti</strong> per ampliare il repertorio oltre la tromba.</li>
+                <li>🧩 <strong>Nuovi componenti di pratica</strong> per arricchire ulteriormente l’apprendimento.</li>
+                <li>🏫 <strong>Test con scuole di musica</strong> per validare usabilità, accessibilità e impatto didattico.</li>
+            </ul>
+
+            <p>L’obiettivo è rendere l’educazione musicale più coinvolgente, efficace e adattabile, mantenendo strumenti pratici per i contesti di insegnamento reali.</p>
+        </section>
+
+        <section>
+            <h2>Orientamento open source</h2>
+            <p>MEI è rilasciato con licenza Affero. Codice, documentazione, processi di design e pubblicazioni open access sono condivisi per sostenere trasparenza, riuso e sostenibilità a lungo termine, offrendo non solo uno strumento ma un approccio riproducibile all’apprendimento musicale inclusivo e adattivo.</p>
+            <div class="resource-links">
+                <a class="resource-link"
+                    href="https://github.com/albertoacquilino/HarmonyHub/tree/gsoc-2024"
+                    target="_blank" rel="noopener">
+                    <img class="resource-icon" src="/assets/github_logo.png" alt="GitHub logo">
+                    <span class="resource-text">Repository GitHub</span>
+                </a>
+                <a class="resource-link" href="https://mei-trumpet.web.app/home/exercise" target="_blank"
+                    rel="noopener">
+                    <img class="resource-icon" src="/assets/mei-logo.png" alt="MEI logo">
+                    <span class="resource-text">Prova la demo</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <p>&copy; 2023 MEI-Music Education Interface. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+    <script src="/assets/js/script.js"></script>
+  <script src="/assets/js/lang.js"></script>
+</body>
+
+</html>
