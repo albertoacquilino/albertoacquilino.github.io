@@ -685,6 +685,29 @@ a.button:hover {
   margin: 2em 0 1.6em;
 }
 
+a.button.spotify-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  background-color: rgb(29, 185, 84);
+  box-shadow: 0 12px 24px rgba(29, 185, 84, 0.25);
+}
+
+a.button.spotify-button:hover {
+  background-color: rgb(30, 215, 96);
+  box-shadow: 0 14px 28px rgba(30, 215, 96, 0.3);
+}
+
+.spotify-button {
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.spotify-icon svg {
+  display: block;
+  vertical-align: middle;
+}
+
 .resource-links {
   display: flex;
   flex-wrap: wrap;
