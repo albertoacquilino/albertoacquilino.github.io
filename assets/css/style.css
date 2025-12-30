@@ -897,28 +897,6 @@ pre {
     padding: 0.5em 0;
   }
 
-  .nav-inner {
-    flex-wrap: wrap;
-    row-gap: 0.4em;
-    padding: 0 1em;
-  }
-
-  .nav-actions {
-    width: 100%;
-    margin-left: 0;
-    justify-content: space-between;
-    gap: 0.6em;
-  }
-
-  .language-switcher {
-    margin-left: auto;
-  }
-
-  nav>h1 {
-    font-size: 0.95em;
-    padding: 0.3em 0;
-  }
-
   body {
     padding-top: calc(var(--nav-height) + 0.3rem);
   }
@@ -1120,11 +1098,50 @@ h3 {
 /* Hide the menu by default on mobile */
 @media (max-width: 768px) {
   .nav-inner {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
     align-items: center;
     justify-content: space-between;
-    gap: 0.6em;
-    flex-wrap: wrap;
+    column-gap: 0.4em;
+    row-gap: 0;
+    padding: 0 1.6em;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+  }
+
+  .home-link {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-right: 0.25em;
+    padding-left: 0.35em;
+  }
+
+  nav a.home-link h1 {
+    font-size: 0.95em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .nav-actions {
+    margin-left: auto;
+    gap: 0.65em;
+    align-items: center;
+    position: relative;
+    flex-shrink: 0;
+    flex: 0 0 auto;
+    width: auto;
+    justify-content: flex-end;
+  }
+
+  .language-switcher {
+    flex-shrink: 0;
+  }
+
+  .lang-toggle {
+    gap: 0.35em;
+    padding: 0.3em 0.5em;
   }
 
   /* Hide #menu by default */
@@ -1133,19 +1150,23 @@ h3 {
     /* hidden by default on mobile */
     background-color: var(--surface);
     /* same background as nav */
+    position: absolute;
+    top: calc(100% + 0.5em);
+    right: 0;
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: min(92vw, 20rem);
     order: 2;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+    z-index: 1000;
   }
 
   /* Show it when we toggle the .show-mobile class */
   #menu.show-mobile {
     display: block;
-    margin-top: 0.5em;
+    margin-top: 0;
   }
 
   /* Stack items vertically */
@@ -1173,17 +1194,30 @@ h3 {
     background: none;
     border: none;
     cursor: pointer;
-    margin-left: 0.75em;
+    margin-left: 0;
     color: var(--text);
   }
 }
 
 /* DESKTOP STYLES */
 @media (min-width: 769px) {
+  .nav-inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    column-gap: 1.1em;
+  }
+
+  .nav-actions {
+    display: contents;
+    margin-left: 0;
+  }
 
   /* Keep your inline display for desktop */
   #menu {
     display: flex;
+    justify-content: center;
+    margin: 0 auto;
     background-color: transparent;
     /* keep transparent on desktop */
   }
@@ -1210,6 +1244,7 @@ h3 {
 
   .language-switcher {
     margin-left: 0;
+    justify-self: end;
   }
 }
 
@@ -1222,6 +1257,13 @@ nav a.home-link h1 {
   display: inline-block;
   color: var(--text);
   text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  nav a.home-link h1 {
+    font-size: 0.92em;
+    padding: 0.35em 0.05em 0.35em 0;
+  }
 }
 
 .home-link {
