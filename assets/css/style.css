@@ -898,21 +898,20 @@ pre {
   }
 
   .nav-inner {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     row-gap: 0.4em;
     padding: 0 1em;
   }
 
   .nav-actions {
-    width: auto;
-    margin-left: auto;
-    justify-content: flex-end;
+    width: 100%;
+    margin-left: 0;
+    justify-content: space-between;
     gap: 0.6em;
-    flex-wrap: nowrap;
   }
 
   .language-switcher {
-    margin-left: 0;
+    margin-left: auto;
   }
 
   nav>h1 {
@@ -1123,14 +1122,9 @@ h3 {
   .nav-inner {
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-    gap: 0.65em;
-    flex-wrap: nowrap;
-  }
-
-  .nav-inner:has(#menu.show-mobile) {
+    justify-content: space-between;
+    gap: 0.6em;
     flex-wrap: wrap;
-    align-items: flex-start;
   }
 
   /* Hide #menu by default */
@@ -1146,7 +1140,6 @@ h3 {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
-    flex-basis: 100%;
   }
 
   /* Show it when we toggle the .show-mobile class */
@@ -1171,30 +1164,6 @@ h3 {
   #menu li a {
     color: var(--text);
     display: block;
-  }
-
-  .nav-actions {
-    width: auto;
-    margin-left: auto;
-    gap: 0.6em;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: flex-end;
-  }
-
-  .nav-actions:has(#menu.show-mobile) {
-    flex-wrap: wrap;
-    width: 100%;
-    row-gap: 0.45em;
-  }
-
-  .language-switcher {
-    order: 1;
-    margin-left: 0;
-  }
-
-  #menu {
-    order: 2;
   }
 
   /* Show the hamburger on mobile */
