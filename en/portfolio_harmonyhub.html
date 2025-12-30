@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/style.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,33 +14,44 @@
 
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
-    <nav aria-label="Main navigation">
-        <div class="nav-inner">
-            <a href="/index.html" class="home-link">
-                <h1>Alberto Acquilino</h1>
-            </a>
-            <!-- Add aria-label to indicate what this button does for screen readers -->
-            <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation" aria-controls="menu" aria-expanded="false">&#9776;</button>
-
-            <ul id="menu">
-                <li><a href="/">About</a></li>
-                <li><a href="/research.html">Research</a></li>
-                <li><a href="/teaching.html">Teaching</a></li>
-                <li><a href="/portfolio.html">Portfolio</a></li>
-            </ul>
+          <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/en/index.html" class="home-link">
+        <h1>Alberto Acquilino</h1>
+      </a>
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation" aria-controls="menu" aria-expanded="false">&#9776;</button>
+      <div class="nav-actions">
+        <ul id="menu">
+          <li><a href="/en/index.html">About</a></li>
+          <li><a href="/en/research.html">Research</a></li>
+          <li><a href="/en/teaching.html">Teaching</a></li>
+          <li><a href="/en/portfolio.html">Portfolio</a></li>
+        </ul>
+        <div class="language-switcher" aria-label="Language selector">
+          <button class="lang-toggle" type="button" onclick="toggleLangMenu()" aria-haspopup="true" aria-expanded="false">
+            <span class="lang-flag flag-en" data-lang-flag></span>
+            <span class="lang-code" data-lang-label>EN</span>
+          </button>
+          <ul class="lang-menu" id="lang-menu" role="menu">
+            <li><button type="button" data-lang-option="en" onclick="setPreferredLanguage('en')" role="menuitem"><span class="lang-flag flag-en"></span><span>English</span></button></li>
+            <li><button type="button" data-lang-option="fr" onclick="setPreferredLanguage('fr')" role="menuitem"><span class="lang-flag flag-fr"></span><span>Français</span></button></li>
+            <li><button type="button" data-lang-option="it" onclick="setPreferredLanguage('it')" role="menuitem"><span class="lang-flag flag-it"></span><span>Italiano</span></button></li>
+          </ul>
         </div>
-    </nav>
+      </div>
+    </div>
+  </nav>
     <main id="main-content">
-        <p><a href="/portfolio.html" class="plain-link strong">← Back to Portfolio</a></p>
+        <p><a href="/en/portfolio.html" class="plain-link strong">← Back to Portfolio</a></p>
         <section class="project-overview">
             <p class="muted support-text">This project is supported by:</p>
             <div class="supporting-logos" aria-label="Supporting organizations">
-                <img src="assets/Western_logo.jpg" alt="Western University logo">
-                <img src="assets/CDSI_logo.png" alt="Canadian Disability Studies Initiative logo">
-                <img src="assets/gsoc_logo.png" alt="Google Summer of Code logo">
-                <img src="assets/incf_logo.png" alt="International Neuroinformatics Coordinating Facility logo">
+                <img src="/assets/Western_logo.jpg" alt="Western University logo">
+                <img src="/assets/CDSI_logo.png" alt="Canadian Disability Studies Initiative logo">
+                <img src="/assets/gsoc_logo.png" alt="Google Summer of Code logo">
+                <img src="/assets/incf_logo.png" alt="International Neuroinformatics Coordinating Facility logo">
             </div>
-            <img src="assets/HarmonyHub_logo.png" alt="HarmonyHub Landscape Cover"
+            <img src="/assets/HarmonyHub_logo.png" alt="HarmonyHub Landscape Cover"
                 class="cover-image" tabindex="0">
 
             <h1 class="project-title">An adaptable music book for inclusive music learning</h1>
@@ -64,7 +75,7 @@
             </ul>
             <p>The intention is not only to personalize content, but to support better student&ndash;teacher interaction: making it easier to iterate, compare versions and reflect on how music is learned and experienced.</p>
             <p>Below is an example of HarmonyHub generating a beginner violin exercise: eight measures, rhythmic focus in E minor, 3/4 time, shown in a piano roll view. Every parameter can be adjusted to match a learner&rsquo;s preferences.</p>
-            <img src="assets/HH.png" alt="HarmonyHub interface mockups" class="full-width-image">
+            <img src="/assets/HH.png" alt="HarmonyHub interface mockups" class="full-width-image">
             <div class="cta-center">
                 <a class="button" href="https://huggingface.co/spaces/SHIKARICHACHA/adaptive-music-exercise-generator" target="_blank" rel="noopener">Try the live demo on Hugging Face</a>
             </div>
@@ -95,7 +106,7 @@
             </ol>
 
             <figure>
-                <img src="assets/HH_pipeline.png" alt="HarmonyHub pipeline diagram from input to processing to output" class="full-width-image">
+                <img src="/assets/HH_pipeline.png" alt="HarmonyHub pipeline diagram from input to processing to output" class="full-width-image">
                 <figcaption>The pipeline is designed for iteration: adjust inputs, review outputs, and regenerate as needed.</figcaption>
             </figure>
 
@@ -130,17 +141,18 @@
             <p>HarmonyHub is fully open source. Code, documentation, design processes and open access publications are shared to support transparency, reuse and long term sustainability&mdash;contributing not only a tool, but a reproducible approach to inclusive, adaptive music learning.</p>
             <div class="resource-links">
                 <a class="resource-link" href="https://github.com/PRIYANSHU2026/Music-Generation-LLM" target="_blank" rel="noopener">
-                    <img class="resource-icon" src="assets/github_logo.png" alt="GitHub logo">
+                    <img class="resource-icon" src="/assets/github_logo.png" alt="GitHub logo">
                     <span class="resource-text">GitHub repository</span>
                 </a>
                 <a class="resource-link" href="https://huggingface.co/spaces/SHIKARICHACHA/adaptive-music-exercise-generator" target="_blank" rel="noopener">
-                    <img class="resource-icon" src="assets/hugging_face_logo.svg" alt="Hugging Face logo">
+                    <img class="resource-icon" src="/assets/hugging_face_logo.svg" alt="Hugging Face logo">
                     <span class="resource-text">Hugging Face demo</span>
                 </a>
             </div>
         </section>
     </main>
-    <script src="/script.js"></script>
+    <script src="/assets/js/script.js"></script>
+  <script src="/assets/js/lang.js"></script>
 </body>
 
 </html>

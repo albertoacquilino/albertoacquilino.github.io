@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="/style.css" rel="stylesheet">
+  <link href="/assets/css/style.css" rel="stylesheet">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,20 +15,31 @@
 
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <nav aria-label="Main navigation">
+        <nav aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="/index.html" class="home-link">
+      <a href="/en/index.html" class="home-link">
         <h1>Alberto Acquilino</h1>
       </a>
-      <!-- Add aria-label to indicate what this button does for screen readers -->
       <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation" aria-controls="menu" aria-expanded="false">&#9776;</button>
-      
-      <ul id="menu">
-        <li><a href="/">About</a></li>
-        <li><a href="/research.html">Research</a></li>
-        <li><a href="/teaching.html">Teaching</a></li>
-        <li><a href="/portfolio.html">Portfolio</a></li>
-      </ul>
+      <div class="nav-actions">
+        <ul id="menu">
+          <li><a href="/en/index.html">About</a></li>
+          <li><a href="/en/research.html">Research</a></li>
+          <li><a href="/en/teaching.html">Teaching</a></li>
+          <li><a href="/en/portfolio.html">Portfolio</a></li>
+        </ul>
+        <div class="language-switcher" aria-label="Language selector">
+          <button class="lang-toggle" type="button" onclick="toggleLangMenu()" aria-haspopup="true" aria-expanded="false">
+            <span class="lang-flag flag-en" data-lang-flag></span>
+            <span class="lang-code" data-lang-label>EN</span>
+          </button>
+          <ul class="lang-menu" id="lang-menu" role="menu">
+            <li><button type="button" data-lang-option="en" onclick="setPreferredLanguage('en')" role="menuitem"><span class="lang-flag flag-en"></span><span>English</span></button></li>
+            <li><button type="button" data-lang-option="fr" onclick="setPreferredLanguage('fr')" role="menuitem"><span class="lang-flag flag-fr"></span><span>Français</span></button></li>
+            <li><button type="button" data-lang-option="it" onclick="setPreferredLanguage('it')" role="menuitem"><span class="lang-flag flag-it"></span><span>Italiano</span></button></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -37,7 +48,7 @@
       <h1>Portfolio</h1>
       <p class="muted">Explore current and past projects focused on tech-enhanced music learning, research, and community impact.</p>
       <div class="portfolio-grid">
-        <a class="portfolio-card" href="/portfolio_harmonyhub.html">
+        <a class="portfolio-card" href="/en/portfolio_harmonyhub.html">
           <div class="tag-row">
             <span class="portfolio-tag tag-software">Software</span>
             <span class="portfolio-tag tag-composition">Composition</span>
@@ -47,7 +58,7 @@
           </div>
           <span class="link-pill">Open project →</span>
         </a>
-        <a class="portfolio-card" href="/portfolio_music_education_interface.html">
+        <a class="portfolio-card" href="/en/portfolio_music_education_interface.html">
           <div class="tag-row">
             <span class="portfolio-tag tag-software">Software</span>
             <span class="portfolio-tag tag-composition">Composition</span>
@@ -57,7 +68,7 @@
           </div>
           <span class="link-pill">Open project →</span>
         </a>
-        <a class="portfolio-card" href="/temes.html">
+        <a class="portfolio-card" href="/en/portfolio_temes.html">
           <div class="tag-row">
             <span class="portfolio-tag tag-community">Community</span>
           </div>
@@ -65,9 +76,9 @@
             <img src="/assets/TEMES_logo.png" alt="TEMES Symposium logo">
           </div>
           <h2>International Symposium</h2>
-          <span class="link-pill">View overview →</span>
+          <span class="link-pill">Open project →</span>
         </a>
-        <a class="portfolio-card" href="/portfolio_hearing_care_platform.html">
+        <a class="portfolio-card" href="/en/portfolio_hearing_care_platform.html">
           <div class="tag-row">
             <span class="portfolio-tag tag-software">Software</span>
             <span class="portfolio-tag tag-wellbeing">Wellbeing</span>
@@ -78,7 +89,7 @@
           <h2>Hearing Care Platform</h2>
           <span class="link-pill">Open project →</span>
         </a>
-        <a class="portfolio-card" href="/portfolio_student_compass.html">
+        <a class="portfolio-card" href="/en/portfolio_student_compass.html">
           <div class="tag-row">
             <span class="portfolio-tag tag-community">Community</span>
             <span class="portfolio-tag tag-wellbeing">Wellbeing</span>
@@ -89,7 +100,7 @@
           <h2>Sistema Student Compass</h2>
           <span class="link-pill">Open project →</span>
         </a>
-        <a class="portfolio-card" href="/portfolio_four_arts_residency.html">
+        <a class="portfolio-card" href="/en/portfolio_four_arts_residency.html">
           <div class="tag-row">
             <span class="portfolio-tag tag-community">Community</span>
           </div>
@@ -97,9 +108,9 @@
             <img src="/assets/society_4_arts.png" alt="Society of the Four Arts logo">
           </div>
           <h2>Society of the Four Arts Residency</h2>
-          <span class="link-pill">View project →</span>
+          <span class="link-pill">Open project →</span>
         </a>
-        <a class="portfolio-card" href="/portfolio_sistema_new_brunswick.html">
+        <a class="portfolio-card" href="/en/portfolio_sistema_new_brunswick.html">
           <div class="tag-row">
             <span class="portfolio-tag tag-community">Community</span>
           </div>
@@ -107,9 +118,9 @@
             <img src="/assets/snb_logo.jpg" alt="Sistema New Brunswick logo">
           </div>
           <h2>Sistema New Brunswick Residency</h2>
-          <span class="link-pill">View project →</span>
+          <span class="link-pill">Open project →</span>
         </a>
-        <a class="portfolio-card" href="/portfolio_giovanni_louis_1995.html">
+        <a class="portfolio-card" href="/en/portfolio_giovanni_louis_1995.html">
           <div class="tag-row">
             <span class="portfolio-tag tag-composition">Composition</span>
           </div>
@@ -117,12 +128,13 @@
             <img src="/assets/1995.jpg" alt="Cover art for Giovanni Louis album 1995">
           </div>
           <h2>Giovanni Louis - 1995</h2>
-          <span class="link-pill">View project →</span>
+          <span class="link-pill">Open project →</span>
         </a>
       </div>
     </section>
   </main>
-  <script src="/script.js"></script>
+  <script src="/assets/js/script.js"></script>
+  <script src="/assets/js/lang.js"></script>
 </body>
 
 </html>
