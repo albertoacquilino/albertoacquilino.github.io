@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/assets/css/style.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+    <title>Music Education Interface GSoC</title>
+    </head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <nav aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="/en/index.html" class="home-link">
+                <h1>Alberto Acquilino</h1>
+            </a>
+            <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation" aria-controls="menu"
+                aria-expanded="false">&#9776;</button>
+            <div class="nav-actions">
+                <ul id="menu">
+                </ul>
+                <div class="language-switcher" aria-label="Language selector">
+                    <button class="lang-toggle" type="button" onclick="toggleLangMenu()" aria-haspopup="true"
+                        aria-expanded="false">
+                        <span class="lang-flag flag-en" data-lang-flag></span>
+                        <span class="lang-code" data-lang-label>EN</span>
+                    </button>
+                    <ul class="lang-menu" id="lang-menu" role="menu">
+                        <li><button type="button" data-lang-option="en" onclick="setPreferredLanguage('en')"
+                                role="menuitem"><span class="lang-flag flag-en"></span><span>English</span></button>
+                        </li>
+                        <li><button type="button" data-lang-option="fr" onclick="setPreferredLanguage('fr')"
+                                role="menuitem"><span class="lang-flag flag-fr"></span><span>Français</span></button>
+                        </li>
+                        <li><button type="button" data-lang-option="it" onclick="setPreferredLanguage('it')"
+                                role="menuitem"><span class="lang-flag flag-it"></span><span>Italiano</span></button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main id="main-content">
+        <section>
+            <div class="supporting-inline" aria-label="Supporting organizations">
+                <div class="supporting-logos">
+                    <img src="/assets/gsoc_logo.png" alt="Google Summer of Code logo">
+                    <img src="/assets/incf_logo.png" alt="International Neuroinformatics Coordinating Facility logo">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h1>GSoC 2026 Project Proposal</h1>
+            <h2>Music Education Interface (MEI)</h2>
+            <h3>Mobile Release Hardening + New "Relative Intonation" Exercise</h3>
+        </section>
+
+        <section>
+            <h2>Context</h2>
+            <p>This project continues and expands the Music Education Interface (MEI), an educational web app that
+                supports learners in building core instrumental skills (rhythm, fingering, intonation, articulation,
+                timbre) through dedicated interactive modules. Learn more about the current app <a
+                    href="/en/portfolio_music_education_interface.html" target="_blank" rel="noopener">here</a>.</p>
+            <p>MEI already runs in the browser and is also available as a beta app on iOS and Android. The roadmap
+                highlights mobile-first experiences and new practice components as key next steps.</p>
+        </section>
+
+        <section>
+            <h2>Project summary</h2>
+            <p>The main goal is to make MEI robust, responsive and maintainable across mobile devices, and
+                to ensure reliable store-ready builds for both Apple App Store and Google Play. In the second half, the
+                contributor will implement a new learning module: a Relative Intonation exercise that trains students to
+                play in tune with what they hear, using the app's existing score display, audio generation and tuner
+                components.</p>
+            <p>By the end of GSoC, the project will deliver:</p>
+            <ol>
+                <li>A mobile-first MEI app that is responsive across screen sizes, stable and easier to maintain.</li>
+                <li>A documented, repeatable release workflow for iOS and Android (build, versioning, store submission
+                    readiness & bug triage), building on the existing Capacitor setup.</li>
+                <li>A new "Relative Intonation" exercise module, integrated into the current app using already-existing
+                    musical notation, synthesis and tuner features.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Why this project matters</h2>
+            <p>Many music apps help with timing (metronomes) and absolute pitch (tuners), but real ensemble playing
+                requires relative intonation: staying in tune with another sound (a partner, a drone or a chord).
+                Students often look at the tuner instead of learning to listen and adjust. This module trains the ear by
+                letting the learner:</p>
+            <ul>
+                <li>See a note on a staff (music notation).</li>
+                <li>Hear a reference sound in headphones (generated by the app).</li>
+                <li>Play while matching the reference by ear, optionally using the tuner as training wheels.</li>
+            </ul>
+            <p>The exercise supports two learning modes:</p>
+            <ol>
+                <li>Unison matching: the student plays the same note they hear.</li>
+                <li>Chord completion: the app plays a chord with one note missing, and the student plays the missing note
+                    so the result sounds locked in and stable.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Objectives</h2>
+            <h3>Part A &mdash; Mobile UI/UX + Store Release Hardening (continuative)</h3>
+            <ol>
+                <li>Refactor UI to be fully responsive (mobile-first layouts; small/large phones; tablets) and ensure
+                    consistent behavior across iOS, Android, and browser targets.</li>
+                <li>Stabilize the mobile app release pipeline:
+                    <ul>
+                        <li>Ensure reproducible builds with Ionic + Angular + Capacitor.</li>
+                        <li>Handle versioning correctly (iOS/Android) and document the process.</li>
+                    </ul>
+                </li>
+                <li>Bug triage and fixes focused on real-device issues (audio I/O, permissions, latency, UI glitches,
+                    crashes, edge cases).</li>
+                <li>Improve developer documentation so future contributors can publish updates confidently.</li>
+            </ol>
+
+            <h3>Part B &mdash; New Module: "Relative Intonation" Exercise</h3>
+            <ol>
+                <li>Design and implement a new exercise that combines existing components:
+                    <ul>
+                        <li>Score rendering (display notes to play).</li>
+                        <li>Audio generation (play reference notes/chords).</li>
+                        <li>Tuner / pitch detection (optional live feedback).</li>
+                    </ul>
+                </li>
+                <li>Implement the two modes:
+                    <ul>
+                        <li>Mode 1: Unison (match pitch with a synthesized reference of the same instrument type).</li>
+                        <li>Mode 2: Chord completion (play the missing chord tone).</li>
+                    </ul>
+                </li>
+                <li>Provide a simple scoring/feedback loop (e.g., in-tune percentage over time, stability indicator, and
+                    optional tuner view toggle).</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Technologies and frameworks</h2>
+            <ul>
+                <li>Ionic + Angular + TypeScript (core stack).</li>
+                <li>JavaScript/Web Audio (audio synthesis/playback).</li>
+                <li>Capacitor iOS/Android toolchain (store builds and native integration).</li>
+                <li>Responsive CSS / UI patterns for multi-screen support.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Suggested timeline (12 weeks)</h2>
+            <ul>
+                <li>Weeks 1-2: onboarding, codebase exploration, reproduce local builds, identify top mobile pain
+                    points, define responsive layout plan.</li>
+                <li>Weeks 3-6: implement responsive refactor, fix priority bugs, improve release docs; verify on real
+                    devices.</li>
+                <li>Weeks 7-8: design Relative Intonation exercise UX and data flow, finalize spec, build scaffolding.
+                </li>
+                <li>Weeks 9-11: implement Mode 1 and Mode 2, integrate tuner option, add feedback/scoring, polish UX.
+                </li>
+                <li>Week 12: stabilization, documentation, final demo, final bugfix pass.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Skills required (target contributor)</h2>
+            <ul>
+                <li>Strong Ionic + Angular + TypeScript/JavaScript skills.</li>
+                <li>Experience building and debugging mobile apps (iOS/Android) and handling store release constraints.
+                </li>
+                <li>Understanding of responsive design and real-device testing.</li>
+                <li>Basic comfort with audio concepts (latency, microphone permissions, pitch detection) is helpful.
+                </li>
+            </ul>
+            <p><strong>Skill level:</strong> Intermediate+</p>
+            <p><strong>Estimated size:</strong> Large (approx. 350 hours)</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <p>&copy; 2023 MEI-Music Education Interface. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/lang.js"></script>
+</body>
+
+</html>
