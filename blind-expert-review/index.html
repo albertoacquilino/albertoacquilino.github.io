@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matched Blind Exercise Review</title>
+  <style>
+:root { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f6f7f9; color: #172026; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+[hidden] { display: none !important; }
+.gate { min-height: 100vh; display: grid; place-items: center; padding: 24px; }
+.gate-panel { width: min(440px, 100%); background: #fff; border: 1px solid #d7dde4; border-radius: 8px; padding: 22px; box-shadow: 0 12px 30px rgba(20, 31, 42, 0.08); }
+.gate-panel h1 { margin-bottom: 8px; }
+.gate-panel p { color: #51606d; }
+.password-field { display: grid; gap: 6px; margin: 18px 0 12px; color: #263540; font-weight: 700; }
+.password-field input { border: 1px solid #9daab6; border-radius: 6px; padding: 9px; font: inherit; }
+#access-status { min-height: 1.4em; margin-bottom: 0; color: #8a2d20; font-weight: 700; }
+header { position: sticky; top: 0; z-index: 3; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding: 16px 24px; border-bottom: 1px solid #d7dde4; background: #fff; }
+h1 { margin: 0; font-size: 1.3rem; }
+header p { margin: 4px 0 0; color: #51606d; }
+.instructions { max-width: 820px; }
+.progress-summary { font-weight: 750; color: #263540; }
+.evaluator-field { display: grid; gap: 6px; min-width: 220px; color: #263540; font-weight: 700; }
+.evaluator-field input { border: 1px solid #9daab6; border-radius: 6px; padding: 8px; font: inherit; }
+main { max-width: 1180px; margin: 0 auto; padding: 20px; }
+button { border: 1px solid #1f5b85; background: #1f5b85; color: #fff; padding: 10px 14px; border-radius: 6px; font-weight: 650; }
+footer { max-width: 1180px; margin: 0 auto 32px; padding: 18px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 12px; flex-wrap: wrap; }
+#export-status { margin: 0; color: #8a2d20; font-weight: 700; }
+.placeholder { color: #51606d; }
+.group { background: #fff; border: 1px solid #d7dde4; border-radius: 8px; margin-bottom: 22px; padding: 18px; }
+.group h2 { margin: 0 0 14px; font-size: 1.12rem; }
+.summary { position: sticky; top: 94px; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; border: 1px solid #d7dde4; border-radius: 8px; padding: 14px; margin-bottom: 16px; background: #fff; }
+.panel-title { font-size: 0.92rem; font-weight: 750; margin: 0 0 8px; }
+dl { display: grid; grid-template-columns: 145px 1fr; gap: 6px 10px; margin: 0; }
+dt { color: #51606d; }
+dd { margin: 0; overflow-wrap: anywhere; }
+.outputs { display: grid; gap: 16px; }
+.candidate { border: 1px solid #d7dde4; border-radius: 8px; padding: 14px; background: #fbfcfd; scroll-margin-top: 160px; }
+.candidate.incomplete { border-color: #b44332; box-shadow: 0 0 0 2px rgba(180, 67, 50, 0.12); }
+.candidate h3 { margin: 0 0 10px; font-size: 1rem; }
+.score { overflow-x: auto; border: 1px solid #d7dde4; border-radius: 6px; padding: 10px; background: #fff; }
+.score svg { display: block; width: 100%; height: auto; }
+.score-page { background: #fff; border: 1px solid #d7dde4; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+.score-status { margin: 6px 0 0; color: #51606d; font-size: 0.84rem; }
+.ratings { display: grid; grid-template-columns: repeat(2, minmax(240px, 1fr)); gap: 14px; margin-top: 14px; }
+.rating-field { display: grid; gap: 8px; margin: 0; padding: 0; border: 0; }
+.rating-field legend { padding: 0; font-weight: 700; }
+.choice-row { display: flex; flex-wrap: wrap; gap: 7px; }
+.choice-row label { display: block; }
+.choice-row input { position: absolute; opacity: 0; pointer-events: none; }
+.choice-row span { display: block; text-align: center; border: 1px solid #b8c2cc; border-radius: 6px; padding: 8px 10px; background: #fff; cursor: pointer; min-width: 42px; }
+.choice-row input:checked + span { background: #1f5b85; border-color: #1f5b85; color: #fff; }
+.choice-row input:focus-visible + span { outline: 3px solid #8dbbe0; outline-offset: 2px; }
+textarea { width: 100%; min-height: 76px; resize: vertical; border: 1px solid #b8c2cc; border-radius: 6px; padding: 8px; font: inherit; background: #fff; }
+.comment-field { display: grid; gap: 7px; grid-column: 1 / -1; font-weight: 700; }
+@media (max-width: 900px) { header { position: static; flex-direction: column; } .summary, .ratings { grid-template-columns: 1fr; } .summary { position: static; } dl { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <section id="access-gate" class="gate">
+    <div class="gate-panel">
+      <h1>Blind Exercise Review</h1>
+      <p>Enter password to begin. This browser-only gate is lightweight and not secure authentication.</p>
+      <label class="password-field">
+        Password
+        <input id="access-password" type="password" autocomplete="current-password" />
+      </label>
+      <button id="access-submit" type="button">Enter</button>
+      <p id="access-status" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+  <div id="review-app" hidden>
+    <header>
+      <div>
+        <h1>Matched Blind Exercise Review</h1>
+        <p id="item-count">Loading request groups...</p>
+        <p id="progress-summary" class="progress-summary">Progress unavailable until data loads.</p>
+        <p class="instructions">Blind review. Candidate labels are anonymized. Candidates may come from different generation systems. Completing the full review is ideal. If tired, stop and export completed ratings only; do not submit blank or incomplete answers.</p>
+      </div>
+      <label class="evaluator-field">
+        Evaluator ID
+        <input id="evaluator-id" autocomplete="off" />
+      </label>
+    </header>
+    <main id="groups"><p class="placeholder">Loading...</p></main>
+    <footer>
+      <p id="export-status" role="status" aria-live="polite"></p>
+      <button id="export-partial-csv" type="button">Export completed ratings only</button>
+      <button id="export-complete-csv" type="button">Export complete review</button>
+    </footer>
+  </div>
+  <script>
+    const UI_SCHEMA_VERSION = "matched_blind_expert_review_v2";
+    const RATING_COLUMNS = ["ui_schema_version", "evaluator_id", "session_id", "request_group_id", "candidate_id", "display_label", "display_order", "assignable_without_editing", "pedagogical_usefulness", "musical_coherence", "engagement", "optional_comments", "optional_red_flags", "timestamp"];
+  </script>
+  <script>
+const state = {
+  payload: null,
+  ratings: {},
+  evaluatorId: "",
+  sessionId: "",
+  verovioLoadPromise: null,
+};
+const REVIEW_DATA_URL = "review_groups.json";
+const STORAGE_KEY = `matched_blind_review_state_${UI_SCHEMA_VERSION}`;
+const ACCESS_KEY = `matched_blind_review_access_${UI_SCHEMA_VERSION}`;
+const ACCESS_PASSWORD = "ismir2026";
+const VEROVIO_SCRIPT_URL = "https://www.verovio.org/javascript/latest/verovio-toolkit-wasm.js";
+const REQUIRED_FIELDS = [
+  "assignable_without_editing",
+  "pedagogical_usefulness",
+  "musical_coherence",
+  "engagement",
+];
+const ASSIGNABLE_OPTIONS = [
+  ["yes", "Yes"],
+  ["minor_edits", "Minor edits"],
+  ["major_edits", "Major edits"],
+  ["no", "No"],
+];
+
+boot();
+
+async function boot() {
+  bindAccessGate();
+  if (sessionStorage.getItem(ACCESS_KEY) !== "granted") {
+    document.getElementById("access-password").focus();
+    return;
+  }
+  await startReview();
+}
+
+function bindAccessGate() {
+  const passwordInput = document.getElementById("access-password");
+  const submitButton = document.getElementById("access-submit");
+  const submit = () => {
+    if (passwordInput.value === ACCESS_PASSWORD) {
+      sessionStorage.setItem(ACCESS_KEY, "granted");
+      document.getElementById("access-status").textContent = "";
+      startReview();
+      return;
+    }
+    document.getElementById("access-status").textContent = "Password incorrect.";
+    passwordInput.select();
+  };
+  submitButton.addEventListener("click", submit);
+  passwordInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      submit();
+    }
+  });
+}
+
+async function startReview() {
+  document.getElementById("access-gate").hidden = true;
+  document.getElementById("review-app").hidden = false;
+  if (state.payload) {
+    return;
+  }
+  loadSavedState();
+  const evaluatorInput = document.getElementById("evaluator-id");
+  evaluatorInput.value = state.evaluatorId;
+  evaluatorInput.addEventListener("input", () => {
+    state.evaluatorId = evaluatorInput.value;
+    document.getElementById("export-status").textContent = "";
+    saveState();
+  });
+  document.getElementById("export-complete-csv").addEventListener("click", exportCompleteCsv);
+  document.getElementById("export-partial-csv").addEventListener("click", exportPartialCsv);
+
+  try {
+    const response = await fetch(REVIEW_DATA_URL, { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error(`Could not load review data: ${response.status}`);
+    }
+    state.payload = await response.json();
+    document.getElementById("item-count").textContent =
+      `${state.payload.length} request groups`;
+    render();
+    updateProgress();
+  } catch (error) {
+    document.getElementById("groups").innerHTML =
+      `<p class="placeholder">${escapeHtml(summarizeError(error))}</p>`;
+  }
+}
+
+function text(value) {
+  if (Array.isArray(value)) return value.join(", ");
+  if (value === null || value === undefined || value === "") return "";
+  return String(value);
+}
+
+function escapeHtml(value) {
+  return text(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+function midiToPitchLabel(midi) {
+  const value = Number(midi);
+  if (!Number.isInteger(value) || value < 0 || value > 127) return text(midi);
+  const names = ["C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"];
+  return `${names[value % 12]}${Math.floor(value / 12) - 1}`;
+}
+
+function pitchInventoryLabel(values) {
+  return Array.isArray(values) ? values.map(midiToPitchLabel).join(", ") : text(values);
+}
+
+function choiceGroup(question, field, candidateId, options) {
+  const buttons = options.map(([value, label]) => `
+    <label>
+      <input type="radio" name="${candidateId}-${field}" value="${value}" data-field="${field}" />
+      <span>${escapeHtml(label)}</span>
+    </label>
+  `).join("");
+  return `<fieldset class="rating-field"><legend>${escapeHtml(question)}</legend><div class="choice-row">${buttons}</div></fieldset>`;
+}
+
+function likertGroup(question, field, candidateId) {
+  const options = [1, 2, 3, 4, 5].map((value) => [String(value), String(value)]);
+  return choiceGroup(question, field, candidateId, options);
+}
+
+function render() {
+  const root = document.getElementById("groups");
+  root.innerHTML = state.payload.map((group) => `
+    <section class="group" data-group-id="${group.request_group_id}">
+      <h2>${escapeHtml(group.request_group_id)}</h2>
+      <div class="summary">
+        <div>
+          <p class="panel-title">Request</p>
+          <dl>
+            <dt>Instrument</dt><dd>${escapeHtml(group.request.instrument)}</dd>
+            <dt>Key</dt><dd>${escapeHtml(group.request.key)}</dd>
+            <dt>Meter</dt><dd>${escapeHtml(group.request.meter)}</dd>
+            <dt>Measures</dt><dd>${escapeHtml(group.request.measure_count)}</dd>
+            <dt>Prompt</dt><dd>${escapeHtml(group.request.custom_prompt)}</dd>
+          </dl>
+        </div>
+        <div>
+          <p class="panel-title">Accessibility Constraints</p>
+          <dl>
+            <dt>Pitch mode</dt><dd>${escapeHtml(group.constraints.pitch_range_mode)}</dd>
+            <dt>Inventory</dt><dd>${escapeHtml(pitchInventoryLabel(group.constraints.playable_pitch_inventory))}</dd>
+            <dt>Policy range</dt><dd>${escapeHtml(midiToPitchLabel(group.constraints.policy_min_midi))}-${escapeHtml(midiToPitchLabel(group.constraints.policy_max_midi))}</dd>
+            <dt>Max density</dt><dd>${escapeHtml(group.constraints.max_rhythmic_density)}</dd>
+            <dt>Max interval</dt><dd>${escapeHtml(group.constraints.max_interval_size)}</dd>
+            <dt>Min onsets</dt><dd>${escapeHtml(group.constraints.minimum_total_note_onsets)}</dd>
+            <dt>Min pitches</dt><dd>${escapeHtml(group.constraints.minimum_unique_pitches)}</dd>
+            <dt>Min stepwise</dt><dd>${escapeHtml(group.constraints.minimum_stepwise_ratio)}</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="outputs">
+        ${group.candidates.map((candidate) => `
+          <article class="candidate" data-candidate-id="${candidate.candidate_id}">
+            <h3>${escapeHtml(candidate.display_label)}</h3>
+            <div class="score" id="score-${candidate.candidate_id}">Loading notation...</div>
+            <p class="score-status" id="score-status-${candidate.candidate_id}"></p>
+            <div class="ratings">
+              ${choiceGroup(
+                "Would you assign this exercise to a beginner learner without editing it?",
+                "assignable_without_editing",
+                candidate.candidate_id,
+                ASSIGNABLE_OPTIONS
+              )}
+              ${likertGroup(
+                "Does this exercise support a clear beginner practice goal?",
+                "pedagogical_usefulness",
+                candidate.candidate_id
+              )}
+              ${likertGroup(
+                "Considering the stated constraints, does the exercise have coherent phrase shape, repetition/variation, and rhythmic clarity?",
+                "musical_coherence",
+                candidate.candidate_id
+              )}
+              ${likertGroup(
+                "Would this feel like a plausible exercise rather than a validator artifact?",
+                "engagement",
+                candidate.candidate_id
+              )}
+              <label class="comment-field">Optional comments<textarea data-field="optional_comments"></textarea></label>
+              <label class="comment-field">Any concern that this exercise seems inappropriate for the stated learner/context?<textarea data-field="optional_red_flags"></textarea></label>
+            </div>
+          </article>
+        `).join("")}
+      </div>
+    </section>
+  `).join("");
+
+  document.querySelectorAll("[data-field]").forEach((field) => {
+    const candidate = field.closest(".candidate");
+    const group = field.closest(".group");
+    const key = candidate.dataset.candidateId;
+    const candidateData = findCandidate(key);
+    state.ratings[key] ||= {
+      ui_schema_version: UI_SCHEMA_VERSION,
+      request_group_id: group.dataset.groupId,
+      candidate_id: key,
+      display_label: candidateData?.display_label || "",
+      display_order: candidateData?.display_order || "",
+    };
+    const savedValue = state.ratings[key][field.dataset.field];
+    if (field.type === "radio" && String(savedValue) === field.value) {
+      field.checked = true;
+    }
+    if (field.tagName === "TEXTAREA" && savedValue) {
+      field.value = savedValue;
+    }
+    field.addEventListener("input", () => {
+      state.ratings[key][field.dataset.field] = field.value;
+      candidate.classList.remove("incomplete");
+      document.getElementById("export-status").textContent = "";
+      saveState();
+      updateProgress();
+    });
+  });
+  renderScores();
+  updateProgress();
+}
+
+function findCandidate(candidateId) {
+  for (const group of state.payload || []) {
+    for (const candidate of group.candidates || []) {
+      if (candidate.candidate_id === candidateId) {
+        return candidate;
+      }
+    }
+  }
+  return null;
+}
+
+async function renderScores() {
+  let toolkit;
+  try {
+    toolkit = await ensureVerovioToolkit();
+  } catch (error) {
+    state.payload.forEach((group) => {
+      group.candidates.forEach((candidate) => {
+        renderFallbackScore(candidate, `Verovio unavailable. Showing local SVG fallback. ${summarizeError(error)}`);
+      });
+    });
+    return;
+  }
+
+  state.payload.forEach((group) => {
+    group.candidates.forEach((candidate) => {
+      const target = document.getElementById(`score-${candidate.candidate_id}`);
+      const status = document.getElementById(`score-status-${candidate.candidate_id}`);
+      try {
+        toolkit.setOptions({
+          inputFrom: "xml",
+          scale: 100,
+          pageWidth: 2100,
+          pageHeight: 2970,
+          adjustPageWidth: true,
+          breaks: "auto",
+          footer: "none",
+          header: "none",
+          svgViewBox: true,
+          adjustPageHeight: true,
+        });
+
+        const loaded = toolkit.loadData(candidate.musicxml);
+        if (loaded === false) {
+          throw new Error("Verovio could not load MusicXML.");
+        }
+
+        const pageCount = Math.max(1, Number(toolkit.getPageCount() || 1));
+        const pages = [];
+        for (let pageNumber = 1; pageNumber <= pageCount; pageNumber += 1) {
+          pages.push(
+            `<div class="score-page" data-page-number="${pageNumber}">${toolkit.renderToSVG(pageNumber)}</div>`
+          );
+        }
+        target.innerHTML = pages.join("");
+        trimRenderedScoreWhitespace(target);
+        status.textContent = `Rendered ${pageCount} page${pageCount === 1 ? "" : "s"} using Verovio.`;
+      } catch (error) {
+        renderFallbackScore(candidate, `Verovio render failed. Showing local SVG fallback. ${summarizeError(error)}`);
+      }
+    });
+  });
+}
+
+function renderFallbackScore(candidate, message) {
+  const target = document.getElementById(`score-${candidate.candidate_id}`);
+  const status = document.getElementById(`score-status-${candidate.candidate_id}`);
+  target.innerHTML = candidate.score_svg || "Notation unavailable.";
+  status.textContent = message;
+}
+
+async function ensureVerovioToolkit() {
+  if (!state.verovioLoadPromise) {
+    state.verovioLoadPromise = new Promise((resolve, reject) => {
+      const timeoutAt = Date.now() + 8000;
+
+      const tryResolve = () => {
+        const ToolkitConstructor = globalThis.verovio?.toolkit;
+        if (!ToolkitConstructor) {
+          if (Date.now() >= timeoutAt) {
+            reject(new Error("Timed out waiting for Verovio."));
+            return;
+          }
+          window.setTimeout(tryResolve, 100);
+          return;
+        }
+
+        try {
+          const toolkit = new ToolkitConstructor();
+          if (
+            typeof toolkit.loadData !== "function" ||
+            typeof toolkit.renderToSVG !== "function" ||
+            typeof toolkit.getPageCount !== "function"
+          ) {
+            throw new Error("Verovio toolkit API incomplete.");
+          }
+          resolve(ToolkitConstructor);
+        } catch (error) {
+          if (Date.now() >= timeoutAt) {
+            reject(new Error(`Timed out waiting for usable Verovio. ${summarizeError(error)}`));
+            return;
+          }
+          window.setTimeout(tryResolve, 100);
+        }
+      };
+
+      let script = document.querySelector('script[data-external="verovio-toolkit"]');
+      if (!script) {
+        script = document.createElement("script");
+        script.src = VEROVIO_SCRIPT_URL;
+        script.async = true;
+        script.dataset.external = "verovio-toolkit";
+        script.addEventListener("load", () => {
+          script.dataset.loaded = "true";
+          tryResolve();
+        }, { once: true });
+        script.addEventListener("error", () => {
+          reject(new Error("Could not load Verovio browser bundle."));
+        }, { once: true });
+        document.head.appendChild(script);
+        return;
+      }
+
+      if (script.dataset.loaded === "true" || globalThis.verovio?.toolkit) {
+        tryResolve();
+        return;
+      }
+
+      script.addEventListener("load", () => {
+        script.dataset.loaded = "true";
+        tryResolve();
+      }, { once: true });
+      script.addEventListener("error", () => {
+        reject(new Error("Could not load Verovio browser bundle."));
+      }, { once: true });
+    }).catch((error) => {
+      state.verovioLoadPromise = null;
+      throw error;
+    });
+  }
+
+  const ToolkitConstructor = await state.verovioLoadPromise;
+  return new ToolkitConstructor();
+}
+
+function trimRenderedScoreWhitespace(stage) {
+  const scoreSvgs = Array.from(stage.querySelectorAll(".score-page svg"));
+  for (const svg of scoreSvgs) {
+    try {
+      const bbox = svg.getBBox();
+      if (!Number.isFinite(bbox?.height) || bbox.height <= 0) {
+        continue;
+      }
+
+      const viewBoxValue = svg.getAttribute("viewBox");
+      if (!viewBoxValue) {
+        continue;
+      }
+
+      const [minX, minY, width, height] = viewBoxValue
+        .trim()
+        .split(/\s+/)
+        .map((value) => Number(value));
+      if (![minX, minY, width, height].every(Number.isFinite)) {
+        continue;
+      }
+
+      const paddingBottom = 28;
+      const trimmedMinY = minY;
+      const trimmedMaxY = Math.min(minY + height, bbox.y + bbox.height + paddingBottom);
+      const trimmedHeight = Math.max(1, trimmedMaxY - trimmedMinY);
+
+      svg.setAttribute("viewBox", `${minX} ${trimmedMinY} ${width} ${trimmedHeight}`);
+    } catch (error) {
+      console.warn("Could not trim score whitespace.", error);
+    }
+  }
+}
+
+function summarizeError(error) {
+  const value = String(error?.message || error || "").replace(/\s+/g, " ").trim();
+  if (!value) {
+    return "";
+  }
+  return value.length > 140 ? `${value.slice(0, 137)}...` : value;
+}
+
+function createSessionId() {
+  if (globalThis.crypto?.randomUUID) {
+    return globalThis.crypto.randomUUID();
+  }
+  return `session-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
+function loadSavedState() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+    if (saved && typeof saved === "object") {
+      state.ratings = saved.ratings || {};
+      state.evaluatorId = saved.evaluatorId || "";
+      state.sessionId = saved.sessionId || createSessionId();
+      return;
+    }
+  } catch {
+    state.ratings = {};
+  }
+  state.sessionId = createSessionId();
+  saveState();
+}
+
+function saveState() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({
+    ratings: state.ratings,
+    evaluatorId: state.evaluatorId,
+    sessionId: state.sessionId,
+  }));
+}
+
+function allCandidates() {
+  return state.payload.flatMap((group) =>
+    group.candidates.map((candidate) => ({
+      group,
+      candidate,
+      rating: state.ratings[candidate.candidate_id] || {
+        ui_schema_version: UI_SCHEMA_VERSION,
+        request_group_id: group.request_group_id,
+        candidate_id: candidate.candidate_id,
+        display_label: candidate.display_label,
+        display_order: candidate.display_order,
+      },
+    }))
+  );
+}
+
+function candidateIsComplete(entry) {
+  return REQUIRED_FIELDS.every((field) => entry.rating[field]);
+}
+
+function completedEntries() {
+  return allCandidates().filter(candidateIsComplete);
+}
+
+function updateProgress() {
+  if (!state.payload) {
+    return;
+  }
+  const all = allCandidates();
+  const completed = all.filter(candidateIsComplete);
+  const groupsWithCompleted = new Set(completed.map((entry) => entry.group.request_group_id));
+  document.getElementById("progress-summary").textContent =
+    `${completed.length} / ${all.length} candidates completed; ${groupsWithCompleted.size} request groups have at least one completed candidate.`;
+}
+
+function validateEvaluator() {
+  const evaluatorInput = document.getElementById("evaluator-id");
+  state.evaluatorId = evaluatorInput.value.trim();
+  if (!state.evaluatorId) {
+    document.getElementById("export-status").textContent = "Enter evaluator ID before exporting.";
+    evaluatorInput.focus();
+    saveState();
+    return false;
+  }
+  saveState();
+  return true;
+}
+
+function validateCompleteExport() {
+  document.querySelectorAll(".candidate.incomplete").forEach((node) => node.classList.remove("incomplete"));
+  if (!validateEvaluator()) {
+    return false;
+  }
+
+  for (const entry of allCandidates()) {
+    const missing = REQUIRED_FIELDS.filter((field) => !entry.rating[field]);
+    if (missing.length > 0) {
+      const node = document.querySelector(`[data-candidate-id="${entry.candidate.candidate_id}"]`);
+      if (node) {
+        node.classList.add("incomplete");
+        node.scrollIntoView({ behavior: "smooth", block: "center" });
+        const firstInput = node.querySelector(`[data-field="${missing[0]}"]`);
+        if (firstInput) {
+          firstInput.focus({ preventScroll: true });
+        }
+      }
+      document.getElementById("export-status").textContent =
+        `Complete required rating for ${entry.candidate.display_label} in ${entry.group.request_group_id}.`;
+      return false;
+    }
+  }
+  document.getElementById("export-status").textContent = "";
+  saveState();
+  return true;
+}
+
+function csvEscape(value) {
+  const s = value === undefined || value === null ? "" : String(value);
+  return /[",\n]/.test(s) ? `"${s.replaceAll('"', '""')}"` : s;
+}
+
+function buildCsv(entries) {
+  const timestamp = new Date().toISOString();
+  const rows = entries.map((entry) =>
+    RATING_COLUMNS.map((column) => {
+      if (column === "ui_schema_version") return UI_SCHEMA_VERSION;
+      if (column === "evaluator_id") return state.evaluatorId;
+      if (column === "session_id") return state.sessionId;
+      if (column === "request_group_id") return entry.group.request_group_id;
+      if (column === "candidate_id") return entry.candidate.candidate_id;
+      if (column === "display_label") return entry.candidate.display_label;
+      if (column === "display_order") return entry.candidate.display_order;
+      if (column === "timestamp") return timestamp;
+      return entry.rating[column] || "";
+    })
+  );
+  return [RATING_COLUMNS, ...rows].map((row) => row.map(csvEscape).join(",")).join("\n") + "\n";
+}
+
+function downloadCsv(csv, filename) {
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  link.click();
+  URL.revokeObjectURL(url);
+}
+
+function exportCompleteCsv() {
+  if (!validateCompleteExport()) {
+    return;
+  }
+  downloadCsv(buildCsv(allCandidates()), "blind_expert_review_complete_ratings.csv");
+}
+
+function exportPartialCsv() {
+  document.querySelectorAll(".candidate.incomplete").forEach((node) => node.classList.remove("incomplete"));
+  if (!validateEvaluator()) {
+    return;
+  }
+  const entries = completedEntries();
+  if (entries.length === 0) {
+    document.getElementById("export-status").textContent =
+      "No completed candidate ratings available to export.";
+    return;
+  }
+  document.getElementById("export-status").textContent =
+    `Exporting ${entries.length} completed candidate rating${entries.length === 1 ? "" : "s"}.`;
+  downloadCsv(buildCsv(entries), "blind_expert_review_completed_ratings_only.csv");
+}
+</script>
+</body>
+</html>
