@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/assets/css/style.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+  <title>Trumpet Timbre Quality Dataset | Alberto Acquilino</title>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+  <nav aria-label="Navigation principale">
+    <div class="nav-inner">
+      <a href="/fr/index.html" class="home-link">
+        <h1>Alberto Acquilino</h1>
+      </a>
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Afficher la navigation" aria-controls="menu" aria-expanded="false">&#9776;</button>
+      <div class="nav-actions">
+        <ul id="menu">
+          <li><a href="/fr/index.html">À propos</a></li>
+          <li><a href="/fr/research.html">Recherche</a></li>
+          <li><a href="/fr/teaching.html">Enseignement</a></li>
+          <li><a href="/fr/media.html">Médias</a></li>
+          <li><a href="/fr/portfolio.html">Portfolio</a></li>
+        </ul>
+        <div class="language-switcher" aria-label="Sélecteur de langue">
+          <button class="lang-toggle" type="button" onclick="toggleLangMenu()" aria-haspopup="true" aria-expanded="false">
+            <span class="lang-flag flag-fr" data-lang-flag></span>
+            <span class="lang-code" data-lang-label>FR</span>
+          </button>
+          <ul class="lang-menu" id="lang-menu" role="menu">
+            <li><button type="button" data-lang-option="en" onclick="setPreferredLanguage('en')" role="menuitem"><span class="lang-flag flag-en"></span><span>English</span></button></li>
+            <li><button type="button" data-lang-option="fr" onclick="setPreferredLanguage('fr')" role="menuitem"><span class="lang-flag flag-fr"></span><span>Français</span></button></li>
+            <li><button type="button" data-lang-option="it" onclick="setPreferredLanguage('it')" role="menuitem"><span class="lang-flag flag-it"></span><span>Italiano</span></button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <p><a href="/fr/portfolio.html" class="plain-link strong">← Retour au portfolio</a></p>
+    <section>
+      <h1 class="project-title">Trumpet Timbre Quality Dataset</h1>
+      <p class="project-meta">Jeu de données de recherche · 2023</p>
+      <p class="project-meta"><strong>En bref :</strong> 1 481 échantillons audio · 17 trompettistes · 4 classes d’annotation</p>
+      <p>Ce jeu de données fournit des enregistrements de trompette annotés pour étudier la qualité perçue du timbre et l’efficacité de la production sonore. Le jeu publié sur Zenodo contient 1 481 échantillons audio propres et isolés de notes de trompette issus de 17 trompettistes sélectionnés, avec différents niveaux d’expertise.</p>
+      <div class="cta-center">
+        <a class="button" href="https://zenodo.org/records/8132780" target="_blank" rel="noopener noreferrer">Explorer le jeu de données sur Zenodo</a>
+      </div>
+
+      <h2>Contenu et préparation</h2>
+      <p>Les 1 481 échantillons publiés proviennent de 17 trompettistes sélectionnés. Ils ont été sélectionnés à partir d’une collection source plus large de plus de 19 000 notes segmentées enregistrées auprès de 110 trompettistes.</p>
+
+      <h2>Interprètes et contexte d’enregistrement</h2>
+      <p>Les trompettistes sélectionnés présentent différents niveaux d’expertise. Chaque interprète a été enregistré sur des hauteurs chromatiques à trois nuances : piano, mezzoforte et forte.</p>
+
+      <h2>Annotation experte</h2>
+      <p>Des musiciens experts ont annoté l’efficacité perçue de la production sonore au moyen de quatre étiquettes : <strong>1 Poor</strong>, <strong>2 Fair</strong>, <strong>3 Good</strong> et <strong>4 Excellent</strong>.</p>
+
+      <h2>Usages possibles</h2>
+      <p>L’audio annoté peut soutenir la recherche en recherche d’information musicale, en analyse audio et en apprentissage automatique, tout en éclairant l’acoustique de la trompette et la pédagogie musicale.</p>
+
+      <section>
+        <h2>Publication associée</h2>
+        <p><a href="/fr/research.html">Article associé à ISMIR 2023</a></p>
+      </section>
+    </section>
+  </main>
+  <script src="/assets/js/script.js"></script>
+  <script src="/assets/js/lang.js"></script>
+</body>
+
+</html>
