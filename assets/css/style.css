@@ -689,6 +689,18 @@ p {
   color: var(--text);
 }
 
+.tag-research {
+  background: rgba(128, 0, 128, 0.12);
+  color: var(--text);
+}
+
+.project-meta {
+  margin: -0.4em 0 1.5em;
+  color: var(--muted);
+  font-weight: 700;
+  text-align: center;
+}
+
 .plain-link {
   color: inherit;
   font-weight: 500;
